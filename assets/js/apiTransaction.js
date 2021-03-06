@@ -17,13 +17,13 @@ function generateMovieDBUrl(path) {
 }
 
 
-function getTopRatedMovies() {
+function searchTopRatedMovies() {
     const url = generateMovieDBUrl(`/movie/top_rated`);
     const render = renderMovies.bind({ title: 'Top Rated Movies' })
     requestMovies(url, render, handleGeneralError);
 }
 
-function getTrendingMovies() {
+function searchTrendingMovies() {
     const url = generateMovieDBUrl('/trending/movie/day');
     const render = renderMovies.bind({ title: 'Trending Movies' })
     requestMovies(url, render, handleGeneralError);

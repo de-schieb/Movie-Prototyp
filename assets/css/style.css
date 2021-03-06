@@ -8,7 +8,7 @@ html, body {
 
 a {
     text-decoration: none;
-    
+    color: white;
 }
 
 li {
@@ -78,9 +78,10 @@ body {
 }
 
 .container {
-    padding: 20px;
+    padding: 65px;
     margin: 0 auto;
     text-align: center;
+
 }
 
 .movie {

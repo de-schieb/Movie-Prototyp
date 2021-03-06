@@ -162,6 +162,6 @@ document.onclick = function (event) {
 // Initialize the search
 searchMovie(INITIAL_SEARCH_VALUE);
 searchUpcomingMovies();
-getTopRatedMovies();
+searchTopRatedMovies();
 searchPopularMovie();
-getTrendingMovies();
+searchTrendingMovies();
