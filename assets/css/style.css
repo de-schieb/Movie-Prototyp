@@ -26,20 +26,21 @@ hr{
 
 header {
     width: 100%;
-    height: 65px;
+    height: 75px;
     position: fixed;
     top: 0;
     left: 0;
-    background:  #616161;
+    background: black;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
     z-index:1;
 }
+
 
 #header_logo {
     width: 140px;
     height: 50px;
     float: left;
-    margin: 10px 0 0 10px;
+    margin: 20px 0 0 10px;
 
     transition: all 300ms;
     -webkit-transition: all 300ms;
@@ -64,9 +65,30 @@ header nav {
     
 }
 
+#header_name {
+    color: white;
+    position: center;
+}
+
 header nav ul li {
     float: left;
     margin-right: 25px;
+}
+
+#nav_konto {
+    padding-top: 5px;
+}
+
+#nav_konto:hover{
+    padding-top: 10px;
+}
+
+#nav_kontakt {
+    padding-top: 5px;
+}
+
+#nav_kontakt:hover{
+    padding-top: 10px;
 }
 
 header nav ul li:hover {
@@ -75,13 +97,14 @@ header nav ul li:hover {
 
 body {
     margin: 0;
+    background: rgb(43, 0, 0);    
 }
 
 .container {
     padding: 65px;
     margin: 0 auto;
     text-align: center;
-
+    
 }
 
 .movie {
@@ -110,11 +133,6 @@ section .imageContainer {
     width: 100%;
     border: 1px solid lightgrey;
     padding: 20px;
-}
-
-
-.content-display {
-    display: block;
 }
 
 
@@ -197,3 +215,48 @@ section .imageContainer {
     border: 1px solid #ced4da;
     border-radius: .25rem;
 }
+
+/* The popup form - hidden by default */
+.form-popup {
+    display: none;
+    position: fixed;
+    top: 65px;
+    right: 160px;
+    border: 3px solid #f1f1f1;
+    z-index: 9;
+    background-color: white;
+  }
+
+  /* Add styles to the form container */
+.form-container {
+    padding: 10px;
+    background-color: white;
+  }
+
+  /* Full-width input fields */
+.form-container input[type=text] {
+    width: 85%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+  }
+
+  /* When the inputs get focus, do something */
+.form-container input[type=text]:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+
+  footer {
+      width: 100%;
+      display: flex;      
+      position: fixed;
+      bottom: 0;
+      color: white;
+      font-size: smaller;
+      border-top: 1px solid white;
+      justify-content:center;
+        align-items:center;
+      background-color: rgb(30, 0,0);
+  }

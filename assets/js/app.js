@@ -3,9 +3,9 @@ const INITIAL_SEARCH_VALUE = 'spiderman';
 const log = console.log;
 
 // Selecting elements from the DOM
-const searchButton = document.querySelector('#search');;
+const searchButton = document.querySelector('#search');
 const searchInput = document.querySelector('#exampleInputEmail1');
-const moviesContainer = document.querySelector('#movies-container');
+// const moviesContainer = document.querySelector('#movies-container');
 const moviesSearchable = document.querySelector('#movies-searchable');
 
 function createImageContainer(imageUrl, id) {
@@ -48,7 +48,6 @@ function insertIframeIntoContent(video, content) {
     content.appendChild(videoContent);
 }
 
-
 function createVideoTemplate(data) {
     const content = this.content;
     content.innerHTML = '<p id="content-close">X</p>';
@@ -81,7 +80,7 @@ function renderMovies(data) {
     const moviesBlock = generateMoviesBlock(data);
     const header = createSectionHeader(this.title);
     moviesBlock.insertBefore(header, moviesBlock.firstChild);
-    moviesContainer.appendChild(moviesBlock);
+    // moviesContainer.appendChild(moviesBlock);
 }
 
 
@@ -112,8 +111,6 @@ function generateMoviesBlock(data) {
     return movieSectionAndContent;
 }
 
-
-
 // Inserting section before content element
 function createMovieContainer(section) {
     const movieElement = document.createElement('div');
@@ -138,7 +135,19 @@ searchButton.onclick = function (event) {
     searchMovie(value);
    }
     resetInput();
+   closeSearchPopup();
 }
+
+function openSearchPopup(){
+    document.getElementById("search_popup").style.display = "block";
+    document.getElementById("body-container").style.opacity = 0.5;
+}
+
+function closeSearchPopup() {
+    document.getElementById("search_popup").style.display = "none";
+    document.getElementById("body-container").style.opacity = 1;
+}
+
 
 // Click on any movies
 // Event Delegation
@@ -158,10 +167,11 @@ document.onclick = function (event) {
         content.classList.remove('content-display');
     }
 }
+  
 
 // Initialize the search
 searchMovie(INITIAL_SEARCH_VALUE);
-searchUpcomingMovies();
-searchTopRatedMovies();
-searchPopularMovie();
-searchTrendingMovies();
+// searchUpcomingMovies();
+// searchTopRatedMovies();
+// searchPopularMovie();
+// searchTrendingMovies();
