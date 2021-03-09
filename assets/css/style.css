@@ -210,7 +210,7 @@ section .imageContainer {
     line-height: 1.5;
     outline: none;
     color: #495057;
-    background-color: #fff;
+    background-color: rgb(43, 0, 0);
     background-clip: padding-box;
     border: 1px solid #ced4da;
     border-radius: .25rem;
@@ -224,7 +224,7 @@ section .imageContainer {
     right: 160px;
     border: 3px solid #f1f1f1;
     z-index: 9;
-    background-color: white;
+    background-color: rgb(43, 0, 0);
   }
 
   /* Add styles to the form container */
