@@ -1,3 +1,4 @@
 user: dema 
 pw: ManoloDenis123!
 ip: 20.52.238.176
+url: cinema-68.germanywestcentral.cloudapp.azure.com
