@@ -91,15 +91,18 @@ function renderSearchMovies(data) {
     moviesSearchable.appendChild(moviesBlock);
 }
 
+
 function generateMoviesBlock(data) {
     const movies = data.results;
     const section = document.createElement('section');
     section.setAttribute('class', 'section');
 
     for (let i = 0; i < movies.length; i++) {
-        const { poster_path, id } = movies[i];
-
-        if (poster_path) {
+        const { poster_path, id, release_date, watch } = movies[i];
+        log("log: " + release_date);
+        if (poster_path&&(/^2019|^2020|^2021/.test(release_date))) {
+            log("log = cinema movie: " + release_date);
+            //TODO: check how to use watch/provier property (or method ???)
             const imageUrl = MOVIE_DB_IMAGE_ENDPOINT + poster_path;
     
             const imageContainer = createImageContainer(imageUrl, id);
@@ -171,7 +174,7 @@ document.onclick = function (event) {
 
 // Initialize the search
 searchMovie(INITIAL_SEARCH_VALUE);
-// searchUpcomingMovies();
-// searchTopRatedMovies();
-// searchPopularMovie();
-// searchTrendingMovies();
+searchUpcomingMovies();
+searchTopRatedMovies();
+searchPopularMovie();
+searchTrendingMovies();
