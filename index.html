@@ -4,10 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css"/>
     <title>CineMA68</title>
   </head>
   <header>
+
     <div id="header_logo">
         <a href="">
             <img src="pics/cinema.png" alt="logo" width="200" height="200"/>
@@ -31,15 +32,50 @@
         </form>
         <button type="submit" class="btn" id="search">Search</button>
       </div> 
-    <div id="body-container" class="container">
 
-      <div id="movies-searchable"></div>
-      <div id="movies-container"></div>
+      <div id="reservation-popup" class="center-popup">
+        <ul>
+          <li>
+            <img src="pics/spiderman.jpg" width="280px"/>
+          </li>
+          <li>
+            <h3>Spiderman - Far Frome Home</h3>
+          </li>
+        </ul>
+        <div id="movie-details">
+            <h5>Länge: 130 min</h5> <h5>FSK: 12</h5>
+            <h5>Erscheinungsdatum: 04.07.2019</h5>
+            <!-- <h5>Beschreibung:
+              Nach der epischen Schlacht gegen Thanos und den schicksalshaften Ereignissen um die Avengers ist Peter zurück an seiner alten Schule. Um vom Superheldendasein etwas auszuruhen, kommt ihm eine Klassenfahrt nach Europa gerade recht, auch um seiner heimlichen Liebe "MJ" endlich seine Gefühle gestehen zu können. Die erste Station ist Venedig in Italien. Nach einer entspannten Gondelfahrt mit der Reisegruppe bricht aber plötzlich das Chaos los: Ein riesiges Monster kommt aus dem Wasser und greift die Stadt an. Dem stellt sich ein bisher unbekannter Superheld namens Mysterio entgegen. Und als wäre das nicht genug, taucht dann noch Nick Fury auf, um Spider-Man für eine Mission zu rekrutieren...
+            </h5> -->
+            <div id="movie-play-times">
+              <h6>Uhrzeiten:</h6>
+              <button type="submit" class="btn" ><h5>12:00</h5></button>
+              <button type="submit" class="btn" ><h5>15:00</h5></button>
+              <button type="submit" class="btn" ><h5>18:00</h5></button>
+              <button type="submit" class="btn" ><h5>21:00</h5></button>
+            </div>
+        </div> 
+        <button type="submit" class="btn" id="close" onclick="closeReservationPopup()">Close</button>
+      </div>
+
+    
+
+    <div id="body-container" class="container">
+      <h1>Movies</h1>
+      <ul id="movies">
+        <li><img src="pics/spiderman.jpg" width="320px" onclick="openReservationPopup()"/></li>
+        <li><img src="pics/spiderman.jpg" width="320px"/></li>
+        <li><img src="pics/spiderman.jpg" width="320px"/></li>
+        <li><img src="pics/spiderman.jpg" width="320px"/></li>
+        <li><img src="pics/spiderman.jpg" width="320px"/></li>
+      </ul>
     </div>
 
-    <script src="./assets/js/apiTransaction.js"></script>
-    <script src="./assets/js/app.js"></script>
+    <!-- <script src="./assets/js/apiTransaction.js"></script> -->
+    <script src="assets/js/app.js"></script>
   </body>
+  
   <footer>
     <div id="footer_text">
       <p>Made with Love and lots of popcorn in 68! &#127871</p>

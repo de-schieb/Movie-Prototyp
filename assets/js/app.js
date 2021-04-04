@@ -5,8 +5,10 @@ const log = console.log;
 // Selecting elements from the DOM
 const searchButton = document.querySelector('#search');
 const searchInput = document.querySelector('#exampleInputEmail1');
+const reservationPopup = document.querySelector('#reservation-popup');
+const bodyContainer = document.querySelector('#body-container');
 // const moviesContainer = document.querySelector('#movies-container');
-const moviesSearchable = document.querySelector('#movies-searchable');
+// const moviesSearchable = document.querySelector('#movies-searchable');
 
 function createImageContainer(imageUrl, id) {
     const tempDiv = document.createElement('div');
@@ -85,11 +87,11 @@ function renderMovies(data) {
 
 
 
-function renderSearchMovies(data) {
-    moviesSearchable.innerHTML = '';
-    const moviesBlock = generateMoviesBlock(data);
-    moviesSearchable.appendChild(moviesBlock);
-}
+// function renderSearchMovies(data) {
+//     moviesSearchable.innerHTML = '';
+//     const moviesBlock = generateMoviesBlock(data);
+//     moviesSearchable.appendChild(moviesBlock);
+// }
 
 
 function generateMoviesBlock(data) {
@@ -98,9 +100,10 @@ function generateMoviesBlock(data) {
     section.setAttribute('class', 'section');
 
     for (let i = 0; i < movies.length; i++) {
-        const { poster_path, id, release_date, watch } = movies[i];
+        const { poster_path, id, release_date} = movies[i];
         log("log: " + release_date);
         if (poster_path&&(/^2019|^2020|^2021/.test(release_date))) {
+            // log("provider: " + getProviderOfMovie(id));
             log("log = cinema movie: " + release_date);
             //TODO: check how to use watch/provier property (or method ???)
             const imageUrl = MOVIE_DB_IMAGE_ENDPOINT + poster_path;
@@ -135,7 +138,7 @@ searchButton.onclick = function (event) {
     const value = searchInput.value
 
    if (value) {
-    searchMovie(value);
+    // searchMovie(value);
    }
     resetInput();
    closeSearchPopup();
@@ -149,6 +152,16 @@ function openSearchPopup(){
 function closeSearchPopup() {
     document.getElementById("search_popup").style.display = "none";
     document.getElementById("body-container").style.opacity = 1;
+}
+
+function openReservationPopup() {
+    reservationPopup.style.display = "block";
+    bodyContainer.style.display = "none";
+}
+
+function closeReservationPopup() {
+    reservationPopup.style.display = "none";
+    bodyContainer.style.display = "block";
 }
 
 
@@ -174,7 +187,7 @@ document.onclick = function (event) {
 
 // Initialize the search
 searchMovie(INITIAL_SEARCH_VALUE);
-searchUpcomingMovies();
-searchTopRatedMovies();
-searchPopularMovie();
-searchTrendingMovies();
+// searchUpcomingMovies();
+// searchTopRatedMovies();
+// searchPopularMovie();
+// searchTrendingMovies();

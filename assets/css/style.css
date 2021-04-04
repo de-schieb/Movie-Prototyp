@@ -4,6 +4,7 @@ html, body {
     height: 100%;
     text-align: center;
     scroll-behavior: smooth;
+    font-family: sans-serif;
 }
 
 a {
@@ -75,6 +76,13 @@ header nav ul li {
     margin-right: 25px;
 }
 
+body div ul li{
+    display: inline;
+    float: left;
+    margin-right: 25px;
+    margin-top: 20px;
+}
+
 #nav_konto {
     padding-top: 5px;
 }
@@ -104,7 +112,6 @@ body {
     padding: 65px;
     margin: 0 auto;
     text-align: center;
-    
 }
 
 .movie {
@@ -160,6 +167,10 @@ section .imageContainer {
     left: 20px;
 }
 
+#body-container {
+    color: white;
+}
+
 
 .imageContainer {
     transition: 250ms all;
@@ -196,6 +207,12 @@ section .imageContainer {
     font-size: 1rem;
     line-height: 1.5;
     border-radius: .25rem;
+}
+
+.btn:hover {
+    color: black;
+    background-color: whitesmoke;
+    border-color:whitesmoke;
 }
 
 .form-group {
@@ -248,7 +265,30 @@ section .imageContainer {
     outline: none;
   }
 
-  footer {
+  #close {
+      position: absolute;
+      right: 0;
+      top: 0;
+  }
+
+  .center-popup {
+    position: absolute;
+    display: none;
+    margin: 200px 0 0 650px;
+    float: left;
+    background-color: black;
+    color: white;
+    padding-bottom: 30px;
+ }
+
+ .center-popup #movie-details{
+    text-align: left;
+ }
+ .center-popup h5 {
+    display:inline;
+ }
+
+footer {
       width: 100%;
       display: flex;      
       position: fixed;
@@ -259,4 +299,4 @@ section .imageContainer {
       justify-content:center;
         align-items:center;
       background-color: rgb(30, 0,0);
-  }
+}
