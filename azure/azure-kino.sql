@@ -1,33 +1,30 @@
 CREATE TABLE movie(
-    movie_id bigint --AUTO_INCREMENT
-    ,title varchar(100),
+    movie_id bigint IDENTITY(1000,1) primary key,
+    title varchar(100),
     fsk int,
     length int,
     release_date date,
     description varchar(8000),
     trailer_url varchar(500),
-    picturepath varchar(500),
-    primary key(movie_id)
+    picture_path varchar(500),
 );
 
 CREATE TABLE hall (
-    hall_id bigint --AUTO_INCREMENT
-    ,number_of_seats int,
+    hall_id bigint IDENTITY(2000,1) primary key,
+    number_of_seats int,
     startSeat int,
     endSeat int,
-    show_id bigint,
-    primary key(hall_id)
+    show_id bigint
     --, foreign key(show_id)
         -- references show(show_id)
             -- on delete set null
 );
 
 CREATE TABLE dbo.show (
-    show_id bigint --AUTO_INCREMENT
-    ,startTime timestamp,
+    show_id bigint IDENTITY(3000,1) primary key,
+    startTime timestamp,
     movie_id bigint,
     hall_id bigint,
-    primary key(show_id),
     constraint movie_deleted_delete_show
     foreign key(movie_id) 
         references movie(movie_id)
@@ -39,11 +36,10 @@ CREATE TABLE dbo.show (
 );
 
 CREATE TABLE seat (
-    seat_id bigint --AUTO_INCREMENT
-    ,free bit,
+    seat_id bigint IDENTITY(4000,1) primary key,
+    free bit,
     show_id bigint,
     hall_id bigint,
-    primary key(seat_id),
     constraint show_deleted_delete_seat
     foreign key(show_id)
         references dbo.show(show_id)
@@ -55,13 +51,12 @@ CREATE TABLE seat (
 );
 
 CREATE TABLE ticket (
-    ticket_id bigint --AUTO_INCREMENT
-    ,price float,
+    ticket_id bigint IDENTITY(5000,1) primary key,
+    price float,
     movie_id bigint,
     show_id bigint,
     hall_id bigint,
     seat_id bigint,
-    primary key(ticket_id),
     constraint movie_deleted_delete_ticket
     foreign key(movie_id)
         references movie(movie_id)
