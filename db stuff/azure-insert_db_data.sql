@@ -1,4 +1,4 @@
-SET QUOTED_IDENTIFIER OFF   
+SET QUOTED_IDENTIFIER OFF   --needed so that we can use " as String delimitier!
 INSERT INTO movie (
     title,
     fsk, 
