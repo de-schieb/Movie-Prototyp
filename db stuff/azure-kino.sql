@@ -1,5 +1,5 @@
 CREATE TABLE movie(
-    movie_id bigint IDENTITY(1000,1) primary key,
+    movie_id int IDENTITY(1000,1) primary key,
     title varchar(100),
     fsk int,
     length int,
@@ -10,21 +10,21 @@ CREATE TABLE movie(
 );
 
 CREATE TABLE hall (
-    hall_id bigint IDENTITY(2000,1) primary key,
+    hall_id int IDENTITY(2000,1) primary key,
     number_of_seats int,
     startSeat int,
     endSeat int,
-    show_id bigint
+    show_id int
     --, foreign key(show_id)
         -- references show(show_id)
             -- on delete set null
 );
 
 CREATE TABLE dbo.show (
-    show_id bigint IDENTITY(3000,1) primary key,
+    show_id int IDENTITY(3000,1) primary key,
     startTime timestamp,
-    movie_id bigint,
-    hall_id bigint,
+    movie_id int,
+    hall_id int,
     constraint movie_deleted_delete_show
     foreign key(movie_id) 
         references movie(movie_id)
@@ -36,10 +36,10 @@ CREATE TABLE dbo.show (
 );
 
 CREATE TABLE seat (
-    seat_id bigint IDENTITY(4000,1) primary key,
+    seat_id int IDENTITY(4000,1) primary key,
     free bit,
-    show_id bigint,
-    hall_id bigint,
+    show_id int,
+    hall_id int,
     constraint show_deleted_delete_seat
     foreign key(show_id)
         references dbo.show(show_id)
@@ -51,12 +51,12 @@ CREATE TABLE seat (
 );
 
 CREATE TABLE ticket (
-    ticket_id bigint IDENTITY(5000,1) primary key,
-    price float,
-    movie_id bigint,
-    show_id bigint,
-    hall_id bigint,
-    seat_id bigint,
+    ticket_id int IDENTITY(5000,1) primary key,
+    price decimal(4,2),
+    movie_id int,
+    show_id int,
+    hall_id int,
+    seat_id int,
     constraint movie_deleted_delete_ticket
     foreign key(movie_id)
         references movie(movie_id)
