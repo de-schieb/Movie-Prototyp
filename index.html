@@ -34,43 +34,52 @@
         <button type="submit" class="btn">Search</button>
       </div> 
 
-      <div id="reservation-popup" class="center-popup">
-        <i><img id="movie-picture" src="pics/poster/spiderman.jpg" width="240px"/></i>
+      <div id="movie-popup" class="center-popup">
+        <i><img id="movie-picture" src="pics/poster/spiderman.jpg"/></i>
         <div id="movie-details">
-          <i><h2 id="movie-title">Spiderman - Far Frome Home</h2></i>
-          <i><h5 id="movie-length">Länge: 130 min</h5></i>
-          <i><h5 id="movie-age-restriction">FSK: 12</h5></i>
-          <i><h5 id="movie-release-date">Erscheinungsdatum: 04.07.2019</h5></i>
-          <i><h5 id="movie-desc-header">Beschreibung:</h5></i>
-          <i><h6 id="movie-desc">Nach der epischen Schlacht gegen Thanos und den schicksalshaften Ereignissen um die Avengers ist Peter zurück an seiner alten Schule. Um vom Superheldendasein etwas auszuruhen, kommt ihm eine Klassenfahrt nach Europa gerade recht, auch um seiner heimlichen Liebe "MJ" endlich seine Gefühle gestehen zu können. Die erste Station ist Venedig in Italien. Nach einer entspannten Gondelfahrt mit der Reisegruppe bricht aber plötzlich das Chaos los: Ein riesiges Monster kommt aus dem Wasser und greift die Stadt an. Dem stellt sich ein bisher unbekannter Superheld namens Mysterio entgegen. Und als wäre das nicht genug, taucht dann noch Nick Fury auf, um Spider-Man für eine Mission zu rekrutieren...</h6></i>
+          <i><h1 id="movie-title">Spiderman - Far Frome Home</h1></i>
+          <i><h4 id="movie-length">Länge: 130 min</h4></i>
+          <i><h4 id="movie-age-restriction">FSK: 12</h4></i>
+          <i><h4 id="movie-release-date">Erscheinungsdatum: 04.07.2019</h4></i>
+          <i><h4 id="movie-desc-header">Beschreibung:</h4></i>
+          <i><h5 id="movie-desc">Nach der epischen Schlacht gegen Thanos und den schicksalshaften Ereignissen um die Avengers ist Peter zurück an seiner alten Schule. Um vom Superheldendasein etwas auszuruhen, kommt ihm eine Klassenfahrt nach Europa gerade recht, auch um seiner heimlichen Liebe "MJ" endlich seine Gefühle gestehen zu können. Die erste Station ist Venedig in Italien. Nach einer entspannten Gondelfahrt mit der Reisegruppe bricht aber plötzlich das Chaos los: Ein riesiges Monster kommt aus dem Wasser und greift die Stadt an. Dem stellt sich ein bisher unbekannter Superheld namens Mysterio entgegen. Und als wäre das nicht genug, taucht dann noch Nick Fury auf, um Spider-Man für eine Mission zu rekrutieren...</h5></i>
+          <i><iframe id="movie-trailer" width="500" height="280" src="https://www.youtube-nocookie.com/embed/5dZVluJh8QI" title="Youtube Video Player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></i>
         </div>
-        <i><h6  id="movie-play-times">Spielzeiten:</h6></i>
-        <i><button type="submit" class="btn" ><h5 id="continue">Zur Sitzplatzwahl</h5></button></i>
+        <i><h3 id="movie-play-times">Spielzeiten:</h3></i>
+        <i></i>
         <div id="movie-play-times-buttons">
-          <button type="submit" class="btn" ><h5>12:00</h5></button>
-          <button type="submit" class="btn" ><h5>15:00</h5></button>
-          <button type="submit" class="btn" ><h5>18:00</h5></button>
-          <button type="submit" class="btn" ><h5>21:00</h5></button>
+          <button type="submit" class="btn" id="first-time-btn" ><h4 id="first-time">12:00</h4></button>
+          <button type="submit" class="btn" id="second-time-btn"><h4 id="second-time">15:00</h4></button>
+          <button type="submit" class="btn" id="third-time-btn"><h4 id="third-time">18:00</h4></button>
+          <button type="submit" class="btn" id="fourth-time-btn"><h4 id="fourth-time">21:00</h4></button>
         </div>
-        <i><button type="submit" class="btn" onclick="closeReservationPopup()" ><h5 id="abort">Abbrechen</h5></button></i>
+        <div id="actions">
+          <i><button type="submit" class="btn" onclick="closeReservationPopup()" id="abort-btn" ><h4 id="abort-text">Abbrechen</h4></button></i>
+          <i><button type="submit" class="btn" id="continue-btn" ><h4 id="continue-text">Zur Sitzplatzwahl</h4></button></i>
+        </div>
       <!-- <button type="submit" class="btn" id="close" onclick="closeReservationPopup()">Close</button> -->
       </div>
+
+      <div></div>
 
     
 
     <div id="body-container" class="grid">
-      <i><img class="movie_img" src="pics/poster/spiderman.jpg" onclick="openReservationPopup()"/></i>
-      <i><img class="movie_img" src="pics/poster/1917.jpg" onclick="openReservationPopup()"/></i>
-      <i><img class="movie_img" src="pics/poster/a_toy_story.jpg" onclick="openReservationPopup()"/></i>
-      <i><img class="movie_img" src="pics/poster/aladdin.jpg" onclick="openReservationPopup()"/></i>
-      <i><img class="movie_img" src="pics/poster/tenet.jpg" onclick="openReservationPopup()"/></i>
-      <i><img class="movie_img" src="pics/poster/nobody.jpg" onclick="openReservationPopup()"/></i>
-      <i><img class="movie_img" src="pics/poster/bloodshot.jpg" onclick="openReservationPopup()"/></i>
-      <i><img class="movie_img" src="pics/poster/avengers.jpg" onclick="openReservationPopup()"/></i>
-      <i><img class="movie_img" src="pics/poster/knives_out.jpg" onclick="openReservationPopup()"/></i>
-      <i><img class="movie_img" src="pics/poster/bad_boys.jpg" onclick="openReservationPopup()"/></i>
+      <i><img class="movie_img" id="movie_img_1001" src="" onclick="openReservationPopup()"/></i>
+      <i><img class="movie_img" id="movie_img_1002" src="" onclick="openReservationPopup()"/></i>
+      <i><img class="movie_img" id="movie_img_1003" src="" onclick="openReservationPopup()"/></i>
+      <i><img class="movie_img" id="movie_img_1004" src="" onclick="openReservationPopup()"/></i>
+      <i><img class="movie_img" id="movie_img_1000" src="" onclick="openReservationPopup()"/></i>
+      <i><img class="movie_img" id="movie_img_1006" src="" onclick="openReservationPopup()"/></i>
+      <i><img class="movie_img" id="movie_img_1008" src="" onclick="openReservationPopup()"/></i>
+      <i><img class="movie_img" id="movie_img_1005" src="" onclick="openReservationPopup()"/></i>
+      <i><img class="movie_img" id="movie_img_1010" src="" onclick="openReservationPopup()"/></i>
+      <i><img class="movie_img" id="movie_img_1007" src="" onclick="openReservationPopup()"/></i>
     </div>
+
     <script src="assets/js/app.js"></script>
+    <script src="assets/js/apiCalls.js"></script>
+    
   </body>
   
   <footer>

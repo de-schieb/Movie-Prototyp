@@ -202,49 +202,71 @@ body div ul li{
 
 .center-popup {
     display: none;
-    grid-template-columns: repeat(2,320px);
+    grid-template-columns: repeat(2,620px);
     grid-template-rows: repeat(3,fit-content(40%));
     background-color: var(--black-color);
     color: var(--white-color);
     padding: 30px 0 30px 0;
+    --movie-play-time-button-width: 100px;
+}
+
+.center-popup #movie-picture {
+    width: 400px;
+    padding-top: 25px
 }
 
 .center-popup #movie-details{
     display: none;
     grid-template-columns: fit-content(100%);
-    grid-template-rows: repeat(5,fit-content(100%));
+    grid-template-rows: repeat(6,fit-content(100%));
     text-align: left;
-}
-
-.center-popup #movie-title {
-    font-size: 21px;
 }
 
 .center-popup #movie-details :is(#movie-title,#movie-release-date) {
     margin-bottom: -3px;
 }
 
-.center-popup #movie-details :is(#movie-length,#movie-age-restriction,#movie-desc-header,#movie-desc) {
+.center-popup #movie-details :is(#movie-length,#movie-age-restriction,#movie-desc-header) {
     margin-bottom: -15px;
     padding-right: 15px;
 }
 
-.center-popup #movie-play-times-buttons {
-    display: none;
-    grid-template-columns: repeat(4,fit-content(40%));
-    grid-template-rows: 40px;
-    padding-left: 30px;
+.center-popup #movie-details #movie-desc {
+    padding-right: 15px;
+    margin-right: 20px;
 }
 
-.center-popup #movie-play-times-buttons h5,
-.center-popup :is(#continue,#abort) {
+.center-popup #movie-play-times-buttons {
+    display: grid;
+    grid-template-columns: repeat(4,fit-content(40%));
+    grid-template-rows: 40px;
+    place-content: center;
+}
+
+.center-popup #movie-play-times-buttons :is(#first-time-btn,#second-time-btn,#third-time-btn) {
+    margin-right: 20px;
+    min-width: var(--movie-play-time-button-width);
+}
+
+.center-popup #movie-play-times-buttons #fourth-time-btn {
+    min-width: var(--movie-play-time-button-width);
+}
+
+.center-popup #movie-play-times-buttons :is(#first-time,#second-time,#third-time,#fourth-time),
+.center-popup :is(#continue-text,#abort-text) {
     margin: 0;
 }
 
 .center-popup #actions {
-    display: none;
-    grid-template-columns: fit-content(40%);
-    grid-template-rows: repeat(2,40px);
+    display: grid;
+    grid-template-columns: repeat(2,fit-content(40%));
+    grid-template-rows: 40px;
+    place-content: center;
+}
+
+.center-popup :is(#continue-btn,#abort-btn){
+    min-width: 250px;
+    margin-right: 20px;
 }
 
 
