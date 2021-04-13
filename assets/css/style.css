@@ -145,7 +145,7 @@ body div ul li{
 }
 
 #body-container {
-    display: none;
+    display: grid;
     grid-template-columns: repeat(5, 270px);
     grid-template-rows: repeat(2, auto); 
     place-items:center;
@@ -201,7 +201,7 @@ body div ul li{
   }
 
 .center-popup {
-    display: grid;
+    display: none;
     grid-template-columns: repeat(2,320px);
     grid-template-rows: repeat(3,fit-content(40%));
     background-color: var(--black-color);
@@ -210,7 +210,7 @@ body div ul li{
 }
 
 .center-popup #movie-details{
-    display: grid;
+    display: none;
     grid-template-columns: fit-content(100%);
     grid-template-rows: repeat(5,fit-content(100%));
     text-align: left;
@@ -230,7 +230,7 @@ body div ul li{
 }
 
 .center-popup #movie-play-times-buttons {
-    display: grid;
+    display: none;
     grid-template-columns: repeat(4,fit-content(40%));
     grid-template-rows: 40px;
     padding-left: 30px;

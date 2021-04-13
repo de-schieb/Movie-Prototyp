@@ -4,7 +4,9 @@ const log = console.log;
 
 // Selecting elements from the DOM
 const searchButton = document.querySelector('#search');
-const reservationPopup = document.querySelector('#reservation-popup');
+const reservationPopupOuterGrid = document.querySelector('#reservation-popup');
+const reservationPopupDetailsGrid = document.querySelector('#movie-details');
+const reservationPopupButtonsGrid = document.querySelector('#movie-play-times-buttons')
 const bodyContainer = document.querySelector('#body-container');
 
 searchButton.onclick = function (event) {
@@ -29,12 +31,16 @@ function closeSearchPopup() {
 }
 
 function openReservationPopup() {
-    reservationPopup.style.display = "block";
+    reservationPopupOuterGrid.style.display = "grid";
+    reservationPopupDetailsGrid.style.display = "grid";
+    reservationPopupButtonsGrid.style.display = "grid";
     bodyContainer.style.display = "none";
 }
 
 function closeReservationPopup() {
-    reservationPopup.style.display = "none";
+    reservationPopupOuterGrid.style.display = "none";
+    reservationPopupDetailsGrid.style.display = "none";
+    reservationPopupButtonsGrid.style.display = "none";
     bodyContainer.style.display = "grid";
 }
 
