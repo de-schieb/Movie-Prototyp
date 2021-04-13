@@ -236,8 +236,15 @@ body div ul li{
     padding-left: 30px;
 }
 
-.center-popup #movie-play-times-buttons h5 {
+.center-popup #movie-play-times-buttons h5,
+.center-popup :is(#continue,#abort) {
     margin: 0;
+}
+
+.center-popup #actions {
+    display: none;
+    grid-template-columns: fit-content(40%);
+    grid-template-rows: repeat(2,40px);
 }
 
 

@@ -7,6 +7,7 @@ const searchButton = document.querySelector('#search');
 const reservationPopupOuterGrid = document.querySelector('#reservation-popup');
 const reservationPopupDetailsGrid = document.querySelector('#movie-details');
 const reservationPopupButtonsGrid = document.querySelector('#movie-play-times-buttons')
+// const reservationPopupActionsGrid = document.querySelector('#actions')
 const bodyContainer = document.querySelector('#body-container');
 
 searchButton.onclick = function (event) {
@@ -34,6 +35,7 @@ function openReservationPopup() {
     reservationPopupOuterGrid.style.display = "grid";
     reservationPopupDetailsGrid.style.display = "grid";
     reservationPopupButtonsGrid.style.display = "grid";
+    // reservationPopupActionsGrid.style.display = "grid";
     bodyContainer.style.display = "none";
 }
 
@@ -41,6 +43,7 @@ function closeReservationPopup() {
     reservationPopupOuterGrid.style.display = "none";
     reservationPopupDetailsGrid.style.display = "none";
     reservationPopupButtonsGrid.style.display = "none";
+    // reservationPopupActionsGrid.style.display = "none";
     bodyContainer.style.display = "grid";
 }
 
