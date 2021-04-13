@@ -1,3 +1,15 @@
+:root {
+    --white-color: white;
+    --black-color: black;
+    --main-color: rgb(43, 0, 0);
+    --footer-color: rgb(30, 0,0);
+    --input-focus-bg-color: rgb(50, 50, 50);
+    --input-bg-color: rgb(25, 25, 25);
+    --button-color: var(--main-color);
+    --button-hover-color: whitesmoke;
+    --poster-size: 95%
+}
+
 html, body {
     margin: 0px; 
     padding: 0px;
@@ -9,7 +21,7 @@ html, body {
 
 a {
     text-decoration: none;
-    color: white;
+    color: var(--white-color);
 }
 
 li {
@@ -19,11 +31,33 @@ li {
 hr{
     width: 30px;
     height: 3px;
-    background: black;
+    background: var(--black-color);
     border: 0px;
     margin: 0 auto 40px auto;
     
 }
+.btn {
+    color: var(--white-color);
+    background-color: var(--button-color);
+    border-color: var(--button-color);
+    outline: none;
+    min-height: 38px;
+    font-weight: 400;
+    text-align: center;
+    cursor: pointer;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+}
+
+.btn:hover {
+    color: var(--black-color);
+    background-color: var(--button-hover-color);
+    border-color:var(--button-hover-color);
+}
+
+/* ----------------------------------------------------------------------------------------- HEADER ------------------------------------------------------------------------------------------- */
 
 header {
     width: 100%;
@@ -31,18 +65,16 @@ header {
     position: fixed;
     top: 0;
     left: 0;
-    background: black;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    background: var(--black-color);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);;
     z-index:1;
 }
-
 
 #header_logo {
     width: 140px;
     height: 50px;
     float: left;
     margin: 15px 0 0 20px;
-
     transition: all 300ms;
     -webkit-transition: all 300ms;
     -moz-transition: all 300ms;
@@ -59,28 +91,20 @@ header {
     height: 100%;
 }
 
+#header_name {
+    color:var(--white-color);
+    position: center;
+}
+
 header nav {
     float: right;
     margin: 10px 50px 0 0;
-    color: rgb(255, 255, 255);
-    
-}
-
-#header_name {
-    color: white;
-    position: center;
+    color:var(--white-color);
 }
 
 header nav ul li {
     float: left;
     margin-right: 25px;
-}
-
-body div ul li{
-    display: inline;
-    float: left;
-    margin-right: 25px;
-    margin-top: 20px;
 }
 
 #nav_konto {
@@ -103,120 +127,35 @@ header nav ul li:hover {
     padding-top: 5px;
 }
 
+/* ------------------------------------------------------------------------------------------ BODY ------------------------------------------------------------------------------------------- */
+
 body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 0;
-    background: rgb(43, 0, 0);    
+    background: var(--main-color);    
 }
 
-.container {
-    padding: 65px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.movie {
-    margin-top: 50px;
-}
-
-section {
-    position: relative;
-    width: 100%;
-    margin-top: 25px;
-    display: flex;
-    align-items: center;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    transition: 250ms all;
-}
-
-section .imageContainer {
-    flex: 0 0 auto;
-}
-
-.content {
-    display: none;
-    position: relative;
-    min-height: 200px;
-    width: 100%;
-    border: 1px solid lightgrey;
-    padding: 20px;
-}
-
-
-.content-display {
-    display: block;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    align-items: center;
-}
-
-.content div {
-    margin: 10px;
-}
-
-
-#content-close {
-    cursor: pointer;
-    position: absolute;
-    top: 20px;
-    padding: 10px;
-    /* width: 35px;; */
-    border: 1px solid lightgrey;
-    border-radius: 45%;
-    left: 20px;
+body div ul li{
+    display: inline;
+    float: left;
+    margin-right: 25px;
+    margin-top: 20px;
 }
 
 #body-container {
-    color: white;
+    display: none;
+    grid-template-columns: repeat(5, 270px);
+    grid-template-rows: repeat(2, auto); 
+    place-items:center;
+    padding: 65px 0 40px 0;
+    color: var(--white-color);
 }
 
-
-.imageContainer {
-    transition: 250ms all;
-    width: 300px;
-}
-
-
-.imageContainer:hover {
-    margin-left: 0 40px;
-    transform: scale(1.2);
-    cursor: pointer;
-}
-
-.imageContainer {
-    border-radius: 4px;
-    box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
-    cursor: pointer;
-}
-
-.imageContainer img {
-    width: 100%;
-}
-
-.btn {
-    color: white;
-    background-color: rgb(43, 0, 0);
-    border-color: rgb(43, 0, 0);
-    outline: none;
-    min-height: 38px;
-    font-weight: 400;
-    text-align: center;
-    cursor: pointer;
-    padding: .375rem .75rem;
-    font-size: 1rem;
-    line-height: 1.5;
-    border-radius: .25rem;
-}
-
-.btn:hover {
-    color: black;
-    background-color: whitesmoke;
-    border-color:whitesmoke;
-}
-
-.form-group {
-    margin-bottom: 1rem;
+#body-container .movie_img {
+    width: var(--poster-size);
+    padding: 5px;
 }
 
 .form-control {
@@ -226,77 +165,99 @@ section .imageContainer {
     font-weight: 400;
     line-height: 1.5;
     outline: none;
-    color: white;
-    background-color: black;
+    color: var(--white-color);
+    background-color: var(--black-color);
     background-clip: padding-box;
     border: 1px solid #ced4da;
     border-radius: .25rem;
 }
 
-/* The popup form - hidden by default */
 .form-popup {
     display: none;
     position: fixed;
     top: 65px;
     right: 160px;
-    border: 3px solid black;
+    border: 3px solid var(--black-color);
     z-index: 9;
-    background-color: black;
+    background-color: var(--black-color);
   }
 
-  /* Add styles to the form container */
 .form-container {
     padding: 10px;
-    background-color: black;
+    background-color: var(--black-color);
   }
 
-  /* Full-width input fields */
 .form-container input[type=text] {
     width: 85%;
     padding: 15px;
     margin: 5px 0 22px 0;
     border: none;
-    background: rgb(25, 25, 25);
+    background: var(--input-bg-color);
   }
 
-  /* When the inputs get focus, do something */
 .form-container input[type=text]:focus {
-    background-color: rgb(50, 50, 50);
+    background-color: var(--input-focus-bg-color);
     outline: none;
   }
 
-  #close {
-      position: absolute;
-      right: 0;
-      top: 0;
-  }
+.center-popup {
+    display: grid;
+    grid-template-columns: repeat(2,320px);
+    grid-template-rows: repeat(3,fit-content(40%));
+    background-color: var(--black-color);
+    color: var(--white-color);
+    padding: 30px 0 30px 0;
+}
 
-  .center-popup {
-    position: absolute;
-    display: none;
-    margin: 200px 0 0 650px;
-    float: left;
-    background-color: black;
-    color: white;
-    padding-bottom: 30px;
- }
-
- .center-popup #movie-details{
+.center-popup #movie-details{
+    display: grid;
+    grid-template-columns: fit-content(100%);
+    grid-template-rows: repeat(5,fit-content(100%));
     text-align: left;
- }
- .center-popup h5 {
-    display:inline;
- }
+}
+
+.center-popup #movie-title {
+    font-size: 21px;
+}
+
+.center-popup #movie-details :is(#movie-title,#movie-release-date) {
+    margin-bottom: -3px;
+}
+
+.center-popup #movie-details :is(#movie-length,#movie-age-restriction,#movie-desc-header,#movie-desc) {
+    margin-bottom: -15px;
+    padding-right: 15px;
+}
+
+.center-popup #movie-play-times-buttons {
+    display: grid;
+    grid-template-columns: repeat(4,fit-content(40%));
+    grid-template-rows: 40px;
+    padding-left: 30px;
+}
+
+.center-popup #movie-play-times-buttons h5 {
+    margin: 0;
+}
+
+
+#close {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+/* ----------------------------------------------------------------------------------------- FOOTER ------------------------------------------------------------------------------------------- */
 
 footer {
       width: 100%;
       display: flex;      
       position: fixed;
       bottom: 0;
-      color: white;
+      color: var(--white-color);
       font-size: smaller;
-      border-top: 1px solid white;
+      border-top: 1px solid var(--white-color);
       justify-content:center;
         align-items:center;
-      background-color: rgb(30, 0,0);
+      background-color: var(--footer-color);
 }

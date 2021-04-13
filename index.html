@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="assets/css/style.css" type="text/css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <title>CineMA68</title>
   </head>
   <header>
@@ -28,51 +29,48 @@
       <div class="form-popup" id="search_popup">
         <form class="form-container">
       
-          <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Search..." required/>
+          <input type="text" class="form-control" placeholder="Search..." required/>
         </form>
-        <button type="submit" class="btn" id="search">Search</button>
+        <button type="submit" class="btn">Search</button>
       </div> 
 
       <div id="reservation-popup" class="center-popup">
-        <ul>
-          <li>
-            <img src="pics/poster/spiderman.jpg" width="280px"/>
-          </li>
-          <li>
-            <h3>Spiderman - Far Frome Home</h3>
-          </li>
-        </ul>
+        <i><img id="movie-picture" src="pics/poster/spiderman.jpg" width="240px"/></i>
         <div id="movie-details">
-            <h5>Länge: 130 min</h5> <h5>FSK: 12</h5>
-            <h5>Erscheinungsdatum: 04.07.2019</h5>
-            <!-- <h5>Beschreibung:
-              Nach der epischen Schlacht gegen Thanos und den schicksalshaften Ereignissen um die Avengers ist Peter zurück an seiner alten Schule. Um vom Superheldendasein etwas auszuruhen, kommt ihm eine Klassenfahrt nach Europa gerade recht, auch um seiner heimlichen Liebe "MJ" endlich seine Gefühle gestehen zu können. Die erste Station ist Venedig in Italien. Nach einer entspannten Gondelfahrt mit der Reisegruppe bricht aber plötzlich das Chaos los: Ein riesiges Monster kommt aus dem Wasser und greift die Stadt an. Dem stellt sich ein bisher unbekannter Superheld namens Mysterio entgegen. Und als wäre das nicht genug, taucht dann noch Nick Fury auf, um Spider-Man für eine Mission zu rekrutieren...
-            </h5> -->
-            <div id="movie-play-times">
-              <h6>Uhrzeiten:</h6>
-              <button type="submit" class="btn" ><h5>12:00</h5></button>
-              <button type="submit" class="btn" ><h5>15:00</h5></button>
-              <button type="submit" class="btn" ><h5>18:00</h5></button>
-              <button type="submit" class="btn" ><h5>21:00</h5></button>
-            </div>
-        </div> 
-        <button type="submit" class="btn" id="close" onclick="closeReservationPopup()">Close</button>
+          <i><h2 id="movie-title">Spiderman - Far Frome Home</h2></i>
+          <i><h5 id="movie-length">Länge: 130 min</h5></i>
+          <i><h5 id="movie-age-restriction">FSK: 12</h5></i>
+          <i><h5 id="movie-release-date">Erscheinungsdatum: 04.07.2019</h5></i>
+          <i><h5 id="movie-desc-header">Beschreibung:</h5></i>
+          <i><h6 id="movie-desc">Nach der epischen Schlacht gegen Thanos und den schicksalshaften Ereignissen um die Avengers ist Peter zurück an seiner alten Schule. Um vom Superheldendasein etwas auszuruhen, kommt ihm eine Klassenfahrt nach Europa gerade recht, auch um seiner heimlichen Liebe "MJ" endlich seine Gefühle gestehen zu können. Die erste Station ist Venedig in Italien. Nach einer entspannten Gondelfahrt mit der Reisegruppe bricht aber plötzlich das Chaos los: Ein riesiges Monster kommt aus dem Wasser und greift die Stadt an. Dem stellt sich ein bisher unbekannter Superheld namens Mysterio entgegen. Und als wäre das nicht genug, taucht dann noch Nick Fury auf, um Spider-Man für eine Mission zu rekrutieren...</h6></i>
+        </div>
+        <i><h6  id="movie-play-times">Spielzeiten:</h6></i>
+        <i></i>
+        <div id="movie-play-times-buttons">
+          <button type="submit" class="btn" ><h5>12:00</h5></button>
+          <button type="submit" class="btn" ><h5>15:00</h5></button>
+          <button type="submit" class="btn" ><h5>18:00</h5></button>
+          <button type="submit" class="btn" ><h5>21:00</h5></button>
+        </div>
+        <i>
+        </i>
+      <!-- <button type="submit" class="btn" id="close" onclick="closeReservationPopup()">Close</button> -->
       </div>
 
     
 
-    <div id="body-container" class="container">
-      <h1>Movies</h1>
-      <ul id="movies">
-        <li><img src="pics/poster/spiderman.jpg" width="320px" onclick="openReservationPopup()"/></li>
-        <li><img src="pics/poster/spiderman.jpg" width="320px" onclick="openReservationPopup()"/></li>
-        <li><img src="pics/poster/spiderman.jpg" width="320px" onclick="openReservationPopup()"/></li>
-        <li><img src="pics/poster/spiderman.jpg" width="320px" onclick="openReservationPopup()"/></li>
-        <li><img src="pics/poster/spiderman.jpg" width="320px" onclick="openReservationPopup()"/></li>
-      </ul>
+    <div id="body-container" class="grid">
+      <i><img class="movie_img" src="pics/poster/spiderman.jpg" onclick="openReservationPopup()"/></i>
+      <i><img class="movie_img" src="pics/poster/1917.jpg" onclick="openReservationPopup()"/></i>
+      <i><img class="movie_img" src="pics/poster/a_toy_story.jpg" onclick="openReservationPopup()"/></i>
+      <i><img class="movie_img" src="pics/poster/aladdin.jpg" onclick="openReservationPopup()"/></i>
+      <i><img class="movie_img" src="pics/poster/tenet.jpg" onclick="openReservationPopup()"/></i>
+      <i><img class="movie_img" src="pics/poster/nobody.jpg" onclick="openReservationPopup()"/></i>
+      <i><img class="movie_img" src="pics/poster/bloodshot.jpg" onclick="openReservationPopup()"/></i>
+      <i><img class="movie_img" src="pics/poster/avengers.jpg" onclick="openReservationPopup()"/></i>
+      <i><img class="movie_img" src="pics/poster/knives_out.jpg" onclick="openReservationPopup()"/></i>
+      <i><img class="movie_img" src="pics/poster/bad_boys.jpg" onclick="openReservationPopup()"/></i>
     </div>
-
-    <!-- <script src="./assets/js/apiTransaction.js"></script> -->
     <script src="assets/js/app.js"></script>
   </body>
   

@@ -7,18 +7,14 @@ const searchButton = document.querySelector('#search');
 const reservationPopup = document.querySelector('#reservation-popup');
 const bodyContainer = document.querySelector('#body-container');
 
-function resetInput() {
-    searchInput.value = '';
-}
-
 searchButton.onclick = function (event) {
     event.preventDefault();
     const value = searchInput.value
 
-   if (value) {
-    // searchMovie(value);
-   }
-    resetInput();
+//    if (value) {
+//     // searchMovie(value);
+//    }
+//     resetInput();
    closeSearchPopup();
 }
 
@@ -39,7 +35,7 @@ function openReservationPopup() {
 
 function closeReservationPopup() {
     reservationPopup.style.display = "none";
-    bodyContainer.style.display = "block";
+    bodyContainer.style.display = "grid";
 }
 
 
