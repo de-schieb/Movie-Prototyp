@@ -21,8 +21,8 @@ function handleGeneralError(error) {
 
 function getPicturePathByMovieID(){
     for(var i = 0;i<movieIDs.length;i++){
-        var picturePath = doFetch(generateUrl("picturePathByMovieID/" + movieIDs[i]));
-        console.log(picturePath);
+        var picturePath = doFetch(generateUrl(`picturePathByMovieID/` + movieIDs[i]));
+        console.log("picturePath:" + picturePath);
         document.getElementById("movie_img_" + movieIDs[i]).src=picturePath;
     }
 }
