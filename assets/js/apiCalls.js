@@ -24,7 +24,7 @@ function handleGeneralError(error) {
 //     document.getElementById("movie_img_" + movieIDs[i]).src = data;
 // }
 
-function getPicturePathByMovieID(){
+xfunction getPicturePathByMovieID(){
     for(var i = 0; i < movieIDs.length; i++){
         var url = generateUrl(`picturePathByMovieID/` + movieIDs[i]);
         console.log("url: " + url);
@@ -33,7 +33,7 @@ function getPicturePathByMovieID(){
         var img = document.createElement("img");
         img.setAttribute("class", "movie_img");
         img.setAttribute("id", "movie_img_" + movieIDs[i]);
-        img.setAttribute("src", await doFetch(url));
+        img.setAttribute("src", (await doFetch(url)));
         document.getElementById("body-container").appendChild(img);
         // document.getElementById("movie_img" + movieIDs[i]).src = data;
     }
