@@ -15,3 +15,19 @@ function shuffle(array) {
   
     return array;
   }
+
+  function setElementInnerHtml(elementId,value){
+      document.getElementById(elementId).innerHTML = value;
+  }
+
+  function setElementAttr(elementId,attr,value){
+      document.getElementById(elementId).setAttribute(attr,value);
+  }
+
+//   function createElement(element){
+//       var element = document.createElement(element);
+//       for(var i = 1;i<arguments.length-1;i++){
+
+//           element.setAttribute(arguments[i].)
+//       }
+//   }
