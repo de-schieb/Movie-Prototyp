@@ -5,8 +5,8 @@ const movieIDs = [1000, 1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1010]
 function doFetch(url,onComplete){
     return fetch(url)
     .then((res) => res.text())
-    .then((data) => console.log("data: " + data))
     .then(onComplete)
+    // .then((data) => console.log("data: " + data))
     .catch(handleGeneralError);
 }
 
@@ -22,7 +22,7 @@ function handleGeneralError(error) {
 
 function setPicturePath(data){
     const picturePath = data;
-    console.log("picturePath: " + picturePath);    
+    console.log("picturePath: " + picturePath);
     document.getElementById("movie_img_" + movieIDs[i]).src=picturePath;
 }
 
