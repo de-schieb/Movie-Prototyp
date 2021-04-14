@@ -19,7 +19,7 @@ function handleGeneralError(error) {
 }
 
 async function getPicturePathByMovieID(){
-    shuffle(movieIDs)
+    shuffle(movieIDs);
     for(var i = 0; i < movieIDs.length; i++){
         var url = generateUrl(`picturePathByMovieID/` + movieIDs[i]);
         console.log("url: " + url);
