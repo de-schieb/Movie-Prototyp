@@ -20,6 +20,11 @@ function handleGeneralError(error) {
 }
 
 function setPicturePath(data, i){
+<<<<<<< HEAD
+=======
+    console.log("picturePath: " + data);
+    document.getElementById("movie_img_" + movieIDs[i]).src = data;
+>>>>>>> eea0ded35f8fb0d0f2743029a2c450e54e18002a
 }
 
 function getPicturePathByMovieID(){
