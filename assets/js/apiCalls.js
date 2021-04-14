@@ -6,7 +6,7 @@ function doFetch(url,onComplete){
     return fetch(url)
     .then((res) => res.text())
     .then((data) => console.log("data: " + data))
-    .then(onComplete)
+    .then((data) => onComplete(data))
     .catch(handleGeneralError);
 }
 
