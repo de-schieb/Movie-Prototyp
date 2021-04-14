@@ -36,6 +36,7 @@ function openMoviePopup(div) {
     var picture_path = div.src.substring(55);
     console.log("picture_path: " + picture_path);
     document.getElementById("movie_img_big").setAttribute("src", picture_path);
+    getMovieDetailsByMovieID(movie_id);
     moviePopupMain.style.display = "grid";
     moviePopupDetails.style.display = "grid";
     moviePopupButtons.style.display = "grid";
