@@ -20,8 +20,6 @@ function handleGeneralError(error) {
 }
 
 function setPicturePath(data, i){
-    console.log("picturePath: " + data);
-    document.getElementById("movie_img" + movieIDs[i]).src = data;
 }
 
 function getPicturePathByMovieID(){
@@ -29,7 +27,13 @@ function getPicturePathByMovieID(){
         var url = generateUrl(`picturePathByMovieID/` + movieIDs[i]);
         console.log("url: " + url);
         var picturePath = doFetch(url);
-        setPicturePath(picturePath, i);
+        console.log("picturePath: " + data);
+        var img = document.createElement("img");
+        img.setAttribute("class", "movie_img");
+        img.setAttribute("id", "movie_img_" + movieIDs[i]);
+        img.setAttribute("src", picturePath);
+        document.getElementById("bodyContainer").appendChild(img);
+        document.getElementById("movie_img" + movieIDs[i]).src = data;
     }
 }
 
