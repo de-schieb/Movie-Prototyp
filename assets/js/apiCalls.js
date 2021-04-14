@@ -35,16 +35,16 @@ async function getMovieDetailsByMovieID(movie_id){
     var details = (await doFetch(url).then((res)=>res.json()));
     var {title, fsk, length, releaseDate, description, trailerUrl} = details;
     console.log("title: " + title);
-    // setElementInnerHtml("movie-title", title);
-    // console.log("fsk: " + fsk);
-    // setElementInnerHtml("movie-age-restriction", fsk)
-    // console.log("length: " + length);
-    // setElementInnerHtml("movie-length", length);
-    // console.log("releaseDate: " + releaseDate);
-    // setElementInnerHtml("movie-release-date", releaseDate);
-    // console.log("description: " + description);
-    // setElementInnerHtml("movie-desc:", description);
-    // console.log("trailerUrl: " + trailerUrl);
+    setElementInnerHtml("movie-title", title);
+    console.log("fsk: " + fsk);
+    setElementInnerHtml("movie-age-restriction", fsk)
+    console.log("length: " + length);
+    setElementInnerHtml("movie-length", length + " min");
+    console.log("releaseDate: " + releaseDate);
+    setElementInnerHtml("movie-release-date", releaseDate);
+    console.log("description: " + description);
+    setElementInnerHtml("movie-desc:", description);
+    console.log("trailerUrl: " + trailerUrl);
     // setElementAttr("movie-trailer","src", trailerUrl);
 }
 
