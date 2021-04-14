@@ -55,9 +55,11 @@ async function getPicturePathByMovieID(){
         img.setAttribute("class", "movie_img");
         img.setAttribute("id", "movie_img_" + movieIDs[i]);
         img.setAttribute("src", picturePath);
+        img.setAttribute("onClick", openMoviePopup())
         document.getElementById("body-container").appendChild(img);
         // document.getElementById("movie_img" + movieIDs[i]).src = data;
     }
+
 }    
 
 getPicturePathByMovieID();
