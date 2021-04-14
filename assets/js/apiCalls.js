@@ -39,11 +39,6 @@ function handleGeneralError(error) {
     alert(error.message || 'Internal Server');
 }
 
-// function setPicturePath(data, i){
-//     console.log("picturePath: " + data);
-//     document.getElementById("movie_img_" + movieIDs[i]).src = data;
-// }
-
 async function getPicturePathByMovieID(){
     shuffle(movieIDs)
     for(var i = 0; i < movieIDs.length; i++){
@@ -55,7 +50,7 @@ async function getPicturePathByMovieID(){
         img.setAttribute("class", "movie_img");
         img.setAttribute("id", "movie_img_" + movieIDs[i]);
         img.setAttribute("src", picturePath);
-        img.setAttribute("onClick", "openMoviePopup()")
+        img.setAttribute("onClick", "openMoviePopup(this)")
         document.getElementById("body-container").appendChild(img);
         // document.getElementById("movie_img" + movieIDs[i]).src = data;
     }

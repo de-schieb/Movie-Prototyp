@@ -30,7 +30,11 @@ function closeSearchPopup() {
     document.getElementById("body-container").style.opacity = 1;
 }
 
-function openMoviePopup() {
+function openMoviePopup(div) {
+    var movie_id = div.id.substring(10);
+    console.log("movie_id: " + movie_id);
+    var picture_path = div.src;
+    console.log("picture_path: " + picture_path);
     moviePopupMain.style.display = "grid";
     moviePopupDetails.style.display = "grid";
     moviePopupButtons.style.display = "grid";
