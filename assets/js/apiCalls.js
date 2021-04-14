@@ -2,26 +2,6 @@
 const API_URL = 'http://cinema-68.germanywestcentral.cloudapp.azure.com:8090'
 const movieIDs = [1000, 1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1010] 
 
-function shuffle(array) {
-    var currentIndex = array.length, temporaryValue, randomIndex;
-  
-    // While there remain elements to shuffle...
-    while (0 !== currentIndex) {
-  
-      // Pick a remaining element...
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex -= 1;
-  
-      // And swap it with the current element.
-      temporaryValue = array[currentIndex];
-      array[currentIndex] = array[randomIndex];
-      array[randomIndex] = temporaryValue;
-    }
-  
-    return array;
-  }
-  
-
 async function doFetch(url){
     var resp = await fetch(url)
     .catch(handleGeneralError);
@@ -59,7 +39,7 @@ async function getMovieDetailsByMovieID(movie_id){
     var url = generateUrl(`movie/` + movie_id);
     console.log("url: " + url);
     var detailsJson = (await doFetch(url).then((res)=>res.json()));
-    console.log("json: " + detailsJson);
+    console.log("json: " + detailsJson.json());
 }
 
 getPicturePathByMovieID();
