@@ -5,6 +5,7 @@ const movieIDs = [1000, 1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1010]
 async function doFetch(url){
     var resp = await fetch(url)
     .then((res)=>res.text())
+    .then((data)=>log(data))
     .catch(handleGeneralError);
     return resp;
 }
