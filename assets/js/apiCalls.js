@@ -3,8 +3,10 @@ const API_URL = 'http://cinema-68.germanywestcentral.cloudapp.azure.com:8090'
 const movieIDs = [1000, 1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1010] 
 
 async function doFetch(url){
-    return await fetch(url)
+    var resp = await fetch(url)
+    .then((res)=>res.text())
     .catch(handleGeneralError);
+    return resp;
 }
 
 function generateUrl(path){
@@ -22,12 +24,12 @@ function handleGeneralError(error) {
 //     document.getElementById("movie_img_" + movieIDs[i]).src = data;
 // }
 
-async function getPicturePathByMovieID(){
+function getPicturePathByMovieID(){
     // for(var i = 0; i < movieIDs.length; i++){
         var url = generateUrl(`picturePathByMovieID/` + "1000");
         // var url = generateUrl(`picturePathByMovieID/` + movieIDs[i]);
         console.log("url: " + url);
-        var picturePath = doFetch(url).then((res) => res.text()).then((data) => console.log(data));
+        var picturePath = doFetch(url);
         console.log("picturePath: " + picturePath);
         var img = document.createElement("img");
         img.setAttribute("class", "movie_img");
@@ -36,6 +38,6 @@ async function getPicturePathByMovieID(){
         document.getElementById("body-container").appendChild(img);
         // document.getElementById("movie_img" + movieIDs[i]).src = data;
     }
-// }
+// }    
 
 getPicturePathByMovieID();
