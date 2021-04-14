@@ -5,7 +5,7 @@ const movieIDs = [1000, 1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1010]
 function doFetch(url){
     return fetch(url)
     .then((res) => res.text())
-    .then((data) => data.res)    
+    .then((data) => data.results)    
     .catch(handleGeneralError);
 }
 
