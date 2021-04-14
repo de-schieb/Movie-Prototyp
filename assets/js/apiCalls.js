@@ -43,9 +43,9 @@ async function getMovieDetailsByMovieID(movie_id){
     console.log("releaseDate: " + releaseDate);
     setElementInnerHtml("movie-release-date", releaseDate);
     console.log("description: " + description);
-    setElementInnerHtml("movie-desc:", description);
+    setElementInnerHtml("movie-desc", description);
     console.log("trailerUrl: " + trailerUrl);
-    // setElementAttr("movie-trailer","src", trailerUrl);
+    setElementAttr("movie-trailer","src", trailerUrl);
 }
 
 getPicturePathByMovieID();
