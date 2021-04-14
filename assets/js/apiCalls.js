@@ -55,11 +55,11 @@ async function getPicturePathByMovieID(){
     }
 }    
 
-// async function getMovieDetailsByMovieID(movie_id){
-//     var url = generateUrl(`movie/` + movie_id);
-//     console.log("url: " + url);
-//     var detailsJson = (await doFetch(url));
-//     doFetchUrl()
-// }
+async function getMovieDetailsByMovieID(movie_id){
+    var url = generateUrl(`movie/` + movie_id);
+    console.log("url: " + url);
+    var detailsJson = (await doFetch(url).then((res)=>res.json()));
+    console.log("json: " + detailsJson);
+}
 
 getPicturePathByMovieID();
