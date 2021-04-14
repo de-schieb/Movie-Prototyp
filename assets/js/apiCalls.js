@@ -26,7 +26,6 @@ async function getPicturePathByMovieID(){
         var picturePath = (await doFetch(url).then((res)=>res.text()));
         console.log("picturePath: " + picturePath);
         createMovieImgElement(movieIDs[i],picturePath);
-        // document.getElementById("movie_img" + movieIDs[i]).src = data;
     }
 }    
 
@@ -34,9 +33,13 @@ async function getMovieDetailsByMovieID(movie_id){
     var url = generateUrl(`movieByID/` + movie_id);
     console.log("url: " + url);
     var details = (await doFetch(url).then((res)=>res.json()));
-    console.log("details: " + title);
-    var title = details.title;
+    var {title, fsk, length, releaseDate, descriptioh, trailerUrl} = details;
     console.log("title: " + title);
+    console.log("title: " + fsk);
+    console.log("title: " + length);
+    console.log("title: " + releaseDate);
+    console.log("title: " + descriptioh);
+    console.log("title: " + trailerUrl);
 }
 
 getPicturePathByMovieID();
