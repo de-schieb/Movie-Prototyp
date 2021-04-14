@@ -22,9 +22,8 @@ function shuffle(array) {
   }
   
 
-async function doFetch(url,format){
+async function doFetch(url){
     var resp = await fetch(url)
-    .then((res)=>res.format)
     .catch(handleGeneralError);
     return resp;
 }
@@ -44,7 +43,7 @@ async function getPicturePathByMovieID(){
     for(var i = 0; i < movieIDs.length; i++){
         var url = generateUrl(`picturePathByMovieID/` + movieIDs[i]);
         console.log("url: " + url);
-        var picturePath = (await doFetch(url, "text()"));
+        var picturePath = (await doFetch(url).then((res)=>res.text()));
         console.log("picturePath: " + picturePath);
         var img = document.createElement("img");
         img.setAttribute("class", "movie_img");
