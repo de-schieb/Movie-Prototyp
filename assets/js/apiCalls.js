@@ -34,8 +34,8 @@ async function getMovieDetailsByMovieID(movie_id){
     var url = generateUrl(`movie/` + movie_id);
     console.log("url: " + url);
     var details = (await doFetch(url).then((res)=>res.json()));
-    var detailsJson = details.results(); 
-    console.log("json: " + detailsJson);
+    var title = details.title;
+    console.log("title: " + title);
 }
 
 getPicturePathByMovieID();
