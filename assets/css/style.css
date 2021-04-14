@@ -222,11 +222,17 @@ body div ul li{
     text-align: left;
 }
 
+.center-popup #movie-details :is(#movie-length-all,#movie-age-restriction-all,#movie-release-date-all){
+    display:grid;
+    grid-template-columns: repeat(2,fit-content(40%));
+    grid-template-rows: fit-content(40%);
+}
+
 .center-popup #movie-details :is(#movie-title,#movie-release-date) {
     margin-bottom: -3px;
 }
 
-.center-popup #movie-details :is(#movie-length,#movie-age-restriction,#movie-desc-header) {
+.center-popup #movie-details :is(#movie-length-header,#movie-length,#movie-age-restriction-header,#movie-age-restriction,#movie-release-date-header,#movie-desc-header) {
     margin-bottom: -15px;
     padding-right: 15px;
 }
