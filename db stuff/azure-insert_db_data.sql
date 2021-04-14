@@ -52,7 +52,7 @@ VALUES
         '2019-05-23',
         "Der Straßendieb Aladdin macht am liebsten mit seinem Affen Abu die Straßen von Agrabah unsicher. Auf den Basaren der Stadt ist kein noch so wertvoll aussehender Gegenstand vor ihm sicher. Doch er möchte dieses Leben als kleiner Gauner gerne hinter sich lassen, da er der festen Überzeugung ist, zu etwas Größerem bestimmt zu sein.",
         "https://www.youtube-nocookie.com/embed/mQ8vWGe5K1M",
-        "pics/poster/aladding.jpg"
+        "pics/poster/aladdin.jpg"
     ),
     (   
         "Avengers - End Game",
