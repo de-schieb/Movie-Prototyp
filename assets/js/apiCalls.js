@@ -19,7 +19,7 @@ function handleGeneralError(error) {
     alert(error.message || 'Internal Server');
 }
 
-function setPicturePath(data){
+function setPicturePath(data, i){
     console.log("picturePath: " + data);
     document.getElementById("movie_img_" + movieIDs[i]).src = data;
 }
@@ -29,7 +29,7 @@ function getPicturePathByMovieID(){
         var url = generateUrl(`picturePathByMovieID/` + movieIDs[i]);
         console.log("url: " + url);
         var picturePath = doFetch(url);
-        setPicturePath(picturePath);
+        setPicturePath(picturePath, i);
     }
 }
 
