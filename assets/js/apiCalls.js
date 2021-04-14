@@ -19,24 +19,21 @@ function handleGeneralError(error) {
     alert(error.message || 'Internal Server');
 }
 
-function setPicturePath(data, i){
-<<<<<<< HEAD
-=======
-    console.log("picturePath: " + data);
-    document.getElementById("movie_img_" + movieIDs[i]).src = data;
->>>>>>> eea0ded35f8fb0d0f2743029a2c450e54e18002a
-}
+// function setPicturePath(data, i){
+//     console.log("picturePath: " + data);
+//     document.getElementById("movie_img_" + movieIDs[i]).src = data;
+// }
 
 function getPicturePathByMovieID(){
     for(var i = 0; i < movieIDs.length; i++){
         var url = generateUrl(`picturePathByMovieID/` + movieIDs[i]);
         console.log("url: " + url);
-        var picturePath = doFetch(url);
-        console.log("picturePath: " + data);
+        // doFetch(url);
+        // console.log("picturePath: " + data);
         var img = document.createElement("img");
         img.setAttribute("class", "movie_img");
         img.setAttribute("id", "movie_img_" + movieIDs[i]);
-        img.setAttribute("src", picturePath);
+        img.setAttribute("src", doFetch(url));
         document.getElementById("bodyContainer").appendChild(img);
         document.getElementById("movie_img" + movieIDs[i]).src = data;
     }
