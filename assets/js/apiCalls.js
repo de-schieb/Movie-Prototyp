@@ -25,12 +25,7 @@ async function getPicturePathByMovieID(){
         console.log("url: " + url);
         var picturePath = (await doFetch(url).then((res)=>res.text()));
         console.log("picturePath: " + picturePath);
-        var img = document.createElement("img");
-        img.setAttribute("class", "movie_img");
-        img.setAttribute("id", "movie_img_" + movieIDs[i]);
-        img.setAttribute("src", picturePath);
-        img.setAttribute("onClick", "openMoviePopup(this)")
-        document.getElementById("body-container").appendChild(img);
+        createMovieImgElement(movieIDs[i],picturePath);
         // document.getElementById("movie_img" + movieIDs[i]).src = data;
     }
 }    

@@ -18,6 +18,15 @@ searchButton.onclick = function (event) {
    closeSearchPopup();
 }
 
+async function createMovieImgElement(movieId, path){
+    var img = document.createElement("img");
+    img.setAttribute("class", "movie_img");
+    img.setAttribute("id", "movie_img_" + movieId);
+    img.setAttribute("src", path);
+    img.setAttribute("onClick", "openMoviePopup(this)")
+    document.getElementById("body-container").appendChild(img);
+}
+
 
 
 function openSearchPopup(){
