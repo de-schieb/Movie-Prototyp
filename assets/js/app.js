@@ -9,7 +9,7 @@ const bodyContainer = document.querySelector('#body-container');
 
 searchButton.onclick = function (event) {
     event.preventDefault();
-    const value = searchInput.value
+    // const value = searchInput.value
 
 //    if (value) {
 //     // searchMovie(value);
