@@ -210,8 +210,8 @@ body div ul li{
     --movie-play-time-button-width: 100px;
 }
 
-.center-popup #movie-picture {
-    width: 400px;
+.center-popup #movie_img_big {
+width: 400px;
     padding-top: 25px
 }
 
