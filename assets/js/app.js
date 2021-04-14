@@ -27,6 +27,22 @@ function createMovieImgElement(movieId, path){
     document.getElementById("body-container").appendChild(img);
 }
 
+function changeMovieDetails(details){
+    var {title, fsk, length, releaseDate, description, trailerUrl} = details;
+    console.log("title: " + title);
+    setElementInnerHtml("movie-title", title);
+    console.log("fsk: " + fsk);
+    setElementInnerHtml("movie-age-restriction", fsk)
+    console.log("length: " + length);
+    setElementInnerHtml("movie-length", length + " min");
+    console.log("releaseDate: " + releaseDate);
+    setElementInnerHtml("movie-release-date", releaseDate);
+    console.log("description: " + description);
+    setElementInnerHtml("movie-desc", description);
+    console.log("trailerUrl: " + trailerUrl);
+    setElementAttr("movie-trailer","src", trailerUrl);
+}
+
 function openSearchPopup(){
     document.getElementById("search_popup").style.display = "block";
     document.getElementById("body-container").style.opacity = 0.5;
