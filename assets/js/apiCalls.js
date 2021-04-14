@@ -24,12 +24,12 @@ function handleGeneralError(error) {
 //     document.getElementById("movie_img_" + movieIDs[i]).src = data;
 // }
 
-function getPicturePathByMovieID(){
+async function getPicturePathByMovieID(){
     // for(var i = 0; i < movieIDs.length; i++){
         var url = generateUrl(`picturePathByMovieID/` + "1000");
         // var url = generateUrl(`picturePathByMovieID/` + movieIDs[i]);
         console.log("url: " + url);
-        var picturePath = doFetch(url);
+        var picturePath = (await doFetch(url));
         console.log("picturePath: " + picturePath);
         var img = document.createElement("img");
         img.setAttribute("class", "movie_img");
