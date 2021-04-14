@@ -2,8 +2,8 @@
 const API_URL = 'http://cinema-68.germanywestcentral.cloudapp.azure.com:8090'
 const movieIDs = [1000, 1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1010] 
 
-function doFetch(url){
-    return fetch(url)
+async function doFetch(url){
+    return await fetch(url)
     .then((res) => res.text())
     .then((data) => console.log(data))
     .catch(handleGeneralError);
