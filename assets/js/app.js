@@ -53,13 +53,13 @@ function closeSearchPopup() {
     document.getElementById("body-container").style.opacity = 1;
 }
 
-function openMoviePopup(div) {
+async function openMoviePopup(div) {
     var movie_id = div.id.substring(10);
     console.log("movie_id: " + movie_id);
     var picture_path = div.src.substring(55);
     console.log("picture_path: " + picture_path);
     document.getElementById("movie_img_big").setAttribute("src", picture_path);
-    getMovieDetailsByMovieID(movie_id);
+    await getMovieDetailsByMovieID(movie_id);
     moviePopupMain.style.display = "grid";
     moviePopupDetails.style.display = "grid";
     moviePopupButtons.style.display = "grid";
@@ -67,6 +67,14 @@ function openMoviePopup(div) {
 }
 
 function closeMoviePopup() {
+    // changeMovieDetails({
+    //     "ticket": "",
+    //     "fsk": "",
+    //     "length": "",
+    //     "releaseDate": "",
+    //     "description": "",
+    //     "trailerUrl": ""
+    // })
     moviePopupMain.style.display = "none";
     moviePopupDetails.style.display = "none";
     moviePopupButtons.style.display = "none";
