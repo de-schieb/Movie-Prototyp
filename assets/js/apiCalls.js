@@ -27,6 +27,7 @@ function setPicturePath(data){
 }
 
 function getPicturePathByMovieID(){
+    var i;
     for(var i = 0; i<movieIDs.length; i++){
         var url = generateUrl(`picturePathByMovieID/` + movieIDs[i]);
         console.log("url: " + url);
