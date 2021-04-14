@@ -42,6 +42,8 @@ function openMoviePopup(div) {
     bodyContainer.style.display = "none";
 }
 
+
+
 function closeMoviePopup() {
     moviePopupMain.style.display = "none";
     moviePopupDetails.style.display = "none";

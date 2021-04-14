@@ -22,9 +22,9 @@ function shuffle(array) {
   }
   
 
-async function doFetch(url){
+async function doFetch(url,format){
     var resp = await fetch(url)
-    .then((res)=>res.text())
+    .then((res)=>res.format)
     .catch(handleGeneralError);
     return resp;
 }
@@ -44,7 +44,7 @@ async function getPicturePathByMovieID(){
     for(var i = 0; i < movieIDs.length; i++){
         var url = generateUrl(`picturePathByMovieID/` + movieIDs[i]);
         console.log("url: " + url);
-        var picturePath = (await doFetch(url));
+        var picturePath = (await doFetch(url, "text()"));
         console.log("picturePath: " + picturePath);
         var img = document.createElement("img");
         img.setAttribute("class", "movie_img");
@@ -54,7 +54,13 @@ async function getPicturePathByMovieID(){
         document.getElementById("body-container").appendChild(img);
         // document.getElementById("movie_img" + movieIDs[i]).src = data;
     }
-
 }    
+
+// async function getMovieDetailsByMovieID(movie_id){
+//     var url = generateUrl(`movie/` + movie_id);
+//     console.log("url: " + url);
+//     var detailsJson = (await doFetch(url));
+//     doFetchUrl()
+// }
 
 getPicturePathByMovieID();
