@@ -67,14 +67,14 @@ async function openMoviePopup(div) {
 }
 
 function closeMoviePopup() {
-    // changeMovieDetails({
-    //     "ticket": "",
-    //     "fsk": "",
-    //     "length": "",
-    //     "releaseDate": "",
-    //     "description": "",
-    //     "trailerUrl": ""
-    // })
+    changeMovieDetails({
+        "ticket": "",
+        "fsk": "",
+        "length": "",
+        "releaseDate": "",
+        "description": "",
+        "trailerUrl": ""
+    })
     moviePopupMain.style.display = "none";
     moviePopupDetails.style.display = "none";
     moviePopupButtons.style.display = "none";
