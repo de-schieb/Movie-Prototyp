@@ -30,14 +30,14 @@ function closeSearchPopup() {
     document.getElementById("body-container").style.opacity = 1;
 }
 
-function openReservationPopup() {
+function openMoviePopup() {
     moviePopupMain.style.display = "grid";
     moviePopupDetails.style.display = "grid";
     moviePopupButtons.style.display = "grid";
     bodyContainer.style.display = "none";
 }
 
-function closeReservationPopup() {
+function closeMoviePopup() {
     moviePopupMain.style.display = "none";
     moviePopupDetails.style.display = "none";
     moviePopupButtons.style.display = "none";
