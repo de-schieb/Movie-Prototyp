@@ -27,8 +27,6 @@ function createMovieImgElement(movieId, path){
     document.getElementById("body-container").appendChild(img);
 }
 
-
-
 function openSearchPopup(){
     document.getElementById("search_popup").style.display = "block";
     document.getElementById("body-container").style.opacity = 0.5;
