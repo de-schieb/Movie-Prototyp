@@ -5,7 +5,6 @@ const movieIDs = [1000, 1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1010]
 function doFetch(url){
     return fetch(url)
     .then((res) => res.text())
-    .then((data) => console.log("data: " + data))
     .catch(handleGeneralError);
 }
 
@@ -20,12 +19,10 @@ function handleGeneralError(error) {
 }
 
 function getPicturePathByMovieID(){
-    for(var i = 0;i<movieIDs.length;i++){
+    for(var i = 0; i<movieIDs.length; i++){
         var url = generateUrl(`picturePathByMovieID/` + movieIDs[i]);
         console.log("url: " + url);
-        var picturePath = doFetch(url);
-        console.log("picturePath:" + picturePath);
-        document.getElementById("movie_img_" + movieIDs[i]).src=picturePath;
+        document.getElementById("movie_img_" + movieIDs[i]).src = doFetch(url);
     }
 }
 
