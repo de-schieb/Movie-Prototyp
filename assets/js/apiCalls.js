@@ -21,7 +21,7 @@ function handleGeneralError(error) {
 
 function setPicturePath(data, i){
     console.log("picturePath: " + data);
-    document.getElementById("movie_img_" + movieIDs[i]).src = data;
+    document.getElementById("movie_img" + movieIDs[i]).src = data;
 }
 
 function getPicturePathByMovieID(){
