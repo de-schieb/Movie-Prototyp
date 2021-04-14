@@ -33,7 +33,7 @@ function closeSearchPopup() {
 function openMoviePopup(div) {
     var movie_id = div.id.substring(10);
     console.log("movie_id: " + movie_id);
-    var picture_path = div.src.substring(56);
+    var picture_path = div.src.substring(55);
     console.log("picture_path: " + picture_path);
     document.getElementById("movie_img_big").setAttribute("src", picture_path);
     moviePopupMain.style.display = "grid";
