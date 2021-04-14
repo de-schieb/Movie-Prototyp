@@ -1,6 +1,6 @@
 
 const API_URL = 'http://cinema-68.germanywestcentral.cloudapp.azure.com:8090'
-const movieIDs = [1000, 1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1010] 
+const movieIDs = [1000, 1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009] 
 
 async function doFetch(url){
     var resp = await fetch(url)
