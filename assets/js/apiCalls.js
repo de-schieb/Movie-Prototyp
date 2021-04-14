@@ -34,7 +34,7 @@ function getPicturePathByMovieID(){
         img.setAttribute("class", "movie_img");
         img.setAttribute("id", "movie_img_" + movieIDs[i]);
         img.setAttribute("src", doFetch(url));
-        document.getElementById("bodyContainer").appendChild(img);
+        document.getElementById("body-container").appendChild(img);
         document.getElementById("movie_img" + movieIDs[i]).src = data;
     }
 }
