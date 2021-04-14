@@ -24,7 +24,7 @@ function handleGeneralError(error) {
 //     document.getElementById("movie_img_" + movieIDs[i]).src = data;
 // }
 
-xfunction getPicturePathByMovieID(){
+function getPicturePathByMovieID(){
     for(var i = 0; i < movieIDs.length; i++){
         var url = generateUrl(`picturePathByMovieID/` + movieIDs[i]);
         console.log("url: " + url);
