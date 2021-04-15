@@ -109,7 +109,7 @@ header nav ul li {
 }
 
 #nav_konto, #nav_kontakt {
-    padding-top: --;
+    padding-top: 5px
 }
 
 #nav_konto:hover{
@@ -146,7 +146,7 @@ body div ul li{
     grid-template-columns: repeat(5, 270px);
     grid-template-rows: repeat(2, auto); 
     place-items:center;
-    padding: calc(var(--header-height)-10px) 0 40px 0;
+    padding: calc(/var(--header-height)-10px) 0 40px 0;
     color: var(--white-color);
 }
 
