@@ -118,7 +118,7 @@ header nav ul li {
     padding-top: 10px;
 }
 
-header nav ul li:hover {
+#nav_search:hover {
     padding-top: 5px;
 }
 
