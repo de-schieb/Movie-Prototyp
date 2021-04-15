@@ -2,7 +2,7 @@
     --white-color: white;
     --black-color: hsl(275, 1%, 24%);
     --main-color: hsl(5, 2%, 91%);
-    --footer-color: hsl(5, 2%, 35%);
+    --footer-color: var(--black-color);
     --input-focus-bg-color: rgb(50, 50, 50);
     --input-bg-color: rgb(25, 25, 25);
     --button-color: var(--main-color);
@@ -380,7 +380,7 @@ footer {
       bottom: 0;
       color: var(--font-color);
       font-size: smaller;
-      border-top: 1px solid var(--font-color);
+      border-top: 1px solid var(--footer-color);
       justify-content: center;
       align-items: center;
       background-color: var(--footer-color);
