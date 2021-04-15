@@ -3,9 +3,9 @@ const log = console.log;
 // Selecting elements from the DOM
 const searchButton = document.querySelector('#search');
 const moviePopupMain = document.querySelector('#movie-popup');
-const moviePopupDetails = document.querySelector('#movie-details');
-const moviePopupButtons = document.querySelector('#movie-play-times-buttons')
+const seatplanPopupMain = document.querySelector('#seatplan-popup')
 const bodyContainer = document.querySelector('#body-container');
+
 
 searchButton.onclick = function (event) {
     event.preventDefault();
@@ -61,8 +61,6 @@ async function openMoviePopup(div) {
     setElementAttr("movie_img_big","src", picture_path);
     await getMovieDetailsByMovieID(movie_id);
     moviePopupMain.style.display = "grid";
-    // moviePopupDetails.style.display = "grid";
-    // moviePopupButtons.style.display = "grid";
     bodyContainer.style.display = "none";
 }
 
@@ -76,7 +74,15 @@ function closeMoviePopup() {
         "trailerUrl": ""
     })
     moviePopupMain.style.display = "none";
-    // moviePopupDetails.style.display = "none";
-    // moviePopupButtons.style.display = "none";
     bodyContainer.style.display = "grid";
+}
+
+function openSeatplanPopup() {
+    moviePopupMain.style.display = "none";
+    seatplanPopupMain.style.display = "flex"
+}
+
+function closeSeatplanPopup() {
+    moviePopupMain.style.display = "grid";
+    seatplanPopupMain.style.display = "none"
 }

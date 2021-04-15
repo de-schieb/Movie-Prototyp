@@ -152,6 +152,8 @@ body div ul li{
     padding: 5px;
 }
 
+/* -------------------------------------------------------------------------------------- SEARCH POPUP ---------------------------------------------------------------------------------------- */
+
 .form-control {
     width: 760px;
     padding: .375rem .75rem;
@@ -193,6 +195,8 @@ body div ul li{
     background-color: var(--input-focus-bg-color);
     outline: none;
   }
+
+  /* ------------------------------------------------------------------------------------ CENTER POPUP ---------------------------------------------------------------------------------------- */
 
 .center-popup {
     display: none;
@@ -269,6 +273,103 @@ body div ul li{
     margin-right: 20px;
 }
 
+/* ------------------------------------------------------------------------------------- SEATPLAN POPUP --------------------------------------------------------------------------------------- */
+
+#seatplan-popup {
+    box-sizing: border-box;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    color: #ffff;
+}
+
+#seatplan-popup #movie-container {
+    margin: 20px 0;
+}
+
+#seatplan-popup #movie-title-seatplan {
+    background-color: #ffff;
+    font-size: 14px;
+    margin-left: 10px;
+    padding: 5px 15px 5px 15px;
+}
+
+#seatplan-popup #showcase {
+    background-color: rgba(0,0,0,0.1);
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #777;
+    display: flex;
+    justify-content: space-between;
+}
+
+#seatplan-popup #showcase li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+}
+
+#seatplan-popup #showcase li small {
+    margin-left: 2px;
+}
+
+#seatplan-popup #movie-container {
+    perspective: 1000px;
+    margin-bottom: 30px;
+}
+
+#seatplan-popup .screen {
+    background-color: #ffff;
+    height: 70px;
+    width: 100%;
+    margin: 15px 0;
+    transform: rotateX(-45deg);
+    box-shadow: 0 3px 10px rgba(255, 255, 255, 0.7);
+}
+
+#seatplan-popup .row {
+    display: flex;
+}
+
+#seatplan-popup .seat {
+    background-color: #444451;
+    height: 12px;
+    width: 15px;
+    margin: 3px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+#seatplan-popup .seat.selected {
+    background-color: #6feaf6;
+}
+
+#seatplan-popup .seat.occupied {
+    background-color: #ffff;
+}
+
+#seatplan-popup .seat:nth-of-type(2) {
+    margin-right: 18px;
+}
+
+#seatplan-popup .seat:nth-last-of-type(2) {
+    margin-left: 18px;
+}
+
+#seatplan-popup .seat:not(.occupied):hover {
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+#seatplan-popup #showcase .seat:not(.occupied):hover {
+    cursor: default;
+    transform: scale(1);
+}
+
 /* ----------------------------------------------------------------------------------------- FOOTER ------------------------------------------------------------------------------------------- */
 
 footer {
@@ -279,7 +380,7 @@ footer {
       color: var(--white-color);
       font-size: smaller;
       border-top: 1px solid var(--white-color);
-      justify-content:center;
-        align-items:center;
+      justify-content: center;
+      align-items: center;
       background-color: var(--footer-color);
 }

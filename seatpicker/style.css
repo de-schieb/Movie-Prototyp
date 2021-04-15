@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
 
-* {
+/* * {
   box-sizing: border-box;
-}
+} */
 
-body {
+/* body {
   background: rgb(28, 28, 29);
   background: linear-gradient(66deg, rgb(25, 25, 26) 0%, rgb(25, 25, 27) 100%);
   display: flex;
@@ -15,9 +15,9 @@ body {
   font-family: 'Lato', sans-serif;
   margin: 0;
   color: #ffff;
-}
+} */
 
-.movie-container {
+/* .movie-container {
   margin: 20px 0;
 }
 
@@ -31,12 +31,12 @@ body {
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
-}
+} */
 
-.container {
+/* .container {
   perspective: 1000px;
   margin-bottom: 30px;
-}
+} */
 
 .seat {
   background-color: #444451;
@@ -73,7 +73,7 @@ body {
   transform: scale(1);
 }
 
-.showcase {
+/* .showcase {
   background-color: rgba(0,0,0,0.1);
   padding: 5px 10px;
   border-radius: 5px;
@@ -92,20 +92,20 @@ body {
 
 .showcase li small {
   margin-left: 2px;
-}
+} */
 
-.row {
+/* .row {
   display: flex;
-}
+} */
 
-.screen {
+/* .screen {
   background-color: #ffff;
   height: 70px;
   width: 100%;
   margin: 15px 0;
   transform: rotateX(-45deg);
   box-shadow: 0 3px 10px rgba(255, 255, 255, 0.7);
-}
+} */
 
 p.text {
   margin: 5px 0;
