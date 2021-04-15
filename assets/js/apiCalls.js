@@ -1,6 +1,6 @@
 
 const API_URL = 'http://cinema-68.germanywestcentral.cloudapp.azure.com:8090'
-const movieIDs = [1000, 1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009] 
+var movieIDs = [];
 
 async function doFetch(url){
     var resp = await fetch(url)
@@ -18,7 +18,14 @@ function handleGeneralError(error) {
     alert(error.message || 'Internal Server');
 }
 
+async function getMovieIds(){
+    var url = generateUrl(`movieIDs`)
+    console.log("url: " + url);
+    movieIDs = (await doFetch(url).then((res)=>res.json()));
+}
+
 async function getPicturePathByMovieID(){
+    await getMovieIds();
     shuffle(movieIDs);
     for(var i = 0; i < movieIDs.length; i++){
         var url = generateUrl(`picturePathByMovieID/` + movieIDs[i]);
