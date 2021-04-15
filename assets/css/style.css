@@ -154,6 +154,7 @@ body div ul li{
 }
 
 #body-bg-splitter {
+    z-index: -1;
     position: fixed;
     top:var(--header-height);
     left:0;
