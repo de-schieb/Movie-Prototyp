@@ -217,6 +217,7 @@ body div ul li{
     background-color: var(--white-color);
     color: var(--font-color);
     padding: 30px 0 30px 0;
+    border: 1px double var(--black-color);
     --movie-play-time-button-width: 100px;
 }
 
