@@ -73,7 +73,7 @@ header {
 
 #header_logo {
     width: 140px;
-    height: calc((var(--header-height)/2)-10px);
+    height: calc((var(--header-height)/2)-20px);
     float: left;
     margin: 15px 0 0 20px;
     transition: all 300ms;
@@ -108,16 +108,12 @@ header nav ul li {
     margin-right: 25px;
 }
 
-#nav_konto {
-    padding-top: 5px;
+#nav_konto, #nav_kontakt {
+    padding-top: --;
 }
 
 #nav_konto:hover{
     padding-top: 10px;
-}
-
-#nav_kontakt {
-    padding-top: 5px;
 }
 
 #nav_kontakt:hover{
@@ -150,7 +146,7 @@ body div ul li{
     grid-template-columns: repeat(5, 270px);
     grid-template-rows: repeat(2, auto); 
     place-items:center;
-    padding: (var(--header-height)-10px) 0 40px 0;
+    padding: calc(var(--header-height)-10px) 0 40px 0;
     color: var(--white-color);
 }
 
