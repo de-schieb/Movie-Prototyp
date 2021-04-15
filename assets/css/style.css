@@ -2,7 +2,7 @@
     --white-color: white;
     --black-color: hsl(0, 0%, 54%);
     --main-color: hsl(5, 2%, 91%);
-    --footer-color: rgb(30, 0,0);
+    --footer-color: hsl(5, 2%, 35%);
     --input-focus-bg-color: rgb(50, 50, 50);
     --input-bg-color: rgb(25, 25, 25);
     --button-color: var(--main-color);
