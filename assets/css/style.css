@@ -1,7 +1,7 @@
 :root {
     --white-color: white;
     --black-color: hsl(0, 0%, 54%);
-    --main-color: rgb(43, 0, 0);
+    --main-color: hsl(5, 2%, 91%);
     --footer-color: rgb(30, 0,0);
     --input-focus-bg-color: rgb(50, 50, 50);
     --input-bg-color: rgb(25, 25, 25);
