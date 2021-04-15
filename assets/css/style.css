@@ -1,15 +1,16 @@
 :root {
     --white-color: white;
-    --black-color: hsl(1, 100%, 25%);
+    --black-color: black;
     --main-color: whitesmoke;
     --footer-color: var(--black-color);
     --input-focus-bg-color: rgb(50, 50, 50);
     --input-bg-color: rgb(25, 25, 25);
     --button-color: var(--main-color);
     --button-hover-color: whitesmoke;
-    --font-color: black;
+    --font-color: var(--black-color);
     --poster-size: 95%;
-    --header-height: 110px;
+    --header-height: 100px;
+    --footer-height: calc((var(--header-height)/2px)-(var(--header-height)/10px));
 }
 
 html, body {
@@ -128,8 +129,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0;
-    background: var(--main-color);    
+    margin: 0;  
 }
 
 body div ul li{
@@ -151,6 +151,18 @@ body div ul li{
 #body-container .movie_img {
     width: var(--poster-size);
     padding: 5px;
+}
+
+#body-upper {
+    height: 50%;
+    margin-top: var(--header-height);
+    background-color: var(--black-color);
+}
+
+#body-lower {
+    height: 50%;
+    margin-bottom: var(--footer-height);
+    background-color: var(--white-color);
 }
 
 /* -------------------------------------------------------------------------------------- SEARCH POPUP ---------------------------------------------------------------------------------------- */
@@ -374,14 +386,15 @@ body div ul li{
 /* ----------------------------------------------------------------------------------------- FOOTER ------------------------------------------------------------------------------------------- */
 
 footer {
-      width: 100%;
-      display: flex;      
-      position: fixed;
-      bottom: 0;
-      color: var(--font-color);
-      font-size: smaller;
-      border-top: 1px solid var(--footer-color);
-      justify-content: center;
-      align-items: center;
-      background-color: var(--footer-color);
+    height: var(--footer-height);
+    width: 100%;
+    display: flex; 
+    position: fixed;
+    bottom: 0;
+    color: var(--font-color);
+    font-size: smaller;
+    border-top: 1px solid var(--footer-color);
+    justify-content: center;
+    align-items: center;
+    background-color: var(--footer-color);
 }
