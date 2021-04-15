@@ -215,9 +215,9 @@ body div ul li{
     grid-template-columns: repeat(2,580px);
     grid-template-rows: repeat(3,fit-content(40%));
     background-color: var(--white-color);
-    color: var(--font-color);
+    color: var(--black-color);
     padding: 30px 0 30px 0;
-    border: 1px double var(--black-color);
+    border: 5px solid var(--black-color);
     --movie-play-time-button-width: 100px;
 }
 
