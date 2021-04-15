@@ -94,11 +94,6 @@ header {
     height: 100%;
 }
 
-#header_name {
-    color:var(--white-color);
-    /* position: center; */
-}
-
 header nav {
     float: right;
     margin: 10px 50px 0 600px;
@@ -110,6 +105,10 @@ header nav ul li {
     margin-right: 25px;
 }
 
+header nav ul li:hover {
+    padding-top: 5px;
+}
+
 #nav_konto, #nav_kontakt {
     padding-top: 5px;
 }
@@ -118,9 +117,9 @@ header nav ul li {
     padding-top: 10px;
 }
 
-#nav_search:hover {
+/* #nav_search:hover {
     padding-top: 5px;
-}
+} */
 
 /* ------------------------------------------------------------------------------------------ BODY ------------------------------------------------------------------------------------------- */
 
