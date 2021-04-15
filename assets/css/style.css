@@ -1,13 +1,13 @@
 :root {
     --white-color: white;
-    --black-color: hsl(275, 1%, 24%);
-    --main-color: hsl(0, 100%, 25%);
+    --black-color: hsl(15, 80%, 60%);
+    --main-color: whitesmoke;
     --footer-color: var(--black-color);
     --input-focus-bg-color: rgb(50, 50, 50);
     --input-bg-color: rgb(25, 25, 25);
     --button-color: var(--main-color);
     --button-hover-color: whitesmoke;
-    --font-color: hsl(194, 100%, 54%);
+    --font-color: black;
     --poster-size: 95%;
     --header-height: 110px;
 }
