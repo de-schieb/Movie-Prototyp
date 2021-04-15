@@ -58,11 +58,11 @@ async function openMoviePopup(div) {
     console.log("movie_id: " + movie_id);
     var picture_path = div.src.substring(55);
     console.log("picture_path: " + picture_path);
-    document.getElementById("movie_img_big").setAttribute("src", picture_path);
+    setElementAttr("movie_img_big","src", picture_path);
     await getMovieDetailsByMovieID(movie_id);
     moviePopupMain.style.display = "grid";
-    moviePopupDetails.style.display = "grid";
-    moviePopupButtons.style.display = "grid";
+    // moviePopupDetails.style.display = "grid";
+    // moviePopupButtons.style.display = "grid";
     bodyContainer.style.display = "none";
 }
 
@@ -76,7 +76,7 @@ function closeMoviePopup() {
         "trailerUrl": ""
     })
     moviePopupMain.style.display = "none";
-    moviePopupDetails.style.display = "none";
-    moviePopupButtons.style.display = "none";
+    // moviePopupDetails.style.display = "none";
+    // moviePopupButtons.style.display = "none";
     bodyContainer.style.display = "grid";
 }

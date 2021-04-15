@@ -7,7 +7,8 @@
     --input-bg-color: rgb(25, 25, 25);
     --button-color: var(--main-color);
     --button-hover-color: whitesmoke;
-    --poster-size: 95%
+    --poster-size: 95%;
+    --header-height: 100px;
 }
 
 html, body {
@@ -61,7 +62,7 @@ hr{
 
 header {
     width: 100%;
-    height: 75px;
+    height: var(--header-height);
     position: fixed;
     top: 0;
     left: 0;
@@ -72,7 +73,7 @@ header {
 
 #header_logo {
     width: 140px;
-    height: 50px;
+    height: (var(--header-height)/2);
     float: left;
     margin: 15px 0 0 20px;
     transition: all 300ms;
@@ -149,7 +150,7 @@ body div ul li{
     grid-template-columns: repeat(5, 270px);
     grid-template-rows: repeat(2, auto); 
     place-items:center;
-    padding: 65px 0 40px 0;
+    padding: (var(--header-height)-10px) 0 40px 0;
     color: var(--white-color);
 }
 
