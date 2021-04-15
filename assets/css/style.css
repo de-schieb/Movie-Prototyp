@@ -1,6 +1,6 @@
 :root {
     --white-color: white;
-    --black-color: hsl(15, 80%, 60%);
+    --black-color: hsl(1, 100%, 25%);
     --main-color: whitesmoke;
     --footer-color: var(--black-color);
     --input-focus-bg-color: rgb(50, 50, 50);
