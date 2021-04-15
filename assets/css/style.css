@@ -8,7 +8,7 @@
     --button-color: var(--main-color);
     --button-hover-color: whitesmoke;
     --poster-size: 95%;
-    --header-height: 100px;
+    --header-height: 110px;
 }
 
 html, body {
@@ -74,8 +74,8 @@ header {
 }
 
 #header_logo {
-    width: 140px;
-    height: calc((var(--header-height) / 2));
+    width: 200px;
+    height: 94px;
     float: left;
     margin: 15px 0 0 20px;
     transition: all 300ms;
@@ -200,7 +200,7 @@ body div ul li{
 
 .center-popup {
     display: none;
-    grid-template-columns: repeat(2,620px);
+    grid-template-columns: repeat(2,580px);
     grid-template-rows: repeat(3,fit-content(40%));
     background-color: var(--black-color);
     color: var(--white-color);
@@ -209,7 +209,7 @@ body div ul li{
 }
 
 .center-popup #movie_img_big {
-    width: 400px;
+    width: 370px;
     padding-top: 25px
 }
 
