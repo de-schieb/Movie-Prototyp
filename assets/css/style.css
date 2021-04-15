@@ -65,7 +65,7 @@ header {
     height: var(--header-height);
     position: fixed;
     display: flex;
-    justify-content: center;
+    align-items: center;
     top: 0;
     left: 0;
     background: var(--black-color);
@@ -96,12 +96,12 @@ header {
 
 #header_name {
     color:var(--white-color);
-    position: center;
+    /* position: center; */
 }
 
 header nav {
     float: right;
-    margin: 10px 50px 0 0;
+    /* margin: 10px 50px 0 0; */
     color:var(--white-color);
 }
 
@@ -110,7 +110,7 @@ header nav ul li {
     margin-right: 25px;
 }
 
-#nav_konto, #nav_kontakt {
+/* #nav_konto, #nav_kontakt {
     padding-top: 5px;
 }
 
@@ -124,7 +124,7 @@ header nav ul li {
 
 header nav ul li:hover {
     padding-top: 5px;
-}
+} */
 
 /* ------------------------------------------------------------------------------------------ BODY ------------------------------------------------------------------------------------------- */
 
