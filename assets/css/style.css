@@ -73,7 +73,7 @@ header {
 
 #header_logo {
     width: 140px;
-    height: (var(--header-height)/2);
+    height: ((var(--header-height)/2)-10px);
     float: left;
     margin: 15px 0 0 20px;
     transition: all 300ms;
@@ -217,14 +217,14 @@ body div ul li{
 }
 
 .center-popup #movie-details{
-    display: none;
+    display: grid;
     grid-template-columns: fit-content(100%);
     grid-template-rows: repeat(6,fit-content(100%));
     text-align: left;
 }
 
 .center-popup #movie-details :is(#movie-length-all,#movie-age-restriction-all,#movie-release-date-all){
-    display:grid;
+    display: grid;
     grid-template-columns: repeat(2,fit-content(40%));
     grid-template-rows: fit-content(40%);
 }
@@ -274,13 +274,6 @@ body div ul li{
 .center-popup :is(#continue-btn,#abort-btn){
     min-width: 250px;
     margin-right: 20px;
-}
-
-
-#close {
-    position: absolute;
-    right: 0;
-    top: 0;
 }
 
 /* ----------------------------------------------------------------------------------------- FOOTER ------------------------------------------------------------------------------------------- */
