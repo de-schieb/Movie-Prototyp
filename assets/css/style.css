@@ -98,7 +98,7 @@ header #header_buttons_and_timestamp {
     display: grid;
     grid-template-columns: repeat(3,fit-content(100%));
     grid-template-rows: 40px;
-    padding-left: 470px;
+    padding-left: 500px;
     padding-top: 30px;
 }
 
@@ -153,7 +153,7 @@ body div ul li{
     display: grid;
     grid-template-columns: repeat(5, 270px);
     grid-template-rows: repeat(2, auto); 
-    place-items:center;
+    place-items: center;
     padding: calc(var(--header-height) - 10px) 0 40px 0;
     color: var(--font-color);
 }
