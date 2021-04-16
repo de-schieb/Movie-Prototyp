@@ -68,7 +68,7 @@ header {
     position: fixed;
     display: grid;
     grid-template-columns: 200px 450px;
-    grid-template-rows: fit-content(40%);
+    grid-template-rows: fit-content(100%);
     top: 0;
     left: 0;
     background: var(--white-color);
@@ -77,8 +77,6 @@ header {
 }
 
 #header_logo {
-    float: left;
-    margin-right: 200px;
     transition: all 300ms;
     -webkit-transition: all 300ms;
     -moz-transition: all 300ms;
@@ -108,7 +106,7 @@ header :is(#header_ticket_search,#header_timestamp,#header_contact) {
 }
 
 header #header_ticket_search{
-    max-width: 225px;
+    max-width: 200px;
     min-width: 150px;
 }
 
@@ -117,7 +115,7 @@ header #header_timestamp {
 }
 
 header #header_contact {
-    width: 75px;
+    width: 100px;
 }
 
 /* ------------------------------------------------------------------------------------------ BODY ------------------------------------------------------------------------------------------- */
