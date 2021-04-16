@@ -118,6 +118,7 @@ header #header_timestamp {
     color:var(--white-color);
     border-radius: .25rem;
     width: 150px;
+    text-align: center;
 }
 
 header #header_contact {
