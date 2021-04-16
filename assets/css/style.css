@@ -99,7 +99,7 @@ header #header_buttons_and_timestamp {
     grid-template-columns: repeat(3,fit-content(100%));
     grid-template-rows: 40px;
     padding-left: 200px;
-    padding-top:15px;
+    padding-top:30px;
 }
 
 header :is(#header_ticket_search,#header_timestamp,#header_contact) {
