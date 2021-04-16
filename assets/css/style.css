@@ -114,7 +114,7 @@ header #header_ticket_search{
 }
 
 header #header_timestamp {
-    background: var(--white-color);
+    background: var(--black-color);
     color:var(--white-color);
     border-radius: .25rem;
     width: 150px;
