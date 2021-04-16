@@ -98,7 +98,7 @@ header #header_buttons_and_timestamp {
     display: grid;
     grid-template-columns: repeat(3,fit-content(100%));
     grid-template-rows: 40px;
-    padding-left: 400px;
+    padding-left: 450px;
     padding-top: 30px;
 }
 
@@ -114,6 +114,8 @@ header #header_ticket_search{
 }
 
 header #header_timestamp {
+    display: flex;
+    align-items: center;
     background: var(--black-color);
     color:var(--white-color);
     border-radius: .25rem;
