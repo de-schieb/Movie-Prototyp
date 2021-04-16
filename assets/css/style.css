@@ -115,6 +115,7 @@ header #header_ticket_search{
 
 header #header_timestamp {
     display: flex;
+    justify-content: center;
     align-items: center;
     background: var(--black-color);
     color:var(--white-color);
