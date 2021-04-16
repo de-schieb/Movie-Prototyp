@@ -77,10 +77,8 @@ header {
 }
 
 #header_logo {
-    /* width: 200px;
-    height: 94px; */
     float: left;
-    /* margin: 15px 0 0 20px; */
+    margin-right: 200px
     transition: all 300ms;
     -webkit-transition: all 300ms;
     -moz-transition: all 300ms;
@@ -121,33 +119,6 @@ header #header_timestamp {
 header #header_contact {
     width: 75px;
 }
-
-/* header nav {
-    float: right;
-    margin: 10px 50px 0 1350px;
-    color: var(--font-color);
-}
-
-header nav ul li {
-    float: left;
-    margin-right: 25px;
-}
-
-header nav ul li:hover {
-    padding-top: 5px;
-}
-
-#nav_konto, #nav_kontakt {
-    padding-top: 5px;
-}
-
-#nav_konto:hover, #nav_kontakt:hover {
-    padding-top: 10px;
-} */
-
-/* #nav_search:hover {
-    padding-top: 5px;
-} */
 
 /* ------------------------------------------------------------------------------------------ BODY ------------------------------------------------------------------------------------------- */
 
