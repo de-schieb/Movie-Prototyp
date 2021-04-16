@@ -103,7 +103,7 @@ header #header_buttons_and_timestamp {
 }
 
 header :is(#header_ticket_search,#header_timestamp,#header_contact) {
-    min-height: 35px;
+    min-height: 35px;   
     max-height: 35px;
     margin-right: 20px;
 }
