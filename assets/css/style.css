@@ -179,7 +179,6 @@ body div ul li{
     color: var(--font-color);
     background-color: var(--black-color);
     background-clip: padding-box;
-    border: 1px solid #ced4da;
     border-radius: .25rem;
 }
 
