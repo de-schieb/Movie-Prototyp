@@ -424,8 +424,12 @@ body div ul li{
     border: 1px solid var(--second-main-color);
 }
 
-#reservation-popup #summary-popup #your-data-container {
+#reservation-popup #summary-popup :is(#caption) {
+    border: none;
+    width: 100%;
+}
 
+#reservation-popup #summary-popup #your-data-container {
     background-color: var(--first-main-color);
     color: var(--second-main-color);
     border: 1px dashed var(--second-main-color);
