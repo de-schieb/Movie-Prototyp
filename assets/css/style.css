@@ -333,6 +333,14 @@ body div ul li{
     margin-left: 2px;
 }
 
+#reservation-popup #seatplan-popup #showcase #selected {
+    margin-left: -4px;
+}
+
+#reservation-popup #seatplan-popup #showcase #occupied {
+    margin-left: -19px;
+}
+
 #reservation-popup #seatplan-popup #seatplan-container {
     margin-left: 25px;
 }
