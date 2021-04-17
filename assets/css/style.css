@@ -299,10 +299,12 @@ body div ul li{
 /* ------------------------------------------------------------------------------------- SEATPLAN POPUP --------------------------------------------------------------------------------------- */
 
 #reservation-popup {
-    display:grid;
-    grid-template-columns: repeat(2, 580px);
-    grid-template-rows: fit-content(100%);
-    margin: 0;
+    display: grid;
+}
+
+#reservation-popup :is(#seatplan-popup, #summary-popup) {
+    width: 584px;
+    height: 580px;
 }
 
 #reservation-popup #seatplan-popup #movie-container {
