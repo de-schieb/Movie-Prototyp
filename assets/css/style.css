@@ -436,6 +436,7 @@ body div ul li{
     display: grid;
     grid-template-columns: fit-content(100%);
     width: max-content;
+    height: max-content;
 }
 
 #reservation-popup #summary-popup #your-data-container #your-data {
@@ -445,11 +446,15 @@ body div ul li{
     margin-left: -9px;
 }
 
-#reservation-popup #summary-popup :is(#your-firstname, #your-lastname, #your-email, #your-phone) {
+#reservation-popup #summary-popup :is(#your-firstname, #your-lastname) {
     text-align: left;
     margin-bottom: 15px;
 }
 
+#reservation-popup #summary-popup :is(#your-email, #your-phone) {
+    text-align: left;
+    margin-bottom: -5px;
+}
 
 /* ----------------------------------------------------------------------------------------- FOOTER ------------------------------------------------------------------------------------------- */
 
