@@ -299,6 +299,11 @@ body div ul li{
 /* ------------------------------------------------------------------------------------- SEATPLAN POPUP --------------------------------------------------------------------------------------- */
 
 #seatplan-popup {
+    display:grid;
+    grid-template-columns: repeat(2, 580px);
+    grid-template-rows: fit-content(100%);
+
+
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
