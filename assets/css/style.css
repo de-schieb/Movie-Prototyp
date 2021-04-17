@@ -307,22 +307,6 @@ body div ul li{
     height: 580px;
 }
 
-#reservation-popup #seatplan-popup #movie-container {
-    display: grid;
-    grid-template-columns: repeat(2,fit-content(100%));
-    grid-template-rows: fit-content(100%);
-    margin: 0;
-}
-
-
-#reservation-popup #seatplan-popup :is(#movie-title-seatplan, #selected-movie) {
-    background-color: var(--second-main-color);
-    font-size: 14px;
-    margin-left: 10px;
-    width: 220px;
-    padding: 5px 15px;
-}
-
 #reservation-popup #seatplan-popup #showcase {
     display: grid;
     grid-template-columns: repeat(3, fit-content(100%));
@@ -345,11 +329,6 @@ body div ul li{
 
 #reservation-popup #seatplan-popup #showcase small {
     margin-left: 2px;
-}
-
-#reservation-popup #seatplan-popup #movie-container {
-    perspective: 1000px;
-    margin-bottom: 15px;
 }
 
 #reservation-popup #seatplan-popup #seatplan-container {
@@ -401,6 +380,23 @@ body div ul li{
 #reservation-popup #seatplan-popup #showcase .seat:not(.occupied):hover {
     cursor: default;
     transform: scale(1);
+}
+
+#reservation-popup #summary-popup #movie-container {
+    display: grid;
+    grid-template-columns: repeat(2,fit-content(100%));
+    grid-template-rows: fit-content(100%);
+    margin: 0;
+    perspective: 1000px;
+    margin-bottom: 15px;
+}
+
+#reservation-popup #summary-popup :is(#movie-title-seatplan, #selected-movie) {
+    background-color: var(--second-main-color);
+    font-size: 14px;
+    margin-left: 10px;
+    width: 220px;
+    padding: 5px 15px;
 }
 
 /* ----------------------------------------------------------------------------------------- FOOTER ------------------------------------------------------------------------------------------- */
