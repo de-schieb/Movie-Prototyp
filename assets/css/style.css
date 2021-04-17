@@ -451,15 +451,23 @@ body div ul li{
     margin-bottom: 15px;
 }
 
-#reservation-popup #summary-popup :is(#submit-your-data, #back-btn) {
-    font-weight: bold;
+#reservation-popup #summary-popup :is(#submit-your-data) {
     margin-top: 15px;
     margin-bottom: -20px;
     margin-right: 10px;
     margin-left: -260px
 }
 
+#reservation-popup #summary-popup :is(#back){
+    display:flex;
+    align-items: center;
+}
+
 #reservation-popup #summary-popup :is(#back-btn){
+    margin-top: 15px;
+    margin-left: 10px;
+    margin-right: 55px;
+    width: 100%;
     
 }
 
