@@ -61,6 +61,16 @@ hr{
     border-color: var(--first-main-color);
 }
 
+.label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--second-main-color);
+    color: var(--first-main-color);
+    border-radius: .25rem;
+    text-align: center;
+}
+
 /* ----------------------------------------------------------------------------------------- HEADER ------------------------------------------------------------------------------------------- */
 
 header {
@@ -117,16 +127,6 @@ header :is(#header_timestamp, #header_contact){
 header #header_ticket_search{
     max-width: 200px;
     min-width: 150px;
-}
-
-.label {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: var(--second-main-color);
-    color: var(--first-main-color);
-    border-radius: .25rem;
-    text-align: center;
 }
 
 header #header_timestamp {
@@ -398,7 +398,7 @@ body div ul li{
     grid-template-rows: fit-content(100%);
     perspective: 1000px;
     margin-top: 15px;
-    margin-bottom: 34px;
+    margin-bottom: 32.5px;
 }
 
 #reservation-popup #summary-popup :is( #selected-movie, #movie-title-seatplan, #selected-show, #show-seatplan, #selected-seats, #seats-seatplan, #total-price, #total-price-seatplan) {
@@ -420,6 +420,8 @@ body div ul li{
 #reservation-popup #summary-popup :is(#movie-title-seatplan, #show-seatplan, #seats-seatplan, #total-price-seatplan) {
     background-color: var(--first-main-color);
     color: var(--second-main-color);
+    font-weight: 600;
+    border: 1px solid var(--second-main-color);
 }
 
 
