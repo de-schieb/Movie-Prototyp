@@ -433,20 +433,18 @@ body div ul li{
     background-color: var(--first-main-color);
     color: var(--second-main-color);
     border: 1px dashed var(--second-main-color);
+    display: grid;
+    grid-template-columns: fit-content(100%);
+    width: 480px;
+    margin-left: 18px;
 }
 
 #reservation-popup #summary-popup #your-data-container #your-data {
     display: flex;
     align-items: center;
     width: 100%;
+    margin-left: -4px;
 }
-
-/* #reservation-popup #summary-popup #your-data-container #your-data-form {
-    display:grid;
-} */
-
-
-
 
 /* ----------------------------------------------------------------------------------------- FOOTER ------------------------------------------------------------------------------------------- */
 
