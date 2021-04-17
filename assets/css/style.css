@@ -58,8 +58,7 @@ hr{
 
 .btn:hover {
     color: var(--accent-color);
-    background-color: var(--button-hover-color);
-    border-color:var(--button-hover-color);
+    border-color: var(--first-main-color);
 }
 
 /* ----------------------------------------------------------------------------------------- HEADER ------------------------------------------------------------------------------------------- */
