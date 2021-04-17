@@ -320,7 +320,7 @@ body div ul li{
     font-size: 14px;
     margin-left: 10px;
     width: 220px;
-    padding: 5px 15px 5px 15px;
+    padding: 5px 15px;
 }
 
 #reservation-popup #seatplan-popup #showcase {
@@ -328,9 +328,10 @@ body div ul li{
     grid-template-columns: repeat(3, fit-content(100%));
     grid-template-rows: fit-content(100%);
     background-color: var(--second-main-color);
-    padding: 5px 10px;
+    padding: 5px 15px;
     border-radius: 5px;
-    width: 156px;
+    margin-left: 10px;
+    width: 440px;
     color: var(--first-main-color);
 }
 
