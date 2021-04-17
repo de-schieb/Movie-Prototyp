@@ -305,47 +305,47 @@ body div ul li{
     margin: 0;
 }
 
-#reservation-popup #movie-container {
+#reservation-popup #seatplan-popup #movie-container {
+    display: grid;
+    grid-template-columns: repeat(2,fit-content(100%));
+    grid-template-rows: fit-content(100%);
     margin: 20px 0;
 }
 
-#reservation-popup #movie-title-seatplan {
+#reservation-popup #seatplan-popup #movie-title-seatplan {
     background-color: var(--second-main-color);
     font-size: 14px;
     margin-left: 10px;
     padding: 5px 15px 5px 15px;
 }
 
-#reservation-popup #showcase {
+#reservation-popup #seatplan-popup #showcase {
+    display: grid;
+    grid-template-columns: repeat(3, fit-content(100%));
+    grid-template-rows: fit-content(100%);
     background-color: var(--second-main-color);
     padding: 5px 10px;
     border-radius: 5px;
     color: var(--first-main-color);
-    display: flex;
-    justify-content: space-between;
 }
-
-#reservation-popup #showcase #free-seat {
-    background-color: var(--first-main-color);
-}
-
-#reservation-popup #showcase li {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+#reservation-popup #seatplan-popup #showcase #showcase-item {
     margin: 0 10px;
 }
 
-#reservation-popup #showcase li small {
+#reservation-popup #seatplan-popup #showcase #free-seat {
+    background-color: var(--first-main-color);
+}
+
+#reservation-popup #seatplan-popup #showcase small {
     margin-left: 2px;
 }
 
-#reservation-popup #movie-container {
+#reservation-popup #seatplan-popup #movie-container {
     perspective: 1000px;
     margin-bottom: 30px;
 }
 
-#reservation-popup .screen {
+#reservation-popup #seatplan-popup .screen {
     background-color: var(--second-main-color);
     height: 70px;
     width: 100%;
@@ -354,11 +354,11 @@ body div ul li{
     box-shadow: 0 3px 10px rgba(255, 255, 255, 0.7);
 }
 
-#reservation-popup .row {
+#reservation-popup #seatplan-popup .row {
     display: flex;
 }
 
-#reservation-popup .seat {
+#reservation-popup #seatplan-popup .seat {
     background-color: var(--second-main-color);
     height: 12px;
     width: 15px;
@@ -367,28 +367,28 @@ body div ul li{
     border-top-right-radius: 10px;
 }
 
-#reservation-popup .seat.selected {
+#reservation-popup #seatplan-popup .seat.selected {
     background-color: var(--accent-color);
 }
 
-#reservation-popup .seat.occupied {
+#reservation-popup #seatplan-popup .seat.occupied {
     background-color: hsl(355, 50%, 35%);
 }
 
-#reservation-popup .seat:nth-of-type(2) {
+#reservation-popup #seatplan-popup .seat:nth-of-type(2) {
     margin-right: 18px;
 }
 
-#reservation-popup .seat:nth-last-of-type(2) {
+#reservation-popup #seatplan-popup .seat:nth-last-of-type(2) {
     margin-left: 18px;
 }
 
-#reservation-popup .seat:not(.occupied):hover {
+#reservation-popup #seatplan-popup .seat:not(.occupied):hover {
     cursor: pointer;
     transform: scale(1.2);
 }
 
-#reservation-popup #showcase .seat:not(.occupied):hover {
+#reservation-popup #seatplan-popup #showcase .seat:not(.occupied):hover {
     cursor: default;
     transform: scale(1);
 }
