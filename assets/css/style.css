@@ -398,7 +398,7 @@ body div ul li{
     grid-template-rows: fit-content(100%);
     margin: 0;
     perspective: 1000px;
-    margin-bottom: 15px;
+    margin: 15px 0;
 }
 
 #reservation-popup #summary-popup :is( #selected-movie, #movie-title-seatplan, #selected-show, #show-seatplan, #selected-seats, #seats-seatplan, #total-price, #total-price-seatplan) {
