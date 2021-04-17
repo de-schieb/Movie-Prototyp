@@ -452,15 +452,8 @@ body div ul li{
 }
 
 #reservation-popup #summary-popup :is(#submit-your-data, #back-btn) {
-<<<<<<< HEAD
     margin-top: 15px;
-    margin-bottom: -5px;
-=======
-    font-weight: bold;
-    font-size: 1em;
-    margin-top: 15px;
-    margin-bottom: -20px;;
->>>>>>> parent of 5325e64 (testing)
+    margin-bottom: -20px;
     margin-right: 10px;
     margin-left: -260px
 }
