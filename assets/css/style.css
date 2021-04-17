@@ -335,8 +335,8 @@ body div ul li{
     color: var(--first-main-color);
 }
 
-#reservation-popup #seatplan-popup #showcase #showcase-item {
-    margin: 0 10px;
+#reservation-popup #seatplan-popup #showcase .showcase-item {
+    margin-left: 75px;
 }
 
 #reservation-popup #seatplan-popup #showcase #free-seat {
