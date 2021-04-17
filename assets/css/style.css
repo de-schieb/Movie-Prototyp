@@ -154,7 +154,7 @@ body div ul li{
 }
 
 #body-container {
-    display: none;
+    display: grid;
     grid-template-columns: repeat(5, 270px);
     grid-template-rows: repeat(2, auto); 
     place-items: center;
@@ -299,7 +299,7 @@ body div ul li{
 /* ------------------------------------------------------------------------------------- SEATPLAN POPUP --------------------------------------------------------------------------------------- */
 
 #reservation-popup {
-    display: grid;
+    display: none;
 }
 
 #reservation-popup :is(#seatplan-popup, #summary-popup) {
@@ -459,7 +459,7 @@ body div ul li{
 }
 
 #reservation-popup #summary-popup :is(#back){
-    display:flex;
+    display: flex;
     align-items: center;
 }
 
