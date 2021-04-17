@@ -311,7 +311,7 @@ body div ul li{
     display: grid;
     grid-template-columns: repeat(2,fit-content(100%));
     grid-template-rows: fit-content(100%);
-    margin: 20px 0;
+    margin: 0;
 }
 
 
@@ -349,15 +349,18 @@ body div ul li{
 
 #reservation-popup #seatplan-popup #movie-container {
     perspective: 1000px;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
+}
+
+#reservation-popup #seatplan-popup #seatplan-container {
+    margin-left: 25px;
 }
 
 #reservation-popup #seatplan-popup .screen {
     background-color: var(--second-main-color);
     height: 205px;
     width: 480px;
-    margin: 15px 25px;
-    transform: rotateX(-45deg);    
+    transform: rotateX(-45deg);
     box-shadow: 0 3px 10px rgba(255, 255, 255, 0.7);
 }
 
@@ -367,8 +370,8 @@ body div ul li{
 
 #reservation-popup #seatplan-popup .seat {
     background-color: var(--second-main-color);
-    height: 12px;
-    width: 15px;
+    height: 40px;
+    width: 51px;
     margin: 3px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
