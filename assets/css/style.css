@@ -403,7 +403,7 @@ body div ul li{
 
 #reservation-popup #summary-popup :is( #selected-movie, #movie-title-seatplan, #selected-show, #show-seatplan, #selected-seats, #seats-seatplan, #total-price, #total-price-seatplan, #your-data, #your-firstname, #your-lastname, #your-email, #your-phone) {
     font-size: 16px;
-    margin-left: 10px;
+    margin: 0 10px;
     width: 220px;
     font-weight: 400;
     text-align: center;
@@ -435,19 +435,19 @@ body div ul li{
     border: 1px dashed var(--second-main-color);
     display: grid;
     grid-template-columns: fit-content(100%);
-    width: 480px;
-    margin-left: 18px;
+    width: max-content;
 }
 
 #reservation-popup #summary-popup #your-data-container #your-data {
     display: flex;
     align-items: center;
     width: 100%;
-    margin-left: -4px;
+    margin-left: -9px;
 }
 
 #reservation-popup #summary-popup :is(#your-firstname, #your-lastname, #your-email, #your-phone) {
     text-align: left;
+    margin-bottom: 15px;
 }
 
 
