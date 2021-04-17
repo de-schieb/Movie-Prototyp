@@ -401,7 +401,7 @@ body div ul li{
     margin-bottom: 32.5px;
 }
 
-#reservation-popup #summary-popup :is( #selected-movie, #movie-title-seatplan, #selected-show, #show-seatplan, #selected-seats, #seats-seatplan, #total-price, #total-price-seatplan, #caption-your-data) {
+#reservation-popup #summary-popup :is( #selected-movie, #movie-title-seatplan, #selected-show, #show-seatplan, #selected-seats, #seats-seatplan, #total-price, #total-price-seatplan, #your-data-container, #your-data) {
     font-size: 16px;
     margin-left: 10px;
     width: 220px;
@@ -425,6 +425,7 @@ body div ul li{
 }
 
 #reservation-popup #summary-popup #your-data-container {
+
     background-color: var(--first-main-color);
     color: var(--second-main-color);
     border: 1px dashed var(--second-main-color);
