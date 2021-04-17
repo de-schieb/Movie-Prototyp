@@ -59,9 +59,9 @@
           <button type="submit" class="btn" id="third-time-btn"><h4 id="third-time">18:00</h4></button>
           <button type="submit" class="btn" id="fourth-time-btn"><h4 id="fourth-time">21:00</h4></button>
         </div>
-        <div id="actions">
+        <div class="actions">
           <i><button type="submit" class="btn" id="abort-btn" onclick="closeMoviePopup()"><h4 id="abort-text">Abbrechen</h4></button></i>
-          <i><button type="submit" class="btn" id="continue-btn" onclick="openSeatplanPopup()" ><h4 id="continue-text">Zur Sitzplatzwahl</h4></button></i>
+          <i><button type="submit" class="btn" id="continue-btn" onclick="openReservationPopup()"><h4 id="continue-text">Zur Sitzplatzwahl</h4></button></i>
         </div>
       </div>
 
@@ -192,6 +192,11 @@
               <i> </i>
               <button type="submit" id="submit-your-data" class="btn">Reservieren</button>
             </form>
+
+            <div class="actions">
+              <i> </i>
+              <i><button type="submit" class="btn" id="back-btn" onclick="closeReservationPopup()"><h4 id="abort-text">Abbrechen</h4></button></i>
+            </div>
 
           </div>
 

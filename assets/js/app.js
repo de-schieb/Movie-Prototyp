@@ -2,8 +2,8 @@ const log = console.log;
 
 // Selecting elements from the DOM
 const searchButton = document.querySelector('#search');
-const moviePopupMain = document.querySelector('#movie-popup');
-const seatplanPopupMain = document.querySelector('#seatplan-popup')
+const moviePopup = document.querySelector('#movie-popup');
+const reservationPopup = document.querySelector('#reservation-popup')
 const bodyContainer = document.querySelector('#body-container');
 
 
@@ -60,7 +60,7 @@ async function openMoviePopup(div) {
     console.log("picture_path: " + picture_path);
     setElementAttr("movie_img_big","src", picture_path);
     await getMovieDetailsByMovieID(movie_id);
-    moviePopupMain.style.display = "grid";
+    moviePopup.style.display = "grid";
     bodyContainer.style.display = "none";
 }
 
@@ -73,16 +73,16 @@ function closeMoviePopup() {
         "description": "",
         "trailerUrl": ""
     })
-    moviePopupMain.style.display = "none";
+    moviePopup.style.display = "none";
     bodyContainer.style.display = "grid";
 }
 
-function openSeatplanPopup() {
-    moviePopupMain.style.display = "none";
-    seatplanPopupMain.style.display = "flex"
+function openReservationPopup() {
+    moviePopup.style.display = "none";
+    reservationPopup.style.display = "grid"
 }
 
-function closeSeatplanPopup() {
-    moviePopupMain.style.display = "grid";
-    seatplanPopupMain.style.display = "none"
+function closeReservationPopup() {
+    moviePopup.style.display = "grid";
+    reservationPopup.style.display = "none"
 }
