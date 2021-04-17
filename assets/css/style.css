@@ -438,6 +438,7 @@ body div ul li{
 #reservation-popup #summary-popup #your-data-container #your-data {
     display: flex;
     align-items: center;
+    width: 100%;
 }
 
 /* #reservation-popup #summary-popup #your-data-container #your-data-form {
