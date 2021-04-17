@@ -312,10 +312,12 @@ body div ul li{
     margin: 20px 0;
 }
 
-#reservation-popup #seatplan-popup #movie-title-seatplan {
+
+#reservation-popup #seatplan-popup :is(#movie-title-seatplan, #selected-movie) {
     background-color: var(--second-main-color);
     font-size: 14px;
     margin-left: 10px;
+    width: 156px;
     padding: 5px 15px 5px 15px;
 }
 
@@ -326,8 +328,10 @@ body div ul li{
     background-color: var(--second-main-color);
     padding: 5px 10px;
     border-radius: 5px;
+    width: 156px;
     color: var(--first-main-color);
 }
+
 #reservation-popup #seatplan-popup #showcase #showcase-item {
     margin: 0 10px;
 }
@@ -348,7 +352,7 @@ body div ul li{
 #reservation-popup #seatplan-popup .screen {
     background-color: var(--second-main-color);
     height: 70px;
-    width: 100%;
+    width: 156px;
     margin: 15px 0;
     transform: rotateX(-45deg);
     box-shadow: 0 3px 10px rgba(255, 255, 255, 0.7);
