@@ -1,13 +1,15 @@
 :root {
-    --white-color: white;
-    --black-color: black;
-    --main-color: #f5f5f5;
-    --footer-color: var(--black-color);
-    --input-focus-bg-color: rgb(50, 50, 50);
-    --input-bg-color: rgb(25, 25, 25);
-    --button-color: var(--black-color);
+    --first-main-color: hsl(0, 0%, 100%);
+    --second-main-color: hsl(0, 0%, 0%);
+    --accent-color: hsl(50, 100%, 50%);
+
+    --button-color: var(--second-main-color);
+    --footer-color: var(--second-main-color);
+
     --button-hover-color: hsl(0, 0%, 25%);
-    --font-color: var(--white-color);
+
+    --font-color: var(--first-main-color);
+    
     --poster-size: 95%;
     --header-height: 100px;
     --footer-height: calc((var(--header-height)/2px)-(var(--header-height)/10px));
@@ -34,7 +36,7 @@ li {
 hr{
     width: 30px;
     height: 3px;
-    background: var(--black-color);
+    background: var(--second-main-color);
     border: 0px;
     margin: 0 auto 40px auto;
     
@@ -55,7 +57,7 @@ hr{
 }
 
 .btn:hover {
-    color: var(--black-color);
+    color: var(--accent-color);
     background-color: var(--button-hover-color);
     border-color:var(--button-hover-color);
 }
@@ -71,7 +73,7 @@ header {
     grid-template-rows: fit-content(100%);
     top: 0;
     left: 0;
-    background: var(--white-color);
+    background: var(--first-main-color);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);;
     z-index:1;
 }
@@ -122,8 +124,8 @@ header #header_timestamp {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: var(--black-color);
-    color:var(--white-color);
+    background: var(--second-main-color);
+    color: var(--first-main-color);
     border-radius: .25rem;
     width: 150px;
     text-align: center;
@@ -170,8 +172,7 @@ body div ul li{
     left:0;
     height: 50%;
     width: 100%;
-    /* margin-top: var(--header-height); */
-    background-color: var(--black-color);
+    background-color: var(--second-main-color);
 }
 
 /* -------------------------------------------------------------------------------------- SEARCH POPUP ---------------------------------------------------------------------------------------- */
@@ -182,7 +183,7 @@ body div ul li{
     line-height: 1.5;
     outline: none;
     color: var(--font-color);
-    background-color: var(--black-color);
+    background-color: var(--second-main-color);
     background-clip: padding-box;
     border-radius: .25rem;
 }
@@ -192,14 +193,14 @@ body div ul li{
     position: fixed;
     top: 65px;
     right: 160px;
-    border: 3px solid var(--black-color);
+    border: 3px solid var(--second-main-color);
     z-index: 9;
-    background-color: var(--black-color);
+    background-color: var(--second-main-color);
   }
 
 .form-container {
     padding: 10px;
-    background-color: var(--black-color);
+    background-color: var(--second-main-color);
   }
 
 .form-container input[type=text] {
@@ -207,11 +208,11 @@ body div ul li{
     padding: 15px;
     margin: 5px 0 22px 0;
     border: none;
-    background: var(--input-bg-color);
+    background: var(--second-main-color);
   }
 
 .form-container input[type=text]:focus {
-    background-color: var(--input-focus-bg-color);
+    background-color: var(--button-hover-color);
     outline: none;
   }
 
@@ -221,10 +222,10 @@ body div ul li{
     display: none;
     grid-template-columns: repeat(2,580px);
     grid-template-rows: repeat(3,fit-content(40%));
-    background-color: var(--white-color);
-    color: var(--black-color);
+    background-color: var(--first-main-color);
+    color: var(--second-main-color);
     padding: 30px 0 30px 0;
-    border: 5px solid var(--black-color);
+    border: 5px solid var(--second-main-color);
     --movie-play-time-button-width: 100px;
 }
 
@@ -303,7 +304,6 @@ body div ul li{
     justify-content: center;
     height: 100vh;
     margin: 0;
-    color: #ffff;
 }
 
 #seatplan-popup #movie-container {
