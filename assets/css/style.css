@@ -328,7 +328,7 @@ body div ul li{
     justify-content: space-between;
 }
 
-#seatplan-popup #showcase .seat {
+#seatplan-popup #showcase #free-seat {
     background-color: var(--first-main-color);
 }
 
