@@ -354,10 +354,10 @@ body div ul li{
 
 #reservation-popup #seatplan-popup .screen {
     background-color: var(--second-main-color);
-    height: 70px;
-    width: 156px;
-    margin: 15px 0;
-    transform: rotateX(-45deg);
+    height: 205px;
+    width: 480px;
+    margin: 15px 25px;
+    transform: rotateX(-45deg);    
     box-shadow: 0 3px 10px rgba(255, 255, 255, 0.7);
 }
 
