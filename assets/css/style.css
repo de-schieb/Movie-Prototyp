@@ -119,15 +119,18 @@ header #header_ticket_search{
     min-width: 150px;
 }
 
-header #header_timestamp {
+.label {
     display: flex;
     justify-content: center;
     align-items: center;
     background: var(--second-main-color);
     color: var(--first-main-color);
     border-radius: .25rem;
-    width: 150px;
     text-align: center;
+}
+
+header #header_timestamp {
+    width: 150px;
 }
 
 header #header_contact {
@@ -310,7 +313,7 @@ body div ul li{
 }
 
 #seatplan-popup #movie-title-seatplan {
-    background-color: #ffff;
+    background-color: var(--second-main-color);
     font-size: 14px;
     margin-left: 10px;
     padding: 5px 15px 5px 15px;
