@@ -371,7 +371,7 @@ body div ul li{
 }
 
 #seatplan-popup .seat.occupied {
-    background-color: #ffff;
+    background-color: hsl(355, 50%, 35%);
 }
 
 #seatplan-popup .seat:nth-of-type(2) {
