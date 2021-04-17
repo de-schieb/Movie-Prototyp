@@ -452,6 +452,8 @@ body div ul li{
 }
 
 #reservation-popup #summary-popup :is(#submit-your-data, #back-btn) {
+    font-weight: bold;
+    font-size: 1em;
     margin-top: 15px;
     margin-bottom: -20px;;
     margin-right: 10px;
