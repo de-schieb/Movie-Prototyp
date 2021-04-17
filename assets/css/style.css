@@ -446,14 +446,21 @@ body div ul li{
     margin-left: -9px;
 }
 
-#reservation-popup #summary-popup :is(#your-firstname, #your-lastname) {
+#reservation-popup #summary-popup :is(#your-firstname, #your-lastname, #your-email, #your-phone) {
     text-align: left;
     margin-bottom: 15px;
 }
 
-#reservation-popup #summary-popup :is(#your-email, #your-phone) {
+#reservation-popup #summary-popup :is() {
     text-align: left;
+    
+}
+
+#reservation-popup #summary-popup #submit-your-data {
+    margin-top: 15px;
     margin-bottom: -5px;
+    margin-right: 10px;
+    margin-left: -260px
 }
 
 /* ----------------------------------------------------------------------------------------- FOOTER ------------------------------------------------------------------------------------------- */
