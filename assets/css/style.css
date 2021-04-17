@@ -305,6 +305,7 @@ body div ul li{
 #reservation-popup :is(#seatplan-popup, #summary-popup) {
     width: 584px;
     height: 580px;
+    margin-left: 20px;
 }
 
 #reservation-popup #seatplan-popup #showcase {
@@ -315,6 +316,7 @@ body div ul li{
     padding: 5px 15px;
     border-radius: 5px;
     margin-left: 10px;
+    margin-top: 15px;
     width: 480px;
     color: var(--first-main-color);
 }
