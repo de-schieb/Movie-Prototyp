@@ -320,10 +320,10 @@ body div ul li{
 }
 
 #seatplan-popup #showcase {
-    background-color: rgba(0,0,0,0.1);
+    background-color: var(--second-main-color);
     padding: 5px 10px;
     border-radius: 5px;
-    color: #777;
+    color: var(--first-main-color);
     display: flex;
     justify-content: space-between;
 }
@@ -345,7 +345,7 @@ body div ul li{
 }
 
 #seatplan-popup .screen {
-    background-color: #ffff;
+    background-color: var(--second-main-color);
     height: 70px;
     width: 100%;
     margin: 15px 0;
@@ -358,7 +358,7 @@ body div ul li{
 }
 
 #seatplan-popup .seat {
-    background-color: #444451;
+    background-color: var(--second-main-color);
     height: 12px;
     width: 15px;
     margin: 3px;
@@ -367,7 +367,7 @@ body div ul li{
 }
 
 #seatplan-popup .seat.selected {
-    background-color: #6feaf6;
+    background-color: var(--accent-color);
 }
 
 #seatplan-popup .seat.occupied {
