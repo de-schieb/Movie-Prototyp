@@ -113,19 +113,15 @@ function updateTimeStamp(){
 
     timestamp = new Date();
     track += 1;
-    day = timestamp.getDay();
+    day = String(timestamp.getDay()).padStart(2, "0");
     console.log("day: " + day);
-    month = timestamp.getMonth();
+    month = String(timestamp.getMonth() + 1).padStart(2, "0");
     console.log("month: " + month);
     year = timestamp.getFullYear();
     console.log("year: " + year);
-    hour = timestamp.getHours();
+    hour = String(timestamp.getHours()).padStart(2, "0");
     console.log("hour: " + hour);
-    minute = timestamp.getMinutes();
+    minute = String(timestamp.getMinutes()).padStart(2, "0");
     console.log("minute: " + minute);
-    if(day < 10) { day = "0" + day};
-    if(month < 10) { month = "0" + month};
-    if(hour < 10) { hour = "0" + hour};
-    if(minute < 10) { minute = "0" + minute};
     document.getElementById("header_timestamp").innerHTML = day + "." + month + "." + year +" - " + hour + ':' + minute;
 }
