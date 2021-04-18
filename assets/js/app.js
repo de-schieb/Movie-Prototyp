@@ -124,7 +124,7 @@ function giveResponseToTicketReservation(){
     let email = document.querySelector("#your-email").value;
     iziToast.show({
         title: 'Ticketreservierung erfolgreich!',
-        message: "Eine Mail mit den Details wurde an die folgende Mail Adresse geschickt: " + email,
+        message: "Eine Mail mit den Details wurde an die folgende Mail Adresse geschickt: " + email + "",
         theme: 'dark',
         close: false,
         position: 'center'
