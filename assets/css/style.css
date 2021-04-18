@@ -456,11 +456,16 @@ body div ul li{
 }
 
 #reservation-popup #summary-popup #last-actions {
-    
+    margin-top: 35px;
+    margin-right: 45px;
 }
 
 #reservation-popup #summary-popup :is(#back-btn, #submit-your-data){
     min-width: 250px;
+}
+
+#reservation-popup #summary-popup #back-btn{
+    margin-right: 20px;
 }
 
 
