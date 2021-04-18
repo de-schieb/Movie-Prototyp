@@ -8,7 +8,6 @@ const bodyContainer = document.querySelector('#body-container');
 
 const btnIds = ["first-time-btn","second-time-btn","third-time-btn","fourth-time-btn"];
 
-
 searchButton.onclick = function (event) {
     event.preventDefault();
     // const value = searchInput.value
