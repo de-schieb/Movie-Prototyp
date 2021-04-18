@@ -27,10 +27,10 @@ function shuffle(array) {
   function setBtnClicked(id,clicked){
     if(clicked){
       document.getElementById(id).style.borderColor = "var(--first-main-color)";
-      document.getElementById(id).style.fontColor = "var(--accent-color)";
+      document.getElementById(id).style.color = "var(--accent-color)";
     } else{
       document.getElementById(id).style.borderColor = "var(--second-main-color";
-      document.getElementById(id).style.fontColor = "var(--first-main-color)";
+      document.getElementById(id).style.color = "var(--first-main-color)";
     }
   }
 
