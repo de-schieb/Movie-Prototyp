@@ -114,10 +114,15 @@ function updateTimeStamp(){
     timestamp = new Date();
     track += 1;
     day = timestamp.getDay();
+    console.log("day: " + day);
     month = timestamp.getMonth();
+    console.log("month: " + month);
     year = timestamp.getFullYear();
+    console.log("year: " + year);
     hour = timestamp.getHours();
+    console.log("hour: " + hour);
     minute = timestamp.getMinutes();
+    console.log("minute: " + minute);
     if(day < 10) { day = "0" + day};
     if(month < 10) { month = "0" + month};
     if(hour < 10) { hour = "0" + hour};
