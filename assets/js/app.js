@@ -121,7 +121,7 @@ function closeReservationPopup() {
 }
 
 $("form#your-data-form").submit(function(event) {
-    console.log("form submitted")
+    console.log("form submitted");
     event.preventDefault();
     let email = document.querySelector("#your-email").value;
     swal({
