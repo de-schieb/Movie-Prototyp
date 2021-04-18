@@ -6,6 +6,8 @@ const moviePopup = document.querySelector('#movie-popup');
 const reservationPopup = document.querySelector('#reservation-popup')
 const bodyContainer = document.querySelector('#body-container');
 
+const btnIds = ["first-time-btn","second-time-btn","third-time-btn","fourth-time-btn"];
+
 
 searchButton.onclick = function (event) {
     event.preventDefault();
@@ -85,4 +87,19 @@ function openReservationPopup() {
 function closeReservationPopup() {
     moviePopup.style.display = "grid";
     reservationPopup.style.display = "none"
+    for(let i = 0;i<btnIds.length;i++){
+        setBtnClicked(btnIds[i],false);
+    } 
+    document.getElementById("continue-btn").style.display("none");
+}
+
+function setContinueBtnVisible(div) {
+    for(let i = 0;i<btnIds.length;i++){
+        if(div.id === btnIds[i]){
+            setBtnClicked(div.id, true);
+            continue;
+        }
+        setBtnClicked(btnIds[i], false);
+    }
+    document.getElementById("continue-btn").style.display("block");
 }
