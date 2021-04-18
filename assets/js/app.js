@@ -120,7 +120,8 @@ function closeReservationPopup() {
     reservationPopup.style.display = "none"
 }
 
-$( "form#your-data-form").submit(function(event) {
+$("form#your-data-form").submit(function(event) {
+    console.log("form submitted")
     event.preventDefault();
     let email = document.querySelector("#your-email").value;
     swal({
