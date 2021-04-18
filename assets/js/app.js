@@ -122,5 +122,8 @@ function closeReservationPopup() {
 
 function giveResponseToTicketReservation(){
     let email = document.querySelector("#your-email").value;
-    swal("Das Ticket wurde erfolgreich gebucht! Eine Mail mit den Details wurde an die folgende Mail Adresse geschickt: " + email );
+    iziToast.show({
+        title: 'Ticketreservierung erfolgreich!',
+        message: "Eine Mail mit den Details wurde an die folgende Mail Adresse geschickt: " + email 
+    });
 }
