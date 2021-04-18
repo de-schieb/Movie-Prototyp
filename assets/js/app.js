@@ -105,7 +105,7 @@ function closeReservationPopup() {
     reservationPopup.style.display = "none"
 }
 
-var keepClockUpdated = function() { setInterval( updateTimeStamp , 100); }
+windows.onload = function() { setInterval( updateTimeStamp , 1000); }
 
 function updateTimeStamp(){
     let timestamp, day, month, year, hour, minute, track;
