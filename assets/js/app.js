@@ -77,6 +77,10 @@ function closeMoviePopup() {
     })
     moviePopup.style.display = "none";
     bodyContainer.style.display = "grid";
+    document.getElementById("continue-btn").style.display = "none";
+    for(let i = 0;i<btnIds.length;i++){
+        setBtnClicked(btnIds[i],false);
+    }
 }
 
 function openReservationPopup() {
@@ -87,10 +91,6 @@ function openReservationPopup() {
 function closeReservationPopup() {
     moviePopup.style.display = "grid";
     reservationPopup.style.display = "none"
-    document.getElementById("continue-btn").style.display = "none";
-    for(let i = 0;i<btnIds.length;i++){
-        setBtnClicked(btnIds[i],false);
-    }
 }
 
 function setContinueBtnVisible(div) {
