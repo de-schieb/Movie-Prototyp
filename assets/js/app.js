@@ -64,6 +64,7 @@ async function openMoviePopup(div) {
     await getMovieDetailsByMovieID(movie_id);
     moviePopup.style.display = "grid";
     bodyContainer.style.display = "none";
+    document.getElementById()
 }
 
 function closeMoviePopup() {
@@ -79,18 +80,8 @@ function closeMoviePopup() {
     bodyContainer.style.display = "grid";
     document.getElementById("continue-btn").style.display = "none";
     for(let i = 0;i<btnIds.length;i++){
-        setBtnClicked(btnIds[i],false);
+        setBtnClicked(btnIds[i], false);
     }
-}
-
-function openReservationPopup() {
-    moviePopup.style.display = "none";
-    reservationPopup.style.display = "grid"
-}
-
-function closeReservationPopup() {
-    moviePopup.style.display = "grid";
-    reservationPopup.style.display = "none"
 }
 
 function setContinueBtnVisible(div) {
@@ -102,4 +93,14 @@ function setContinueBtnVisible(div) {
         setBtnClicked(btnIds[i], false);
     }
     document.getElementById("continue-btn").style.display= "block";
+}
+
+function openReservationPopup() {
+    moviePopup.style.display = "none";
+    reservationPopup.style.display = "grid"
+}
+
+function closeReservationPopup() {
+    moviePopup.style.display = "grid";
+    reservationPopup.style.display = "none"
 }
