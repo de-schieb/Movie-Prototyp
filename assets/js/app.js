@@ -87,10 +87,10 @@ function openReservationPopup() {
 function closeReservationPopup() {
     moviePopup.style.display = "grid";
     reservationPopup.style.display = "none"
+    document.getElementById("continue-btn").style.display = "none";
     for(let i = 0;i<btnIds.length;i++){
         setBtnClicked(btnIds[i],false);
-    } 
-    document.getElementById("continue-btn").style.display= "none";
+    }
 }
 
 function setContinueBtnVisible(div) {
