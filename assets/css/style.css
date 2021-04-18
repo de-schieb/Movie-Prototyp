@@ -462,7 +462,7 @@ body div ul li{
     margin-left: -260px
 }
 
-#reservation-popup #summary-popup :is(#back){
+/* #reservation-popup #summary-popup :is(#back){
     display: flex;
     align-items: center;
 }
@@ -472,7 +472,7 @@ body div ul li{
     margin-left: 10px;
     margin-right: 55px;
     width: 100%;
-    
+     */
 }
 
 /* ----------------------------------------------------------------------------------------- FOOTER ------------------------------------------------------------------------------------------- */
