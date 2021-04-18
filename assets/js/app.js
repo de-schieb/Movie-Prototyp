@@ -90,7 +90,7 @@ function closeReservationPopup() {
     for(let i = 0;i<btnIds.length;i++){
         setBtnClicked(btnIds[i],false);
     } 
-    document.getElementById("continue-btn").style.display("none");
+    document.getElementById("continue-btn").style.display= "none";
 }
 
 function setContinueBtnVisible(div) {
@@ -101,5 +101,5 @@ function setContinueBtnVisible(div) {
         }
         setBtnClicked(btnIds[i], false);
     }
-    document.getElementById("continue-btn").style.display("block");
+    document.getElementById("continue-btn").style.display= "block";
 }
