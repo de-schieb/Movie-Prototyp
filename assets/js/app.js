@@ -113,7 +113,7 @@ function updateTimeStamp(){
 
     timestamp = new Date();
     track += 1;
-    day = String(timestamp.getDay()).padStart(2, "0");
+    day = String(timestamp.getDate()).padStart(2, "0");
     console.log("day: " + day);
     month = String(timestamp.getMonth() + 1).padStart(2, "0");
     console.log("month: " + month);
