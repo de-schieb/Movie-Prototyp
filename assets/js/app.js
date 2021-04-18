@@ -5,7 +5,7 @@ const searchButton = document.querySelector('#search');
 const moviePopup = document.querySelector('#movie-popup');
 const reservationPopup = document.querySelector('#reservation-popup')
 const bodyContainer = document.querySelector('#body-container');
-const reservationSubmitBtn = document.querySelector("#submit-your-data")
+const reservationForm = document.querySelector("#your-data-form");
 
 const btnIds = ["first-time-btn","second-time-btn","third-time-btn","fourth-time-btn"];
 
@@ -122,5 +122,7 @@ function closeReservationPopup() {
 
 function giveResponseToTicketReservation(){
     let email = document.querySelector("#your-email").value;
-    swal("Ticketrervierung erfolgreich!", "Eine Mail mit den Reservierungsdetails wurde an die folgendene Mail-Adresse gesendet: " + email + "")
+    setTimeout(function() {
+        swal("Ticketrervierung erfolgreich!", "Eine Mail mit den Reservierungsdetails wurde an die folgendene Mail-Adresse gesendet: " + email + "")
+    },3000);
 }
