@@ -120,15 +120,22 @@ function closeReservationPopup() {
     reservationPopup.style.display = "none"
 }
 
-reservationSubmitBtn.onclick = function (event){
+$( "form#your-data-form").submit(function(event) {
     event.preventDefault();
     let email = document.querySelector("#your-email").value;
-
-    iziToast.show({
-        title: 'Ticketreservierung erfolgreich!',
-        message: "Eine Mail mit den Details wurde an die folgende Mail Adresse geschickt: " + email + "",
-        theme: 'dark',
-        close: false,
-        position: 'center'
-    });
-}
+    swal({
+        title: "Ticketrervierung erfolgreich!",
+        text: "Eine EMail mit den Reservierungsdetails wurde an die folgendene Mail-Adresse gesendet: " + email + "",
+        type: "success",
+        confirmButtonColor: "#000000",
+        confirmButtonText: "Okay",
+        closeOnConfirm: false
+  },
+  function(isConfirm){
+      console.log(isConfirm);
+  });
+});
+// reservationSubmitBtn.onclick = function (event){
+    // event.preventDefault();
+    
+// }
