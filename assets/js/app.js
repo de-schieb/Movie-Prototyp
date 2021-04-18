@@ -122,5 +122,5 @@ function closeReservationPopup() {
 
 function giveResponseToSubmittedReservation(){
     let email = document.querySelector("#your-email").value;
-    alert("Das Ticket wurde erfolgreich gebucht! Eine Mail mit den Details wurde an die folgende Mail Adresse geschickt: " + email );
+    swal("Das Ticket wurde erfolgreich gebucht! Eine Mail mit den Details wurde an die folgende Mail Adresse geschickt: " + email );
 }
