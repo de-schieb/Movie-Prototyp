@@ -8,6 +8,8 @@ const bodyContainer = document.querySelector('#body-container');
 
 const btnIds = ["first-time-btn","second-time-btn","third-time-btn","fourth-time-btn"];
 
+window.onload = function() { setInterval( updateTimeStamp , 100); }
+
 
 searchButton.onclick = function (event) {
     event.preventDefault();
@@ -103,4 +105,22 @@ function openReservationPopup() {
 function closeReservationPopup() {
     moviePopup.style.display = "grid";
     reservationPopup.style.display = "none"
+}
+
+function updateTimeStamp(){
+    let timestamp ,day ,month ,year, hour, minute, track;
+    track = 0;
+
+    timestamp = new Date();
+    track+= 1;
+    day = timestamp.getDay();
+    month = timestamp.getMonth();
+    year = timestamp.getFullYear();
+    hour = time.getHours();
+    minute = time.getMinutes();
+    if(day < 10) { day = "0" + day};
+    if(month < 10) { month = "0" + month};
+    if(hour < 10) { hour = "0" + hour};
+    if(minute < 10) { minute = "0" + minute};
+    document.getElementById("header_timestamp").innerHTML = day + "." + month + "." + year +" - " + hour + ':' + minute;
 }

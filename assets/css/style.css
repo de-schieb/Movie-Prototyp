@@ -312,7 +312,7 @@ body div ul li{
     margin-left: 20px;
 }
 
-#reservation-popup #seatplan-popup #showcase {
+#reservation-popup #seatplan-popup #showcase {  
     display: grid;
     grid-template-columns: repeat(3, fit-content(100%));
     grid-template-rows: fit-content(100%);
