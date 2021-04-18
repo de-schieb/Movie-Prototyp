@@ -120,7 +120,8 @@ function closeReservationPopup() {
     reservationPopup.style.display = "none"
 }
 
-function giveResponseToSubmittedReservation(){
+function giveResponseToSubmittedReservation(event){
     let email = document.querySelector("#your-email").value;
+    event.preventDefault()
     swal("Das Ticket wurde erfolgreich gebucht! Eine Mail mit den Details wurde an die folgende Mail Adresse geschickt: " + email );
 }
