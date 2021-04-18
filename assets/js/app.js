@@ -104,20 +104,20 @@ function closeReservationPopup() {
     reservationPopup.style.display = "none"
 }
 
-// window.onload = async function() { 
-//     setInterval( updateTimeStamp , 1000); 
-// }
+window.onload = async function() { 
+    setInterval( updateTimeStamp , 1000); 
+}
 
-// function updateTimeStamp(){
-//     let timestamp, day, month, year, hour, minute, track;
-//     track = 0;
+function updateTimeStamp(){
+    let timestamp, day, month, year, hour, minute, track;
+    track = 0;
 
-//     timestamp = new Date();
-//     track += 1;
-//     day = String(timestamp.getDate()).padStart(2, "0");
-//     month = String(timestamp.getMonth() + 1).padStart(2, "0");
-//     year = timestamp.getFullYear();
-//     hour = String(timestamp.getHours()).padStart(2, "0");
-//     minute = String(timestamp.getMinutes()).padStart(2, "0");
-//     document.getElementById("header_timestamp").innerHTML = day + "." + month + "." + year +" - " + hour + ':' + minute;
-// }
+    timestamp = new Date();
+    track += 1;
+    day = String(timestamp.getDate()).padStart(2, "0");
+    month = String(timestamp.getMonth() + 1).padStart(2, "0");
+    year = timestamp.getFullYear();
+    hour = String(timestamp.getHours()).padStart(2, "0");
+    minute = String(timestamp.getMinutes()).padStart(2, "0");
+    document.getElementById("header_timestamp").innerHTML = day + "." + month + "." + year +" - " + hour + ':' + minute;
+}
