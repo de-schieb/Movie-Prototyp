@@ -8,7 +8,7 @@ const bodyContainer = document.querySelector('#body-container');
 
 const btnIds = ["first-time-btn","second-time-btn","third-time-btn","fourth-time-btn"];
 
-window.onload = function() { setInterval( updateTimeStamp(), 100); }
+window.onload = function() { setInterval( updateTimeStamp, 100); }
 
 searchButton.onclick = function (event) {
     event.preventDefault();
