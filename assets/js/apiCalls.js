@@ -42,7 +42,3 @@ async function getMovieDetailsByMovieID(movie_id){
     var details = (await doFetch(url).then((res)=>res.json()));
     changeMovieDetails(details);
 }
-
-
-
-getPicturePathByMovieID();
