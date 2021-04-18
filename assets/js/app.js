@@ -8,6 +8,8 @@ const bodyContainer = document.querySelector('#body-container');
 
 const btnIds = ["first-time-btn","second-time-btn","third-time-btn","fourth-time-btn"];
 
+window.onload = function() { setInterval( updateTimeStamp(), 100); }
+
 searchButton.onclick = function (event) {
     event.preventDefault();
     // const value = searchInput.value
@@ -104,8 +106,6 @@ function closeReservationPopup() {
     reservationPopup.style.display = "none"
 }
 
-window.onload = function() { setInterval( updateTimeStamp(), 100); }
-
 function updateTimeStamp(){
     let timestamp, day, month, year, hour, minute, track;
     track = 0;
@@ -117,5 +117,6 @@ function updateTimeStamp(){
     year = timestamp.getFullYear();
     hour = String(timestamp.getHours()).padStart(2, "0");
     minute = String(timestamp.getMinutes()).padStart(2, "0");
+    log("Timestamp: " +  day + "." + month + "." + year +" - " + hour + ':' + minute);
     document.getElementById("header_timestamp").innerHTML = day + "." + month + "." + year +" - " + hour + ':' + minute;
 }
