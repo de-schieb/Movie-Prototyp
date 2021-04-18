@@ -130,12 +130,7 @@ function giveResponseToTicketReservation(){
             confirmButtonText: "Okay!",
         }).then(
             function(isConfirm){
-                $("#your-data-form").submit(function (e, params) {
-                    var localParams = params || {};
-            
-                    if (!localParams.send) {
-                        e.preventDefault();
-                    }});
+                $("#your-data-form").submit();
             }
         )
     }
