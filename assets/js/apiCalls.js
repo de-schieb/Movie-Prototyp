@@ -43,4 +43,8 @@ async function getMovieDetailsByMovieID(movie_id){
     changeMovieDetails(details);
 }
 
+// async function getMoviePlayTimesByMovieID(movie_id){
+
+// }
+
 getPicturePathByMovieID();

@@ -117,6 +117,5 @@ function updateTimeStamp(){
     year = timestamp.getFullYear();
     hour = String(timestamp.getHours()).padStart(2, "0");
     minute = String(timestamp.getMinutes()).padStart(2, "0");
-    log("Timestamp: " +  day + "." + month + "." + year +" - " + hour + ':' + minute);
     document.getElementById("header_timestamp").innerHTML = day + "." + month + "." + year +" - " + hour + ':' + minute;
 }
