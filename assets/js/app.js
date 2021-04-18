@@ -121,7 +121,19 @@ function closeReservationPopup() {
 }
 
 reservationSubmitBtn.onclick = function(event){
-    event.preventDefault()
+    
     let email = document.querySelector("#your-email").value;
-    swal("Das Ticket wurde erfolgreich gebucht! Eine Mail mit den Details wurde an die folgende Mail Adresse geschickt: " + email );
+    
+swal(function(isConfirm) {
+    debugger;
+    setTimeout(function() {
+      if (isConfirm) {
+        swal("yes, do it!");
+      } else {
+        swal("cannel!");
+      }
+    }, 400)
+  }
+);
+    // swal("Das Ticket wurde erfolgreich gebucht! Eine Mail mit den Details wurde an die folgende Mail Adresse geschickt: " + email );
 }
