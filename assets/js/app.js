@@ -5,6 +5,7 @@ const searchButton = document.querySelector('#search');
 const moviePopup = document.querySelector('#movie-popup');
 const reservationPopup = document.querySelector('#reservation-popup')
 const bodyContainer = document.querySelector('#body-container');
+const reservationSubmitBtn = document.querySelector("#submit-your-data")
 
 const btnIds = ["first-time-btn","second-time-btn","third-time-btn","fourth-time-btn"];
 
@@ -79,7 +80,6 @@ async function openMoviePopup(div) {
     await getMovieDetailsByMovieID(movie_id);
     moviePopup.style.display = "grid";
     bodyContainer.style.display = "none";
-    document.getElementById()
 }
 
 function closeMoviePopup() {
@@ -120,8 +120,8 @@ function closeReservationPopup() {
     reservationPopup.style.display = "none"
 }
 
-function giveResponseToSubmittedReservation(event){
-    let email = document.querySelector("#your-email").value;
+reservationSubmitBtn.onclick = function(event){
     event.preventDefault()
+    let email = document.querySelector("#your-email").value;
     swal("Das Ticket wurde erfolgreich gebucht! Eine Mail mit den Details wurde an die folgende Mail Adresse geschickt: " + email );
 }
