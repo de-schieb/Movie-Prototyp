@@ -455,6 +455,7 @@ body div ul li{
     margin-bottom: 15px;
 }
 
+
 #reservation-popup #summary-popup #last-actions {
     margin-top: 35px;
     margin-right: 45px;
@@ -465,7 +466,7 @@ body div ul li{
 }
 
 #reservation-popup #summary-popup #back-btn{
-    margin-right: 20px;
+    margin-right: 15px;
 }
 
 
