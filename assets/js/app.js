@@ -127,7 +127,9 @@ function giveResponseToTicketReservation(){
             title: "Ticketreservierung erfolgreich!",
             text: "Eine Mail mit den Reservierungsdetails wurde an die folgendene Mail-Adresse gesendet: " + email + "",
             type: "success",
+            icon: "success",
             confirmButtonText: "Okay!",
+            confirmButtonColor: "#000000"
         }).then(
             function(isConfirm){
                 $("#your-data-form").submit();
