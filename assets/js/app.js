@@ -8,8 +8,6 @@ const bodyContainer = document.querySelector('#body-container');
 
 const btnIds = ["first-time-btn","second-time-btn","third-time-btn","fourth-time-btn"];
 
-window.onload = function() { setInterval( updateTimeStamp , 100); }
-
 
 searchButton.onclick = function (event) {
     event.preventDefault();
@@ -106,6 +104,8 @@ function closeReservationPopup() {
     moviePopup.style.display = "grid";
     reservationPopup.style.display = "none"
 }
+
+var keepClockUpdated = function() { setInterval( updateTimeStamp , 100); }
 
 function updateTimeStamp(){
     let timestamp, day, month, year, hour, minute, track;
