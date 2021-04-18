@@ -30,6 +30,20 @@ function createMovieImgElement(movieId, path){
     document.getElementById("body-container").appendChild(img);
 }
 
+function updateTimeStamp(){
+    let timestamp, day, month, year, hour, minute, track;
+    track = 0;
+
+    timestamp = new Date();
+    track += 1;
+    day = String(timestamp.getDate()).padStart(2, "0");
+    month = String(timestamp.getMonth() + 1).padStart(2, "0");
+    year = timestamp.getFullYear();
+    hour = String(timestamp.getHours()).padStart(2, "0");
+    minute = String(timestamp.getMinutes()).padStart(2, "0");
+    document.getElementById("header_timestamp").innerHTML = day + "." + month + "." + year +" - " + hour + ':' + minute;
+}
+
 function changeMovieDetails(details){
     var {title, fsk, length, releaseDate, description, trailerUrl} = details;
     console.log("title: " + title);
@@ -106,16 +120,7 @@ function closeReservationPopup() {
     reservationPopup.style.display = "none"
 }
 
-function updateTimeStamp(){
-    let timestamp, day, month, year, hour, minute, track;
-    track = 0;
-
-    timestamp = new Date();
-    track += 1;
-    day = String(timestamp.getDate()).padStart(2, "0");
-    month = String(timestamp.getMonth() + 1).padStart(2, "0");
-    year = timestamp.getFullYear();
-    hour = String(timestamp.getHours()).padStart(2, "0");
-    minute = String(timestamp.getMinutes()).padStart(2, "0");
-    document.getElementById("header_timestamp").innerHTML = day + "." + month + "." + year +" - " + hour + ':' + minute;
+function giveResponseToSubmittedReservation(){
+    let email = document.querySelector("#your-email").value;
+    alert("Das Ticket wurde erfolgreich gebucht! Eine Mail mit den Details wurde an die folgende Mail Adresse geschickt: " + email );
 }
