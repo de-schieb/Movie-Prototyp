@@ -112,12 +112,12 @@ function updateTimeStamp(){
     track = 0;
 
     timestamp = new Date();
-    track+= 1;
+    track += 1;
     day = timestamp.getDay();
     month = timestamp.getMonth();
     year = timestamp.getFullYear();
-    hour = time.getHours();
-    minute = time.getMinutes();
+    hour = timestamp.getHours();
+    minute = timestamp.getMinutes();
     if(day < 10) { day = "0" + day};
     if(month < 10) { month = "0" + month};
     if(hour < 10) { hour = "0" + hour};
