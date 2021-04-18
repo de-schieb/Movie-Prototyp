@@ -46,4 +46,3 @@ async function getMovieDetailsByMovieID(movie_id){
 
 
 getPicturePathByMovieID();
-keepClockUpdated;
