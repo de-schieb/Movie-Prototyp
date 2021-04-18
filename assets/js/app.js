@@ -120,23 +120,7 @@ function closeReservationPopup() {
     reservationPopup.style.display = "none"
 }
 
-$("form#your-data-form").submit(function(event) {
-    console.log("form submitted");
-    event.preventDefault();
+function giveResponseToTicketReservation(){
     let email = document.querySelector("#your-email").value;
-    swal({
-        title: "Ticketrervierung erfolgreich!",
-        text: "Eine EMail mit den Reservierungsdetails wurde an die folgendene Mail-Adresse gesendet: " + email + "",
-        type: "success",
-        confirmButtonColor: "#000000",
-        confirmButtonText: "Okay",
-        closeOnConfirm: false
-  },
-  function(isConfirm){
-      console.log(isConfirm);
-  });
-});
-// reservationSubmitBtn.onclick = function (event){
-    // event.preventDefault();
-    
-// }
+    swal("Ticketrervierung erfolgreich!", "Eine Mail mit den Reservierungsdetails wurde an die folgendene Mail-Adresse gesendet: " + email + "")
+}
