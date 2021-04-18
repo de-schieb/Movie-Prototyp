@@ -291,7 +291,7 @@ body div ul li{
     place-content: center;
 }
 
-.center-popup :is(#continue-btn,#abort-btn, #back-btn, #submit-your-data){
+.center-popup :is(#continue-btn,#abort-btn){
     min-width: 250px;
     margin-right: 20px;
 }
@@ -453,6 +453,14 @@ body div ul li{
 #reservation-popup #summary-popup :is(#your-firstname, #your-lastname, #your-email, #your-phone) {
     text-align: left;
     margin-bottom: 15px;
+}
+
+#reservation-popup #summary-popup #last-actions {
+    
+}
+
+#reservation-popup #summary-popup :is(#back-btn, #submit-your-data){
+    min-width: 250px;
 }
 
 
