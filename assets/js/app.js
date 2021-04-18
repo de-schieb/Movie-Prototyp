@@ -122,7 +122,14 @@ function closeReservationPopup() {
 
 function giveResponseToTicketReservation(){
     let email = document.querySelector("#your-email").value;
-    setTimeout(function() {
-        swal("Ticketreservierung erfolgreich!", "Eine Mail mit den Reservierungsdetails wurde an die folgendene Mail-Adresse gesendet: " + email + "")
-    },3000);
+    swal({
+        title: "Ticketreservierung erfolgreich!",
+        text: "Eine Mail mit den Reservierungsdetails wurde an die folgendene Mail-Adresse gesendet: " + email + "",
+        type: "success",
+        confirmButtonText: "Okay!",
+    }).then(
+        function(isConfirm){
+            $("#your-data-form").submit();
+        }
+    )
 }
