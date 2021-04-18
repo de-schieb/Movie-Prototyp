@@ -105,7 +105,7 @@ function closeReservationPopup() {
     reservationPopup.style.display = "none"
 }
 
-windows.onload = async function() { 
+window.onload = async function() { 
     await getPicturePathByMovieID;  
     setInterval( updateTimeStamp , 1000); 
 }
