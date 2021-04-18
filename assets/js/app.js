@@ -122,14 +122,21 @@ function closeReservationPopup() {
 
 function giveResponseToTicketReservation(){
     let email = document.querySelector("#your-email").value;
-    swal({
-        title: "Ticketreservierung erfolgreich!",
-        text: "Eine Mail mit den Reservierungsdetails wurde an die folgendene Mail-Adresse gesendet: " + email + "",
-        type: "success",
-        confirmButtonText: "Okay!",
-    }).then(
-        function(isConfirm){
-            $("#your-data-form").submit();
-        }
-    )
+    if(reservationForm.reportValidity()){
+        swal({
+            title: "Ticketreservierung erfolgreich!",
+            text: "Eine Mail mit den Reservierungsdetails wurde an die folgendene Mail-Adresse gesendet: " + email + "",
+            type: "success",
+            confirmButtonText: "Okay!",
+        }).then(
+            function(isConfirm){
+                $("#your-data-form").submit(function (e, params) {
+                    var localParams = params || {};
+            
+                    if (!localParams.send) {
+                        e.preventDefault();
+                    }});
+            }
+        )
+    }
 }
