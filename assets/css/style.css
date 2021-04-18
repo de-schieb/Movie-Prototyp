@@ -291,7 +291,7 @@ body div ul li{
     place-content: center;
 }
 
-.center-popup :is(#continue-btn,#abort-btn){
+.center-popup :is(#continue-btn,#abort-btn, #back-btn, #submit-your-data){
     min-width: 250px;
     margin-right: 20px;
 }
@@ -460,19 +460,6 @@ body div ul li{
     margin-bottom: -20px;
     margin-right: 10px;
     margin-left: -260px
-}
-
-/* #reservation-popup #summary-popup :is(#back){
-    display: flex;
-    align-items: center;
-}
-
-#reservation-popup #summary-popup :is(#back-btn){
-    margin-top: 15px;
-    margin-left: 10px;
-    margin-right: 55px;
-    width: 100%;
-     */
 }
 
 /* ----------------------------------------------------------------------------------------- FOOTER ------------------------------------------------------------------------------------------- */
