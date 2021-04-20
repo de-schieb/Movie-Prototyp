@@ -100,7 +100,7 @@ async function openMoviePopup(div) {
 
 function closeMoviePopup() {
     changeMovieDetails({
-        "ticket": "",
+        "title": "",
         "fsk": "",
         "length": "",
         "releaseDate": "",
