@@ -126,6 +126,12 @@ function giveResponseToTicketReservation(){
             firstname: document.querySelector("#your-firstname").value
     };
     if(reservationForm.reportValidity()){
+        emailjs.send("service_mailjet","template_cineMA68",templateParams)
+                .then(function(){
+                    console.log('SUCCESS!')
+                }, function(error){
+                    console.log('FAILED... ', error);
+                });
         swal({
             title: "Ticketreservierung erfolgreich!",
             text: "Eine Mail mit den Reservierungsdetails wurde an die folgendene Mail-Adresse gesendet: " + templateParams.email + "",
@@ -136,12 +142,6 @@ function giveResponseToTicketReservation(){
         }).then(
             function(isConfirm){
                 $("#your-data-form").submit();
-                emailjs.send("service_mailjet","template_cineMA68",templateParams)
-                .then(function(){
-                    console.log('SUCCESS!')
-                }, function(error){
-                    console.log('FAILED... ', error);
-                });
             }
         )
     }
