@@ -127,7 +127,7 @@ function setTicketDetails(){
 
 function setShowBtnClicked(div) {
     setContinueBtnVisible(div);
-    setTicketDetails;
+    setTicketDetails();
 }
 
 function setContinueBtnVisible(div) {
