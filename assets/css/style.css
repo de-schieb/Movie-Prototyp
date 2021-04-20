@@ -107,7 +107,7 @@ header {
 
 header #header_buttons_and_timestamp {
     display: grid;
-    grid-template-columns: repeat(3,fit-content(100%));
+    grid-template-columns: repeat(4,fit-content(100%));
     grid-template-rows: 40px;
     padding-left: 500px;
     padding-top: 30px;

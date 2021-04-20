@@ -184,7 +184,7 @@ function getCount(){
     var count = "";
     if (document.cookie){
 
-        var countStart = document.cookie.indexOf("=") +1;
+        var countStart = document.cookie.indexOf("=") + 1;
         var countEnd = document.cookie.indexOf(";");
         if(countEnd == -1){
             countEnd = document.cookie.length;
