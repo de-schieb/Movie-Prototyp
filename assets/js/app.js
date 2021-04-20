@@ -117,7 +117,9 @@ function closeMoviePopup() {
 
 function setTicketDetails(){
     let picked_movie_title = document.getElementById("movie-title").innerHTML;
+    console.log("picked movie title: ", picked_movie_title);
     let picked_show_play_time = clickedBtn.innerHTML;
+    console.log("picked show play time: " + picked_show_play_time);
     setElementInnerHtml("movie-title-seatplan", picked_movie_title);
     setElementInnerHtml("show-seatplan", picked_show_play_time);
 }
