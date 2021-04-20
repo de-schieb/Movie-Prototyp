@@ -25,10 +25,10 @@ async function showTicketDetails(event,div){
             title: "Ticketdetails",
             text: "TicketID: " + ticketId + "\n" + 
                     "Film: " + title + "\n" + 
-                    "Show: " + startTime + "\n" +
+                    "Show: " + startTime + "Uhr \n" +
                     "Sitz: " + seatId + "\n" + 
                     "Halle: " + hallId + "\n" + 
-                    "Preis: " + price,
+                    "Preis: " + price + "€" ,
             confirmButtonText: "Okay!"
         });
     } 
@@ -155,8 +155,8 @@ function giveResponseToTicketReservation(){
             firstname: document.querySelector("#your-firstname").value,
             lastname: document.querySelector("#your-lastname").value,
             movie: document.querySelector("#movie-title-seatplan").innerHTML,
-            show: document.querySelector("#show-seatplan").innerHTML,
-            price: document.querySelector("#total-price-seatplan").innerHTML
+            show: document.querySelector("#show-seatplan").innerHTML + "Uhr",
+            price: document.querySelector("#total-price-seatplan").innerHTML + "€"
     };
     if(reservationForm.reportValidity()){
         sendEmailToCustomer(params);
