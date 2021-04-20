@@ -49,7 +49,7 @@ function changeMoviePlayTimes(moviePlayTimes){
     let moviePlayTimeFields = ["first-time-btn", "second-time-btn", "third-time-btn", "fourth-time-btn"];
     setElementInnerHtml("movie-play-time-date",moviePlayTimes[0].substring(0,10))
     for(let i = 0; i<moviePlayTimes.length; i++){
-        setElementInnerHtml(moviePlayTimeFields[i],moviePlayTimes[i].substring(10,15));
+        setElementInnerHtml(moviePlayTimeFields[i],moviePlayTimes[i].substring(10,16));
     }
 }
 
