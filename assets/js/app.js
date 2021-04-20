@@ -13,10 +13,24 @@ var clickedBtn;
 
 window.onload = function() { setInterval( updateTimeStamp, 100); }
 
-
-// async function showTicketDetails(ticket_id){
-
-// }
+async function showTicketDetails(event,div){
+    if(event.key = '13'){
+        let ticketID = div.value;
+        let {ticketId, price, movieByMovieId, showByShowId, hallId, seatId} = (await getTicketDetails(ticketID))
+        let title = movieByMovieId.title;
+        let startTime = showByShowId.startTime;
+        swal({
+            title: "Ticketdetails",
+            text: "TicketID: " + ticketId + "\n" + 
+                    "Film: " + title + "\n" + 
+                    "Show: " + startTime + "\n" +
+                    "Sitz: " + seatId + "\n" + 
+                    "Halle: " + hallId + "\n" + 
+                    "Preis: " + price,
+            confirmButtonText: "Okay!"
+        });
+    } 
+}
 
 function updateTimeStamp(){
     let timestamp, day, month, year, hour, minute, track;
@@ -33,10 +47,10 @@ function updateTimeStamp(){
 }
 
 function aboutUs(){
-    let corporate_email = "cinema68@web.de";
+    let corporateEmail = "cinema68@web.de";
     swal({
         title: "Über uns",
-        text: "Wir bei cineMA68 sind ein kleiner Betrieb deren 2 Gründer eine Vision haben. Unsere Vision ist es ein etwas anderes Kinoerlebnis zu schaffen. \n\n Du fragst dich jetzt bestimmt was wir damit meinen, richtig? Naja, bei uns laufen immer genau die 10 Filme die unsere Kunden gerade sehen wollen. Ja richtig gehört, nicht wir bestimmen welche Filme laufen, sondern unsere Kunden. Wir bekommen regelmäßig Vorschläge zugesendet und die meist genannten 10 Filme nehmen wir dann in unser Programm für die nächsten 10 Tage auf. Unser Alleinstellungsmerkmal ist somit das wir die Filme zeigen die unsere Community sehen will und dazu dann das gewohnte Kinoambiente bieten. \n\n Wenn auch du mitbestimmen willst welche Filme bei uns laufen dann schreib uns doch gerne eine E-Mail an die folgende Adresse: \n\n" + corporate_email + "\n\n\n" + "Dein cineMA68 Team!",
+        text: "Wir bei cineMA68 sind ein kleiner Betrieb deren 2 Gründer eine Vision haben. Unsere Vision ist es ein etwas anderes Kinoerlebnis zu schaffen. \n\n Du fragst dich jetzt bestimmt was wir damit meinen, richtig? Naja, bei uns laufen immer genau die 10 Filme die unsere Kunden gerade sehen wollen. Ja richtig gehört, nicht wir bestimmen welche Filme laufen, sondern unsere Kunden. Wir bekommen regelmäßig Vorschläge zugesendet und die meist genannten 10 Filme nehmen wir dann in unser Programm für die nächsten 10 Tage auf. Unser Alleinstellungsmerkmal ist somit das wir die Filme zeigen die unsere Community sehen will und dazu dann das gewohnte Kinoambiente bieten. \n\n Wenn auch du mitbestimmen willst welche Filme bei uns laufen dann schreib uns doch gerne eine E-Mail an die folgende Adresse: \n\n" + corporateEmail + "\n\n\n" + "Dein cineMA68 Team!",
         type: "info",
         icon: "info",
         button: false,
@@ -56,24 +70,24 @@ async function setPicturePathsOnStartUp(){
 
 setPicturePathsOnStartUp();
 
-async function setMovieDetails(movie_id){
-    let details = (await getMovieDetailsByMovieID(movie_id));
+async function setMovieDetails(movieID){
+    let details = (await getMovieDetailsByMovieID(movieID));
     changeMovieDetails(details);
 }
 
-async function setMoviePlayTimes(movie_id){
-    let moviePlayTimes = (await getMoviePlayTimesByMovieID(movie_id));
+async function setMoviePlayTimes(movieID){
+    let moviePlayTimes = (await getMoviePlayTimesByMovieID(movieID));
     changeMoviePlayTimes(moviePlayTimes);
 }
 
 async function openMoviePopup(div) {
-    let movie_id = div.id.substring(10);
-    console.log("movie_id: " + movie_id);
-    let picture_path = div.src.substring(55);
-    console.log("picture_path: " + picture_path);
-    setElementAttr("movie_img_big","src", picture_path);
-    await setMovieDetails(movie_id);
-    await setMoviePlayTimes(movie_id);
+    let movieID = div.id.substring(10);
+    console.log("movie_id: " + movieID);
+    let picturePath = div.src.substring(55);
+    console.log("picture_path: " + picturePath);
+    setElementAttr("movie_img_big","src", picturePath);
+    await setMovieDetails(movieID);
+    await setMoviePlayTimes(movieID);
     moviePopup.style.display = "grid";
     bodyContainer.style.display = "none";
 }
@@ -113,14 +127,14 @@ function setContinueBtnVisible(div) {
 }
 
 function setTicketDetails(){
-    let picked_movie_title = document.getElementById("movie-title").innerHTML;
-    console.log("picked movie title: ", picked_movie_title);
-    let picked_show_play_time = clickedBtn.innerHTML;
-    let picked_show_play_date = document.getElementById("movie-play-time-date").innerHTML;
-    let picked_show = picked_show_play_date + " - " + picked_show_play_time;
-    console.log("picked show play time: " + picked_show);
-    setElementInnerHtml("movie-title-seatplan", picked_movie_title);
-    setElementInnerHtml("show-seatplan", picked_show);
+    let pickedMovieTitle = document.getElementById("movie-title").innerHTML;
+    console.log("picked movie title: ", pickedMovieTitle);
+    let pickedShowPlayTime = clickedBtn.innerHTML;
+    let pickedShowPlayDate = document.getElementById("movie-play-time-date").innerHTML;
+    let pickedShow = pickedShowPlayDate + " - " + pickedShowPlayTime;
+    console.log("picked show play time: " + pickedShow);
+    setElementInnerHtml("movie-title-seatplan", pickedMovieTitle);
+    setElementInnerHtml("show-seatplan", pickedShow);
 }
 
 function openReservationPopup() {

@@ -33,8 +33,8 @@ function sendEmailToCustomer(params){
                 });
 }
 
-// async function getTicketDetails(ticket_id){
-//     let url = generateUrl(`/ticketDetailsByID/` + ticket_id);
-//     log("url: " + url);
-//     let ticketDetails = (await doFetch(url).then((res) => res.json()));
-// }
+async function getTicketDetails(ticketID){
+    let url = generateUrl(`/ticketDetailsByID/` + ticketID);
+    log("url: " + url);
+    return await doFetch(url).then((res) => res.json());
+}
