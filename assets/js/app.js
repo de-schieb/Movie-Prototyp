@@ -14,7 +14,7 @@ var clickedBtn;
 window.onload = function() { setInterval( updateTimeStamp, 100); }
 
 async function showTicketDetails(event,div){
-    if(event.key = '13'){
+    if(event.key === 'Enter'){
         let ticketID = div.value;
         let {ticketId, price, movieByMovieId, showByShowId, hallByHallId, seatBySeatId} = (await getTicketDetails(ticketID))
         let title = movieByMovieId.title;
@@ -25,11 +25,11 @@ async function showTicketDetails(event,div){
             title: "Ticketdetails",
             text: "TicketID: " + ticketId + "\n" + 
                     "Film: " + title + "\n" + 
-                    "Show: " + startTime + "Uhr \n" +
+                    "Show: " + startTime + " Uhr \n" +
                     "Sitz: " + seatId + "\n" + 
                     "Halle: " + hallId + "\n" + 
                     "Preis: " + price + "€" ,
-            confirmButtonText: "Okay!"
+            button: false
         });
     } 
 }
@@ -133,7 +133,7 @@ function setTicketDetails(){
     console.log("picked movie title: ", pickedMovieTitle);
     let pickedShowPlayTime = clickedBtn.innerHTML;
     let pickedShowPlayDate = document.getElementById("movie-play-time-date").innerHTML;
-    let pickedShow = pickedShowPlayDate + " - " + pickedShowPlayTime;
+    let pickedShow = pickedShowPlayDate + " - " + pickedShowPlayTime + " Uhr";
     console.log("picked show play time: " + pickedShow);
     setElementInnerHtml("movie-title-seatplan", pickedMovieTitle);
     setElementInnerHtml("show-seatplan", pickedShow);
@@ -155,8 +155,8 @@ function giveResponseToTicketReservation(){
             firstname: document.querySelector("#your-firstname").value,
             lastname: document.querySelector("#your-lastname").value,
             movie: document.querySelector("#movie-title-seatplan").innerHTML,
-            show: document.querySelector("#show-seatplan").innerHTML + "Uhr",
-            price: document.querySelector("#total-price-seatplan").innerHTML + "€"
+            show: document.querySelector("#show-seatplan").innerHTML,
+            price: document.querySelector("#total-price-seatplan").innerHTML
     };
     if(reservationForm.reportValidity()){
         sendEmailToCustomer(params);
@@ -165,7 +165,7 @@ function giveResponseToTicketReservation(){
             text: "Eine Mail mit den Reservierungsdetails wurde an die folgendene Mail-Adresse gesendet: " + params.email + "",
             type: "success",
             icon: "success",
-            confirmButtonText: "Okay!",
+            button: false
         }).then(
             function(isConfirm){
                 $("#your-data-form").submit();
