@@ -18,7 +18,7 @@ async function showTicketDetails(event,div){
         let ticketID = div.value;
         let {ticketId, price, movieByMovieId, showByShowId, hallByHallId, seatBySeatId} = (await getTicketDetails(ticketID))
         let title = movieByMovieId.title;
-        let startTime = showByShowId.startTime;
+        let startTime = showByShowId.startTime.substring(0,16);
         let hallId = hallByHallId.hallId;
         let seatId = seatBySeatId.seatId;
         swal({
@@ -111,7 +111,7 @@ function closeMoviePopup() {
     }
 }
 
-function setShowBtnClicked(div) {
+function setTicketDetailsForReservationPopup(div) {
     setContinueBtnVisible(div);
     setTicketDetails();
 }
