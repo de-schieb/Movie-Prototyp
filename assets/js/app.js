@@ -9,6 +9,8 @@ const reservationForm = document.querySelector("#your-data-form");
 
 const btnIds = ["first-time-btn","second-time-btn","third-time-btn","fourth-time-btn"];
 
+var clickedBtn;
+
 window.onload = function() { setInterval( updateTimeStamp, 100); }
 
 searchButton.onclick = function (event) {
@@ -113,10 +115,18 @@ function closeMoviePopup() {
     }
 }
 
+function setTicketDetails(){
+    let picked_movie_title = document.getElementById("movie-title").innerHTML;
+    let picked_show_play_time = clickedBtn.innerHTML;
+    setElementInnerHtml("movie-title-seatplan", picked_movie_title);
+    setElementInnerHtml("show-seatplan", picked_show_play_time);
+}
+
 function setContinueBtnVisible(div) {
     for(let i = 0;i<btnIds.length;i++){
         if(div.id === btnIds[i]){
             setBtnClicked(div.id, true);
+            clickedBtn = div;
             continue;
         }
         setBtnClicked(btnIds[i], false);
