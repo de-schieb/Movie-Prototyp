@@ -25,7 +25,7 @@ async function showTicketDetails(event,div){
             title: "Ticketdetails",
             text: "TicketID: " + ticketId + "\n" + 
                     "Film: " + title + "\n" + 
-                    "Show: " + startTime + "Uhr \n" +
+                    "Show: " + startTime + " Uhr \n" +
                     "Sitz: " + seatId + "\n" + 
                     "Halle: " + hallId + "\n" + 
                     "Preis: " + price + "€" ,
@@ -133,7 +133,7 @@ function setTicketDetails(){
     console.log("picked movie title: ", pickedMovieTitle);
     let pickedShowPlayTime = clickedBtn.innerHTML;
     let pickedShowPlayDate = document.getElementById("movie-play-time-date").innerHTML;
-    let pickedShow = pickedShowPlayDate + " - " + pickedShowPlayTime;
+    let pickedShow = pickedShowPlayDate + " - " + pickedShowPlayTime + " Uhr";
     console.log("picked show play time: " + pickedShow);
     setElementInnerHtml("movie-title-seatplan", pickedMovieTitle);
     setElementInnerHtml("show-seatplan", pickedShow);
@@ -155,8 +155,8 @@ function giveResponseToTicketReservation(){
             firstname: document.querySelector("#your-firstname").value,
             lastname: document.querySelector("#your-lastname").value,
             movie: document.querySelector("#movie-title-seatplan").innerHTML,
-            show: document.querySelector("#show-seatplan").innerHTML + "Uhr",
-            price: document.querySelector("#total-price-seatplan").innerHTML + "€"
+            show: document.querySelector("#show-seatplan").innerHTML,
+            price: document.querySelector("#total-price-seatplan").innerHTML
     };
     if(reservationForm.reportValidity()){
         sendEmailToCustomer(params);
