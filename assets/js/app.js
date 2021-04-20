@@ -163,12 +163,6 @@ function giveResponseToTicketReservation(){
             price: document.querySelector("#total-price-seatplan").innerHTML
     };
     if(reservationForm.reportValidity()){
-        emailjs.send("service_mailjet","template_cinema68_pro",templateParams)
-                .then(function(){
-                    console.log('SUCCESS!')
-                }, function(error){
-                    console.log('FAILED... ', error);
-                });
         swal({
             title: "Ticketreservierung erfolgreich!",
             text: "Eine Mail mit den Reservierungsdetails wurde an die folgendene Mail-Adresse gesendet: " + templateParams.email + "",
@@ -177,6 +171,12 @@ function giveResponseToTicketReservation(){
             confirmButtonText: "Okay!",
         }).then(
             function(isConfirm){
+                emailjs.send("service_mailjet","template_cinema68_pro", templateParams)
+                .then(function(){
+                    console.log('SUCCESS!')
+                }, function(error){
+                    console.log('FAILED... ', error);
+                });
                 $("#your-data-form").submit();
             }
         )
