@@ -1,7 +1,7 @@
 
 //Fisher-Yates (aka Knuth) Shuffle
 function shuffle(array) {
-  var currentIndex = array.length, temporaryValue, randomIndex;
+  let currentIndex = array.length, temporaryValue, randomIndex;
   
    while (0 !== currentIndex) {
   
@@ -35,16 +35,16 @@ function setBtnClicked(id,clicked){
 }
 
 function createMovieImgElement(movieId, path){
-  var img = document.createElement("img");
+  let img = document.createElement("img");
   img.setAttribute("class", "movie_img");
   img.setAttribute("id", "movie_img_" + movieId);
   img.setAttribute("src", path);
-  img.setAttribute("onClick", "openMoviePopup(this)")
+  img.setAttribute("onclick", "openMoviePopup(this)")
   document.getElementById("body-container").appendChild(img);
 }
 
 function changeMovieDetails(details){
-  var {title, fsk, length, releaseDate, description, trailerUrl} = details;
+  let {title, fsk, length, releaseDate, description, trailerUrl} = details;
   console.log("title: " + title);
   setElementInnerHtml("movie-title", title);
   console.log("fsk: " + fsk);
@@ -73,13 +73,13 @@ function changeMoviePlayTimes(moviePlayTimes){
 }
 
 async function doFetch(url){
-  var resp = await fetch(url)
+  let resp = await fetch(url)
   .catch(handleGeneralError);
   return resp;
 }
 
 function generateUrl(path){
-  const url = `${API_URL}/${path}`;
+  let url = `${API_URL}/${path}`;
   return url;
 }
 

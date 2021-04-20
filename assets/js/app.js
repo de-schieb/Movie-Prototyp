@@ -33,7 +33,7 @@ function updateTimeStamp(){
 }
 
 function aboutUs(){
-    var corporate_email = "cinema68@web.de";
+    let corporate_email = "cinema68@web.de";
     swal({
         title: "Über uns",
         text: "Wir bei cineMA68 sind ein kleiner Betrieb deren 2 Gründer eine Vision haben. Unsere Vision ist es ein etwas anderes Kinoerlebnis zu schaffen. \n\n Du fragst dich jetzt bestimmt was wir damit meinen, richtig? Naja, bei uns laufen immer genau die 10 Filme die unsere Kunden gerade sehen wollen. Ja richtig gehört, nicht wir bestimmen welche Filme laufen, sondern unsere Kunden. Wir bekommen regelmäßig Vorschläge zugesendet und die meist genannten 10 Filme nehmen wir dann in unser Programm für die nächsten 10 Tage auf. Unser Alleinstellungsmerkmal ist somit das wir die Filme zeigen die unsere Community sehen will und dazu dann das gewohnte Kinoambiente bieten. \n\n Wenn auch du mitbestimmen willst welche Filme bei uns laufen dann schreib uns doch gerne eine E-Mail an die folgende Adresse: \n\n" + corporate_email + "\n\n\n" + "Dein cineMA68 Team!",
@@ -47,8 +47,8 @@ function aboutUs(){
 async function setPicturePathsOnStartUp(){
     let movieIDs = (await getMovieIds());
     shuffle(movieIDs);
-    for(var i = 0; i < movieIDs.length; i++){
-        var picturePath = (await getPicturePathByMovieID(movieIDs[i]));
+    for(let i = 0; i < movieIDs.length; i++){
+        let picturePath = (await getPicturePathByMovieID(movieIDs[i]));
         console.log("picturePath: " + picturePath);
         createMovieImgElement(movieIDs[i], picturePath);
     }
@@ -67,9 +67,9 @@ async function setMoviePlayTimes(movie_id){
 }
 
 async function openMoviePopup(div) {
-    var movie_id = div.id.substring(10);
+    let movie_id = div.id.substring(10);
     console.log("movie_id: " + movie_id);
-    var picture_path = div.src.substring(55);
+    let picture_path = div.src.substring(55);
     console.log("picture_path: " + picture_path);
     setElementAttr("movie_img_big","src", picture_path);
     await setMovieDetails(movie_id);
@@ -113,11 +113,11 @@ function setContinueBtnVisible(div) {
 }
 
 function setTicketDetails(){
-    var picked_movie_title = document.getElementById("movie-title").innerHTML;
+    let picked_movie_title = document.getElementById("movie-title").innerHTML;
     console.log("picked movie title: ", picked_movie_title);
     let picked_show_play_time = clickedBtn.innerHTML;
     let picked_show_play_date = document.getElementById("movie-play-time-date").innerHTML;
-    var picked_show = picked_show_play_date + " - " + picked_show_play_time;
+    let picked_show = picked_show_play_date + " - " + picked_show_play_time;
     console.log("picked show play time: " + picked_show);
     setElementInnerHtml("movie-title-seatplan", picked_movie_title);
     setElementInnerHtml("show-seatplan", picked_show);
