@@ -122,6 +122,11 @@ function setTicketDetails(){
     setElementInnerHtml("show-seatplan", picked_show_play_time);
 }
 
+function setShowBtnClicked(div) {
+    setContinueBtnVisible(div);
+    setTicketDetails;
+}
+
 function setContinueBtnVisible(div) {
     for(let i = 0;i<btnIds.length;i++){
         if(div.id === btnIds[i]){
