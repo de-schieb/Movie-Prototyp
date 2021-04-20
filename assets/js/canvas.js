@@ -2,20 +2,20 @@ var W = canvas.width;
 var H = canvas.height;
 var ballX = W/2;
 var ballY = H/2;
-var ballSpeedX = 10;
+var ballSpeedX = 8;
 var ballSpeedY = 0;
 var paddle1Y = 150;
 var paddle2Y = 150;
 var winningScreenShowed = false;
 var stopped = false;
 var requestId = 0;
-var computerLevel = 9; //range 0 - 10
+var computerLevel = 8; //range 0 - 10
 
 var playerScore = 0;
 var computerScore = 0;
 
 const WINNING_SCORE = 3;
-const PADDLE_HEIGHT = 100;
+const PADDLE_HEIGHT = 80;
 const PADDLE_THICKNESS = 10;
 
 function startTennisGame(){
