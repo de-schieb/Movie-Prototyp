@@ -19,7 +19,7 @@ const PADDLE_HEIGHT = 100;
 const PADDLE_THICKNESS = 10;
 
 function startTennisGame(){
-	var canvas = document.getElementById('canvas');
+	var canvas = document.getElementById('screen');
 	var ctx = canvas.getContext('2d');  
   
   function loop(){
