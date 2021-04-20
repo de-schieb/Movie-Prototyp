@@ -116,11 +116,11 @@ function closeMoviePopup() {
 }
 
 function setTicketDetails(){
-    console.log("INNNN")
     let picked_movie_title = document.getElementById("movie-title").innerHTML;
     console.log("picked movie title: ", picked_movie_title);
     let picked_show_play_time = clickedBtn.innerHTML;
-    console.log("picked show play time: " + picked_show_play_time);
+    let picked_show_play_date = document.getElementById("movie-play-time-date").innerHTML;
+    console.log("picked show play time: " + picked_show_play_date + " - " + picked_show_play_time);
     setElementInnerHtml("movie-title-seatplan", picked_movie_title);
     setElementInnerHtml("show-seatplan", picked_show_play_time);
 }
