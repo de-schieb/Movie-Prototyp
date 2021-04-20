@@ -165,6 +165,7 @@ body div ul li{
 #body-container .movie_img {
     width: var(--poster-size);
     padding: 5px;
+    cursor:pointer;
 }
 
 #body-bg-splitter {
