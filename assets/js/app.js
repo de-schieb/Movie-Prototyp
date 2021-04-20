@@ -121,7 +121,10 @@ function closeReservationPopup() {
 }
 
 function giveResponseToTicketReservation(){
-    let email = document.querySelector("#your-email").value;
+    let templateParams = {
+            email: document.querySelector("#your-email").value,
+            firstname: document.querySelector("#your-firstname").value
+    };
     if(reservationForm.reportValidity()){
         swal({
             title: "Ticketreservierung erfolgreich!",
@@ -133,6 +136,7 @@ function giveResponseToTicketReservation(){
         }).then(
             function(isConfirm){
                 $("#your-data-form").submit();
+                emailjs.send("service_mailjet","template_cineMA68",templateParams);
             }
         )
     }
