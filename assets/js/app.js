@@ -169,7 +169,7 @@ function giveResponseToTicketReservation(){
                 }, function(error){
                     console.log('FAILED... ', error);
                 });
-        Swal.fire({
+        swal({
             title: "Ticketreservierung erfolgreich!",
             text: "Eine Mail mit den Reservierungsdetails wurde an die folgendene Mail-Adresse gesendet: " + templateParams.email + "",
             type: "success",
