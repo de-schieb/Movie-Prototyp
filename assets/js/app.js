@@ -51,7 +51,7 @@ function changeMoviePlayTimes(moviePlayTimes){
     let moviePlayTimeYear = unformattedMoviePlayTimeDate.substring(0,4);
     let moviePlayTimeMonth = unformattedMoviePlayTimeDate.substring(5,7);
     let moviePlayTimeDay = unformattedMoviePlayTimeDate.substring(8,10);
-    let formattedMoviePlayTimeDate = moviePlayTimeDay + ":" + moviePlayTimeMonth + ":" + moviePlayTimeYear;
+    let formattedMoviePlayTimeDate = moviePlayTimeDay + "." + moviePlayTimeMonth + "." + moviePlayTimeYear;
     setElementInnerHtml("movie-play-time-date",formattedMoviePlayTimeDate);
     for(let i = 0; i<moviePlayTimes.length; i++){
         setElementInnerHtml(moviePlayTimeFields[i],moviePlayTimes[i].substring(10,16));
