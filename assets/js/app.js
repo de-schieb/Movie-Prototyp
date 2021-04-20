@@ -141,7 +141,7 @@ function giveResponseToTicketReservation(){
                     console.log('SUCCESS!')
                 }, function(error){
                     console.log('FAILED... ', error);
-                };
+                });
             }
         )
     }
