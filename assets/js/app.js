@@ -195,11 +195,11 @@ function getCount(){
 }
 
 function visitCount(){
-    var expire = 1000 * 60 *60 * 24 * 365;
+    var expire = 1000 * 60 * 60 * 24 * 365;
     var count = getCount();
     var number = 0;
     if (count != ""){
-        number = parseInt(count); 
+        number = parseInt(count) || 0; 
     }
     number = number + 1;
     setCount("Counter", number, expire);
@@ -209,5 +209,5 @@ function visitCount(){
 function setCount(name, number, expire){
     var timeNow = new Date();
     var timeStop = new Date(timeNow.getTime() + expire);
-    document.cookie = name + "=" + number + "; expires=0" + timeStop.toGMTString() + ";";
+    document.cookie = name + "=" + number + "; expires=" + timeStop.toGMTString() + ";";
 }
