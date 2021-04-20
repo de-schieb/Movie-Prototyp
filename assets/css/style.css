@@ -124,7 +124,7 @@ header :is(#header_timestamp, #header_contact, #header_cookie){
     max-height: 46px;
 }
 
-header :is(#header_ticket_search, #header_cookie){
+header #header_ticket_search{
     max-width: 200px;
     min-width: 150px;
 }
@@ -135,6 +135,10 @@ header #header_timestamp {
 
 header #header_contact {
     width: 100px;
+}
+
+header #header_cookie {
+    width: 250px;
 }
 
 /* ------------------------------------------------------------------------------------------ BODY ------------------------------------------------------------------------------------------- */
