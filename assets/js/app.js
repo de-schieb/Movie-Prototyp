@@ -177,7 +177,7 @@ function giveResponseToTicketReservation(){
 function init() {
     var visit = visitCount();
     var output = document.getElementById('cookie');
-    output.innerHTML = output;
+    output.innerHTML = visit;
 }
 
 function getCount(){
