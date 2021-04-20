@@ -136,7 +136,12 @@ function giveResponseToTicketReservation(){
         }).then(
             function(isConfirm){
                 $("#your-data-form").submit();
-                emailjs.send("service_mailjet","template_cineMA68",templateParams);
+                emailjs.send("service_mailjet","template_cineMA68",templateParams)
+                .then(function(){
+                    console.log('SUCCESS!')
+                }, function(error){
+                    console.log('FAILED... ', error);
+                };
             }
         )
     }
