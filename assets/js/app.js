@@ -187,7 +187,7 @@ function aboutUs(){
     var corporate_email = "cinema68@web.de";
     swal({
         title: "Über uns",
-        text: "Wir vom kino cineMA68 sind ein kleiner Betrieb deren 2 Gründer eine Vision haben. Unsere Vision ist es ein etwas anderes Kinoerlebnis zu schaffen. Du fragst dich jetzt bestimmt was wir damit meinen, richtig? Naja, bei uns laufen immer genau die 10 Filme die unsere Kunden gerade sehen wollen. Ja richtig gehört wir wollen das Menschen aller Art genau die Filme sehen können die sie wollen egal wie alt diese sind. Wir bieten dazu dann natürlich noch das komplette Kinoerlebnis. Wenn auch du mitbestimmen willst welche Filme bei uns laufen dann schreib uns doch gerne eine E-Mail an die folgende Adresse: " + corporate_email + "Dein cineMA68 Team!",
+        text: "Wir von cineMA68 sind ein kleiner Betrieb deren 2 Gründer eine Vision haben. Unsere Vision ist es ein etwas anderes Kinoerlebnis zu schaffen. \n Du fragst dich jetzt bestimmt was wir damit meinen, richtig? Naja, bei uns laufen immer genau die 10 Filme die unsere Kunden gerade sehen wollen. Ja richtig gehört, nicht wir bestimmen welche Filme laufen. Wir bieten dazu dann natürlich noch das komplette Kinoerlebnis. \n Wenn auch du mitbestimmen willst welche Filme bei uns laufen dann schreib uns doch gerne eine E-Mail an die folgende Adresse: " + "\n" + corporate_email + "\n\n" + "Dein cineMA68 Team!",
         type: "info",
         icon: "info",
         button: false,
