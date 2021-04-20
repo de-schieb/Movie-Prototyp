@@ -211,3 +211,5 @@ function setCount(name, number, expire){
     var timeStop = new Date(timeNow.getTime() + expire);
     document.cookie = name + "=" + number + "; expires=" + timeStop.toGMTString() + ";";
 }
+
+window.addEventListener('DOMContentLoaded', init);
