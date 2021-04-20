@@ -14,7 +14,7 @@ var clickedBtn;
 window.onload = function() { setInterval( updateTimeStamp, 100); }
 
 async function showTicketDetails(event,div){
-    if(event.key = '13'){
+    if(event.key === 'Enter'){
         let ticketID = div.value;
         let {ticketId, price, movieByMovieId, showByShowId, hallByHallId, seatBySeatId} = (await getTicketDetails(ticketID))
         let title = movieByMovieId.title;
