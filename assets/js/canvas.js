@@ -16,7 +16,7 @@ var computerScore = 0;
 
 const WINNING_SCORE = 3;
 const PADDLE_HEIGHT = 80;
-const PADDLE_THICKNESS = 10;
+const PADDLE_THICKNESS = 5;
 
 function startTennisGame(){
 	var canvas = document.getElementById('canvas');
