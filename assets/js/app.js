@@ -47,9 +47,14 @@ function updateTimeStamp(){
 
 function changeMoviePlayTimes(moviePlayTimes){
     let moviePlayTimeFields = ["first-time-btn", "second-time-btn", "third-time-btn", "fourth-time-btn"];
-    setElementInnerHtml("movie-play-time-date",moviePlayTimes[0].substring(0,10))
+    let unformattedMoviePlayTimeDate = moviePlayTimes[0].substring(0,10);
+    let moviePlayTimeYear = unformattedMoviePlayTimeDate.substring(0,4);
+    let moviePlayTimeMonth = unformattedMoviePlayTimeDate.substring(5,7);
+    let moviePlayTimeDay = unformattedMoviePlayTimeDate.substring(8,10);
+    let formattedMoviePlayTimeDate = moviePlayTimeDay + ":" + moviePlayTimeMonth + ":" + moviePlayTimeYear;
+    setElementInnerHtml("movie-play-time-date",)
     for(let i = 0; i<moviePlayTimes.length; i++){
-        setElementInnerHtml(moviePlayTimeFields[i],moviePlayTimes[i].substring(10,16));
+        setElementInnerHtml(moviePlayTimeFields[i],formattedMoviePlayTimeDate);
     }
 }
 
