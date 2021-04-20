@@ -29,7 +29,7 @@ async function showTicketDetails(event,div){
                     "Sitz: " + seatId + "\n" + 
                     "Halle: " + hallId + "\n" + 
                     "Preis: " + price + "€" ,
-            confirmButtonText: "Okay!"
+            button: false
         });
     } 
 }
@@ -165,7 +165,7 @@ function giveResponseToTicketReservation(){
             text: "Eine Mail mit den Reservierungsdetails wurde an die folgendene Mail-Adresse gesendet: " + params.email + "",
             type: "success",
             icon: "success",
-            confirmButtonText: "Okay!",
+            button: false
         }).then(
             function(isConfirm){
                 $("#your-data-form").submit();
