@@ -198,9 +198,12 @@ function visitCount(){
     var expire = 1000 * 60 * 60 * 24 * 365;
     var count = getCount();
     var number = 0;
+    console.log("Vorher " + number)
     if (count != ""){
         number = parseInt(count) || 0; 
     }
+
+    console.log("Nachher " + number)
     number = number + 1;
     setCount("Counter", number, expire);
     return(number);
