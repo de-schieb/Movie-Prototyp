@@ -16,9 +16,11 @@ window.onload = function() { setInterval( updateTimeStamp, 100); }
 async function showTicketDetails(event,div){
     if(event.key = '13'){
         let ticketID = div.value;
-        let {ticketId, price, movieByMovieId, showByShowId, hallId, seatId} = (await getTicketDetails(ticketID))
+        let {ticketId, price, movieByMovieId, showByShowId, hallByHallId, seatBySeatId} = (await getTicketDetails(ticketID))
         let title = movieByMovieId.title;
         let startTime = showByShowId.startTime;
+        let hallId = hallByHallId.hallId;
+        let seatId = seatBySeatId.seatId;
         swal({
             title: "Ticketdetails",
             text: "TicketID: " + ticketId + "\n" + 
