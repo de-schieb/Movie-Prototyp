@@ -120,9 +120,10 @@ function setTicketDetails(){
     console.log("picked movie title: ", picked_movie_title);
     let picked_show_play_time = clickedBtn.innerHTML;
     let picked_show_play_date = document.getElementById("movie-play-time-date").innerHTML;
-    console.log("picked show play time: " + picked_show_play_date + " - " + picked_show_play_time);
+    let picked_show = picked_show_play_date + " - " + picked_show_play_time;
+    console.log("picked show play time: " + picked_show);
     setElementInnerHtml("movie-title-seatplan", picked_movie_title);
-    setElementInnerHtml("show-seatplan", picked_show_play_time);
+    setElementInnerHtml("show-seatplan", picked_show);
 }
 
 function setShowBtnClicked(div) {
