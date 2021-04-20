@@ -45,6 +45,14 @@ function updateTimeStamp(){
     document.getElementById("header_timestamp").innerHTML = day + "." + month + "." + year +" - " + hour + ':' + minute;
 }
 
+function changeMoviePlayTimes(moviePlayTimes){
+    let moviePlayTimeFields = ["first-time-btn", "second-time-btn", "third-time-btn", "fourth-time-btn"];
+    setElementInnerHtml("movie-play-time-date",moviePlayTimes[0].substring(0,11))
+    for(let i = 0; i<moviePlayTimes.length; i++){
+        setElementInnerHtml(moviePlayTimeFields[i],moviePlayTimes[i].substring(12));
+    }
+}
+
 function changeMovieDetails(details){
     var {title, fsk, length, releaseDate, description, trailerUrl} = details;
     console.log("title: " + title);
@@ -78,6 +86,7 @@ async function openMoviePopup(div) {
     console.log("picture_path: " + picture_path);
     setElementAttr("movie_img_big","src", picture_path);
     await getMovieDetailsByMovieID(movie_id);
+    await getMoviePlayTimesByMovieID(movie_id);
     moviePopup.style.display = "grid";
     bodyContainer.style.display = "none";
 }

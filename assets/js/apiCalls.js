@@ -44,7 +44,10 @@ async function getMovieDetailsByMovieID(movie_id){
 }
 
 async function getMoviePlayTimesByMovieID(movie_id){
-    var url = generateUrl(`showsByMovieID/`)
-} 
+    var url = generateUrl(`showsByMovieID/` + movie_id);
+    console.log("url: " + url);
+    var moviePlayTimes = (await doFetch(url).then((res)=>res.json()));
+    changeMoviePlayTimes(moviePlayTimes);
+}
 
 getPicturePathByMovieID();
