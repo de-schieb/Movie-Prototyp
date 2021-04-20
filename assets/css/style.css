@@ -119,12 +119,12 @@ header :is(#header_ticket_search,#header_timestamp,#header_contact) {
     margin-right: 20px;
 }
 
-header :is(#header_timestamp, #header_contact){
+header :is(#header_timestamp, #header_contact, #header_cookie){
     min-height: 46px;
     max-height: 46px;
 }
 
-header #header_ticket_search{
+header :is(#header_ticket_search, #header_cookie){
     max-width: 200px;
     min-width: 150px;
 }
