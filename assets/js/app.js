@@ -163,7 +163,7 @@ function giveResponseToTicketReservation(){
             price: document.querySelector("#total-price-seatplan").innerHTML
     };
     if(reservationForm.reportValidity()){
-        emailjs.send("service_mailjet","template_cineMA68",templateParams)
+        emailjs.send("service_mailjet","template_cinema68_pro",templateParams)
                 .then(function(){
                     console.log('SUCCESS!')
                 }, function(error){
