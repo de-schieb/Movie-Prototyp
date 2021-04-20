@@ -173,3 +173,41 @@ function giveResponseToTicketReservation(){
         )
     }
 }
+
+function init() {
+    var visit = visitCount();
+    var output = document.getElementById('cookie');
+    output.innerHTML = output;
+}
+
+function getCount(){
+    var count = "";
+    if (document.cookie){
+
+        var countStart = document.cookie.indexOf("=") +1;
+        var countEnd = document.cookie.indexOf(";");
+        if(countEnd == -1){
+            countEnd = document.cookie.length;
+        }
+    count = document.cookie.substring(countStart, countEnd);
+    }
+    return count;
+}
+
+function visitCount(){
+    var expire = 1000 * 60 *60 * 24 * 365;
+    var count = getCount();
+    var number = 0;
+    if (count != ""){
+        number = parseInt(count); 
+    }
+    number = number + 1;
+    setCount("Counter", number, expire);
+    return(number);
+}
+
+function setCount(name, number, expire){
+    var timeNow = new Date();
+    var timeStop = new Date(timeNow.getTime() + expire);
+    document.cookie = name + "=" + number + "; expires=0" + timeStop.toGMTString() + ";";
+}
