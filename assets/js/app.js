@@ -116,11 +116,11 @@ function closeMoviePopup() {
 }
 
 function setTicketDetails(){
-    let picked_movie_title = document.getElementById("movie-title").innerHTML;
+    var picked_movie_title = document.getElementById("movie-title").innerHTML;
     console.log("picked movie title: ", picked_movie_title);
     let picked_show_play_time = clickedBtn.innerHTML;
     let picked_show_play_date = document.getElementById("movie-play-time-date").innerHTML;
-    let picked_show = picked_show_play_date + " - " + picked_show_play_time;
+    var picked_show = picked_show_play_date + " - " + picked_show_play_time;
     console.log("picked show play time: " + picked_show);
     setElementInnerHtml("movie-title-seatplan", picked_movie_title);
     setElementInnerHtml("show-seatplan", picked_show);
@@ -156,7 +156,11 @@ function closeReservationPopup() {
 function giveResponseToTicketReservation(){
     let templateParams = {
             email: document.querySelector("#your-email").value,
-            firstname: document.querySelector("#your-firstname").value
+            firstname: document.querySelector("#your-firstname").value,
+            lastname: document.querySelector("#your-lastname").value,
+            movie: document.querySelector("#movie-title-seatplan").innerHTML,
+            show: document.querySelector("#show-seatplan").innerHTML,
+            price: document.querySelector("#total-price-seatplan").innerHTML
     };
     if(reservationForm.reportValidity()){
         emailjs.send("service_mailjet","template_cineMA68",templateParams)
