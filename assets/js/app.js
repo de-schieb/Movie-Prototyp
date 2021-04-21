@@ -21,15 +21,17 @@ async function showTicketDetails(event,div){
         let startTime = showByShowId.startTime.substring(0,16);
         let hallId = hallByHallId.hallId;
         let seatId = seatBySeatId.seatId;
-        swal({
+        Swal.fire({
             title: "Ticketdetails",
-            text: "TicketID: " + ticketId + "\n" + 
-                    "Film: " + title + "\n" + 
-                    "Show: " + startTime + " Uhr \n" +
-                    "Sitz: " + seatId + "\n" + 
-                    "Halle: " + hallId + "\n" + 
-                    "Preis: " + price + "€" ,
-            button: false
+            text: "TicketID: " + ticketId + "<br>" + 
+                    "Film: " + title + "<br>" + 
+                    "Show: " + startTime + " Uhr <br>" +
+                    "Sitz: " + seatId + "<br>" + 
+                    "Halle: " + hallId + "<br>" + 
+                    "Preis: " + price + "€ <br><br>" +
+                    "Reserviert auf: " ,
+            confirmButtonText: "Okay",
+            confirmButtonColor: "#000000"
         });
     } 
 }
