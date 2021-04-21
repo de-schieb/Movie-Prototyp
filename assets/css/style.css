@@ -76,7 +76,7 @@ hr{
     text-align: left;
 }
 
-.swal-button {
+.swal-button--confirm {
     color: var(--font-color);
     background-color: var(--button-color);
     border-color: var(--button-color);
@@ -91,7 +91,7 @@ hr{
     border-radius: .25rem; 
   }
 
-  .swal-button:hover{
+  .swal-button--confirm:hover{
     color: var(--accent-color) !important;
     border-color: var(--first-main-color) !important;
   }
