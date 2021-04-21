@@ -55,8 +55,11 @@ function aboutUs(){
         html: '<div class="align-left">Wir bei cineMA68 sind ein kleiner Betrieb deren 2 Gründer eine Vision haben. Unsere Vision ist es ein etwas anderes Kinoerlebnis zu schaffen. <br><br> Du fragst dich jetzt bestimmt was wir damit meinen, richtig? Naja, bei uns laufen immer genau die 10 Filme die unsere Kunden gerade sehen wollen. Ja richtig gehört, nicht wir bestimmen welche Filme laufen, sondern unsere Kunden. Wir bekommen regelmäßig Vorschläge zugesendet und die meist genannten 10 Filme nehmen wir dann in unser Programm für die nächsten 10 Tage auf. Unser Alleinstellungsmerkmal ist somit das wir die Filme zeigen die unsere Community sehen will und dazu dann das gewohnte Kinoambiente bieten. <br><br> Wenn auch du mitbestimmen willst welche Filme bei uns laufen dann schreib uns doch gerne eine E-Mail an die folgende Adresse: <br><br>' + corporateEmail + '<br><br><br>' + 'Dein cineMA68 Team!</div>',
         type: 'info',
         icon: 'info',
+        iconColor: "#000000",
         confirmButtonText: 'Alles klar!',
-        timer: 35000
+        buttonsStyling: false,
+        timer: 35000,
+        timerProgressBar: true,
     })
 }
 
