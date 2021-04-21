@@ -167,7 +167,7 @@ function giveResponseToTicketReservation(){
         sendEmailToCustomer(params);
         Swal.fire({
             title: "Ticketreservierung erfolgreich!",
-            html: "<div class=\"align-left\">Eine Mail mit den Reservierungsdetails wurde an die folgendene Mail-Adresse gesendet: <br><em>" + params.email + "</em></div>",
+            html: "<div class=\"align-left\">Eine Mail mit den Reservierungsdetails wurde an die folgendene Mail-Adresse gesendet: <br><br><em>" + params.email + "</em></div>",
             type: "success",
             icon: "success",
             confirmButtonText: "Okay",
