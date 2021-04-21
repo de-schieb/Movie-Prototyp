@@ -23,13 +23,13 @@ async function showTicketDetails(event,div){
         let seatId = seatBySeatId.seatId;
         Swal.fire({
             title: "Ticketdetails",
-            html: "TicketID: <em>" + ticketId + "</em><br>" + 
+            html: "<div class=\"align-left\">TicketID: <em>" + ticketId + "</em><br>" + 
                     "Film: <em>" + title + "</em><br>" + 
                     "Show: <em>" + startTime + " Uhr</em> <br>" +
                     "Sitz: <em>" + seatId + "</em><br>" + 
                     "Halle: <em>" + hallId + "</em><br>" + 
                     "Preis: <em>" + price + "€</em> <br><br>" +
-                    "Reserviert auf: <em>",
+                    "Reserviert auf: <em>" + "placeholder" + "</em></div>",
             confirmButtonText: "Okay",
             confirmButtonColor: "#000000"
         });
