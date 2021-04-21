@@ -23,7 +23,7 @@ async function showTicketDetails(event,div){
         let seatId = seatBySeatId.seatId;
         Swal.fire({
             title: "Ticketdetails",
-            text: "TicketID: <em>" + ticketId + "</em><br>" + 
+            html: "TicketID: <em>" + ticketId + "</em><br>" + 
                     "Film: <em>" + title + "</em><br>" + 
                     "Show: <em>" + startTime + " Uhr</em> <br>" +
                     "Sitz: <em>" + seatId + "</em><br>" + 
