@@ -57,6 +57,7 @@ function aboutUs(){
         icon: 'info',
         iconColor: "#000000",
         confirmButtonText: "Alles klar",
+        confirmButtonColor: "#000000",
         timer: 35000
     })
 }
