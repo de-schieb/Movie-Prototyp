@@ -58,6 +58,7 @@ function aboutUs(){
         iconColor: "#000000",
         confirmButtonText: "Alles klar",
         confirmButtonColor: "#000000",
+        focusConfirm: false,
         timer: 35000
     })
 }
