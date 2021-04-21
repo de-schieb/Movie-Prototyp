@@ -56,7 +56,9 @@ function aboutUs(){
         type: 'info',
         icon: 'info',
         iconColor: "#000000",
-        confirmButtonHtml: "<button class=\"btn\">Alles klar!</button>",
+        showCloseButton: true,
+        showConfirmButton: false,
+        closeButtonHtml: "<button class=\"btn\">Alles klar!</button>",
         buttonsStyling: false,
         timer: 35000,
     })
