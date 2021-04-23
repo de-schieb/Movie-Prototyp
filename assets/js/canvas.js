@@ -20,7 +20,8 @@ function pickColor() {
 }
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  var canvas = createCanvas(windowWidth, windowHeight);
+  canvas.parent("screen");
   x = random(width);
   y = random(height);
   xspeed = 10;
