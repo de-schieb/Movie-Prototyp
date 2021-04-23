@@ -19,13 +19,15 @@ function pickColor() {
   b = random(100, 256);
 }
 
-var canvasHeight = document.getElementById("canvas").height;
-var canvasWidth = document.getElementById("canvas").width;
+var canvasParent = document.getElementById("canvas");
+
+var canvasHeight = canvasParent.height;
+var canvasWidth = canvasParent.width;
 
 
 function setup() {
   var canvas = createCanvas(canvasWidth, canvasHeight);
-  canvas.parent("canvas")
+  canvas.parent(canvasParent);
   x = random(width);
   y = random(height);
   xspeed = 10;
