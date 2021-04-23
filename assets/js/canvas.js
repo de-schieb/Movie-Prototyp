@@ -9,10 +9,6 @@ let dvd;
 
 let r, g, b;
 
-function startBouncingDVDLogo(){
-  
-}
-
 function preload() {
   dvd = loadImage('pics/dvd_logo.png');
 }
