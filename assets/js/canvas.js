@@ -14,7 +14,7 @@ function startBouncingDVDLogo(){
 }
 
 function preload() {
-  dvd = loadImage('dvd_logo.png');
+  dvd = loadImage('pics/dvd_logo.png');
 }
 
 function pickColor() {
