@@ -48,7 +48,7 @@ async function getSeatplanByShowID(showID){
     return await doFetch(url).then((res) => res.json());
 }
 
-async function postTicketDetails(ticketPrice,movieID,showID,hallID,seatID,firstName,lastName){
+async function postTicketDetails(price,movieID,showID,hallID,seatID,firstName,lastName){
     let url = generateUrl(`postTicket/` + price + `/` + movieID + `/` + showID + `/` + hallID + `/` + seatID + `/` + firstName + `/` + lastName );
     log("url: " + url);
     await doPost(url);

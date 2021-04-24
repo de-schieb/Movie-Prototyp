@@ -171,7 +171,7 @@ function closeReservationPopup() {
 async function giveResponseToTicketReservation(){
     if(reservationForm.reportValidity()){
         Swal.fire({
-            title:"Loading...",
+            title:"Bitte warten...",
             confirmButtonText: "Okay",
             confirmButtonColor: "#000000"
         })
