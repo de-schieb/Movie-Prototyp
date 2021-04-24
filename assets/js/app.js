@@ -20,7 +20,7 @@ async function showTicketDetails(event,div){
         let title = movieByMovieId.title;
         let startTime = showByShowId.startTime.substring(0,16);
         let hallId = hallByHallId.hallId;
-        let seatId = getSeatIDForTarget(seatBySeatId.seatId, FRONTEND);
+        let seatId = (await getSeatIDForTarget(seatBySeatId.seatId, FRONTEND));
         Swal.fire({
             title: "Ticketdetails",
             html: "<div id=\"ticket_details_popup\" class=\"align-left\">TicketID: <em>" + ticketId + "</em><br>" + 

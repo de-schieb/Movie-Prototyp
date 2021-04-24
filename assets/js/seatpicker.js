@@ -5,7 +5,6 @@ const total = document.getElementById('total-price-seatplan');
 
 let ticketPrice = 8;
 let selectedSeatIDs = [];
-let seatPlanPatternMixed = [];
 
 // Update total and count
 function updateSelectedCount(div) {
@@ -65,8 +64,8 @@ function populateMixedSeatPlanPattern(seatPlanPatternFE,seatPlanPatternDB){
 function populateUI(fetchedSeatPlanPattern) {
     let seatPlanPatternFrontend = populateFrontEndSeatPlanPattern();
     let seatPlanPatternDatabase = populateDatabaseSeatPlanPattern(fetchedSeatPlanPattern);
-    seatPlanPatternMixed = populateMixedSeatPlanPattern(seatPlanPatternFrontend,seatPlanPatternDatabase);
-
+    let seatPlanPatternMixed = populateMixedSeatPlanPattern(seatPlanPatternFrontend,seatPlanPatternDatabase);
+    
     console.log("seatPlanPatternMixed.length: ", seatPlanPatternMixed.length)
     for(let i = 0;i<seatPlanPatternMixed.length;i++){
         if(seatPlanPatternMixed[i].seatFree == "false"){
@@ -75,7 +74,12 @@ function populateUI(fetchedSeatPlanPattern) {
     }
 }
 
-function getSeatIDForTarget(seatID,target){
+async function getSeatIDForTarget(seatID,target,showID){
+    let fetchedSeatPlanPattern = (await getSeatplanByShowID(showID));
+    let seatPlanPatternFrontend = populateFrontEndSeatPlanPattern();
+    let seatPlanPatternDatabase = populateDatabaseSeatPlanPattern(fetchedSeatPlanPattern);
+    let seatPlanPatternMixed = populateMixedSeatPlanPattern(seatPlanPatternFrontend,seatPlanPatternDatabase);
+
     switch(target){
         case FRONTEND:
             for(let i = 0;i<seatPlanPatternMixed.length;i++){
@@ -96,7 +100,7 @@ function getSeatIDForTarget(seatID,target){
 async function setTicketDetailsInDBAndReturnTicketIDs(movieID,showID,firstName,lastName){
     let fetchedSeatIDs = [];
     for(let i = 0;i<selectedSeatIDs.length;i++){
-        let seatID = getSeatIDForTarget(selectedSeatIDs[i], DB);
+        let seatID = await getSeatIDForTarget(selectedSeatIDs[i], DB,showID);
         console.log("ticketDetails: " + ticketPrice + ", " + movieID + ", " + showID + ", " + 2000 + ", " + seatID + ", " + firstName + ", " + lastName);
         await postTicketDetails(ticketPrice,movieID,showID,2000,seatID,firstName,lastName);
         await setSeatBlocked(seatID);
