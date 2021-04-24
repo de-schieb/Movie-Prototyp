@@ -1,4 +1,4 @@
-const log = console.log;
+// const log = console.log;
 
 // Selecting elements from the DOM
 const searchButton = document.querySelector('#search');
@@ -21,10 +21,10 @@ async function showTicketDetails(event,div){
         let startTime = formatMoviePlayDateForTarget(showByShowId.startTime.substring(0,10),FRONTEND) + " - " + showByShowId.startTime.substring(11,16);
         let hallId = hallByHallId.hallId;
         let seatId = seatBySeatId.seatId;
-        console.log("seatID: " + seatId);
+        // console.log("seatID: " + seatId);
         let showId = showByShowId.showId;
         seatId = (await getSeatIDForTarget(seatId, FRONTEND, showId));
-        console.log("seatID: " + seatId);
+        // console.log("seatID: " + seatId);
         Swal.fire({
             title: "Ticketdetails",
             html: "<div id=\"ticket_details_popup\" class=\"align-left\">TicketID: <em>" + ticketId + "</em><br>" + 
@@ -74,7 +74,7 @@ async function setPicturePathsOnStartUp(){
     shuffle(movieIDs);
     for(let i = 0; i < movieIDs.length; i++){
         let picturePath = (await getPicturePathByMovieID(movieIDs[i]));
-        console.log("picturePath: " + picturePath);
+        // console.log("picturePath: " + picturePath);
         createMovieImgElement(movieIDs[i], picturePath);
     }
 }
@@ -93,9 +93,9 @@ async function setMoviePlayTimes(movieID){
 
 async function openMoviePopup(div) {
     let movieID = div.id.substring(10);
-    console.log("movie_id: " + movieID);
+    // console.log("movie_id: " + movieID);
     let picturePath = div.src.substring(55);
-    console.log("picture_path: " + picturePath);
+    // console.log("picture_path: " + picturePath);
     setElementAttr("movie_img_big","src", picturePath);
     await setMovieDetails(movieID);
     await setMoviePlayTimes(movieID);
@@ -139,11 +139,11 @@ function setContinueBtnVisible(div) {
 async function setTicketDetails(div){
     let clickedBtn = div;
     let pickedMovieTitle = document.getElementById("movie-title").innerHTML;
-    console.log("picked movie title: ", pickedMovieTitle);
+    // console.log("picked movie title: ", pickedMovieTitle);
     let pickedShowPlayTime = clickedBtn.innerHTML;
     let pickedShowPlayDate = document.getElementById("movie-play-time-date").innerHTML;
     let pickedShow = pickedShowPlayDate + " - " + pickedShowPlayTime + " Uhr";
-    console.log("picked show play time: " + pickedShow);
+    // console.log("picked show play time: " + pickedShow);
     setElementInnerHtml("movie-title-seatplan", pickedMovieTitle);
     setElementInnerHtml("show-seatplan", pickedShow);
 
@@ -151,12 +151,12 @@ async function setTicketDetails(div){
     let formattedPickedShow = formattedMoviePlayTimeDate + "%20" + pickedShowPlayTime + ":00";
     let movieID = (await getMovieIDByMovieTitle(pickedMovieTitle));
     showIDForTicketReservation = (await getShowIDByMovieIDAndStartTime(movieID,formattedPickedShow));
-    console.log("showIDForTicketReservation: " + showIDForTicketReservation);
+    // console.log("showIDForTicketReservation: " + showIDForTicketReservation);
 }
 
 async function setSeatPlanPattern(showID){
     let seatPlanPatternDB =  (await getSeatplanByShowID(showID));
-    console.log("seatPlanPatternDB: ", seatPlanPatternDB);
+    // console.log("seatPlanPatternDB: ", seatPlanPatternDB);
     populateUI(seatPlanPatternDB);
 }
 
@@ -191,7 +191,7 @@ async function giveResponseToTicketReservation(){
         };
         let movieID = (await getMovieIDByMovieTitle(params.movie));
         let formattedMovieShow = formatMoviePlayDateForTarget(params.show.substring(0,10),DB)+"%20"+params.show.substring(13,18) + ":00";
-        console.log("formattedMovieShow: " + formattedMovieShow);
+        // console.log("formattedMovieShow: " + formattedMovieShow);
         let showID = (await getShowIDByMovieIDAndStartTime(movieID,formattedMovieShow))
         params.ticket_ids = (await setTicketDetailsInDBAndReturnTicketIDs(movieID,showID,params.firstname,params.lastname));
         sendEmailToCustomer(params);
@@ -234,12 +234,12 @@ function visitCount(){
     var expire = 1000 * 60 * 60 * 24 * 365;
     var count = getCount();
     var number = 0;
-    console.log("Vorher " + number)
+    // console.log("Vorher " + number)
     if (count != ""){
         number = parseInt(count) || 0; 
     }
 
-    console.log("Nachher " + number)
+    // console.log("Nachher " + number)
     number = number + 1;
     setCount("Counter", number, expire);
     return(number);

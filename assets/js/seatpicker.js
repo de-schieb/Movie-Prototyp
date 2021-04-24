@@ -55,7 +55,7 @@ function populateMixedSeatPlanPattern(seatPlanPatternFE,seatPlanPatternDB){
                 seatIDDB: seatPlanPatternDB[i].seatID,
                 seatFree: seatPlanPatternDB[i].seatFree
             }
-            console.log("seatMix: " + seatPlanPatternMixed[i].seatIDFE + ", " + seatPlanPatternMixed[i].seatIDDB +  ", " + seatPlanPatternMixed[i].seatFree);
+            // console.log("seatMix: " + seatPlanPatternMixed[i].seatIDFE + ", " + seatPlanPatternMixed[i].seatIDDB +  ", " + seatPlanPatternMixed[i].seatFree);
         }
     }
     return seatPlanPatternMixed;
@@ -67,7 +67,7 @@ function populateUI(fetchedSeatPlanPattern) {
     let seatPlanPatternDatabase = populateDatabaseSeatPlanPattern(fetchedSeatPlanPattern);
     let seatPlanPatternMixed = populateMixedSeatPlanPattern(seatPlanPatternFrontend,seatPlanPatternDatabase);
 
-    console.log("seatPlanPatternMixed.length: ", seatPlanPatternMixed.length)
+    // console.log("seatPlanPatternMixed.length: ", seatPlanPatternMixed.length);
     for(let i = 0;i<seatPlanPatternMixed.length;i++){
         if(seatPlanPatternMixed[i].seatFree == "false"){
             document.getElementById(seatPlanPatternMixed[i].seatIDFE).classList.toggle('occupied');
@@ -84,19 +84,17 @@ async function getSeatIDForTarget(seatID,target,showID){
     switch(target){
         case FRONTEND:
             for(let i = 0;i<seatPlanPatternMixed.length;i++){
-                console.log("in FRONTEND");
                 if(seatPlanPatternMixed[i].seatIDDB == seatID){
-                    console.log("seatPlanPatternMixed[i].seatIDDB: " + seatPlanPatternMixed[i].seatIDDB);
-                    console.log("seatPlanPatternMixed[i].seatIDFE: " + seatPlanPatternMixed[i].seatIDFE);
+                    // console.log("seatPlanPatternMixed[i].seatIDDB: " + seatPlanPatternMixed[i].seatIDDB);
+                    // console.log("seatPlanPatternMixed[i].seatIDFE: " + seatPlanPatternMixed[i].seatIDFE);
                     return seatPlanPatternMixed[i].seatIDFE;
                 }
             }
             case DB:
                 for(let i = 0;i<seatPlanPatternMixed.length;i++){
-                    console.log("in DB");
                     if(seatPlanPatternMixed[i].seatIDFE == seatID){
-                    console.log("seatPlanPatternMixed[i].seatIDDB: " + seatPlanPatternMixed[i].seatIDDB);
-                    console.log("seatPlanPatternMixed[i].seatIDFE: " + seatPlanPatternMixed[i].seatIDFE);
+                    // console.log("seatPlanPatternMixed[i].seatIDDB: " + seatPlanPatternMixed[i].seatIDDB);
+                    // console.log("seatPlanPatternMixed[i].seatIDFE: " + seatPlanPatternMixed[i].seatIDFE);
                     return seatPlanPatternMixed[i].seatIDDB;
                 }
             }
@@ -108,7 +106,7 @@ async function setTicketDetailsInDBAndReturnTicketIDs(movieID,showID,firstName,l
     let fetchedSeatIDs = [];
     for(let i = 0;i<selectedSeatIDs.length;i++){
         let seatID = await getSeatIDForTarget(selectedSeatIDs[i], DB, showID);
-        console.log("ticketDetails: " + ticketPrice + ", " + movieID + ", " + showID + ", " + 2000 + ", " + seatID + ", " + firstName + ", " + lastName);
+        // console.log("ticketDetails: " + ticketPrice + ", " + movieID + ", " + showID + ", " + 2000 + ", " + seatID + ", " + firstName + ", " + lastName);
         await postTicketDetails(ticketPrice,movieID,showID,2000,seatID,firstName,lastName);
         await setSeatBlocked(seatID);
         fetchedSeatIDs.push(await getTicketIDs(movieID,showID,seatID));

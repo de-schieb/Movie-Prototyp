@@ -48,17 +48,17 @@ function createMovieImgElement(movieId, path){
 
 function changeMovieDetails(details){
   let {title, fsk, length, releaseDate, description, trailerUrl} = details;
-  console.log("title: " + title);
+  // console.log("title: " + title);
   setElementInnerHtml("movie-title", title);
-  console.log("fsk: " + fsk);
+  // console.log("fsk: " + fsk);
   setElementInnerHtml("movie-age-restriction", fsk)
-  console.log("length: " + length);
+  // console.log("length: " + length);
   setElementInnerHtml("movie-length", length + " min");
-  console.log("releaseDate: " + releaseDate);
+  // console.log("releaseDate: " + releaseDate);
   setElementInnerHtml("movie-release-date", releaseDate);
-  console.log("description: " + description);
+  // console.log("description: " + description);
   setElementInnerHtml("movie-desc", description);
-  console.log("trailerUrl: " + trailerUrl);
+  // console.log("trailerUrl: " + trailerUrl);
   setElementAttr("movie-trailer","src", trailerUrl);
 }
 
@@ -105,6 +105,6 @@ function generateUrl(path){
 }
 
 function handleGeneralError(error) {
-  log('Error: ', error.message);
+  // log('Error: ', error.message);
   alert(error.message || 'Internal Server');
 }
