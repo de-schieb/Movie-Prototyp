@@ -186,7 +186,8 @@ async function giveResponseToTicketReservation(){
             price: document.querySelector("#total-price-seatplan").innerHTML
         };
         let movieID = (await getMovieIDByMovieTitle(params.movie));
-        let showID = (await getShowIDByMovieIDAndStartTime(movieID,formatMoviePlayDateForTarget(params.show.substring(0,10),DB)+"%20"+params.show.substring(15,19)+":00"))
+        let formattedMovieShow = formatMoviePlayDateForTarget(params.show.substring(0,10),DB)+"%20"+params.show.substring(15,19) + ":00";
+        let showID = (await getShowIDByMovieIDAndStartTime(movieID,))
         await setTicketDetailsInDB(movieID,showID,params.firstname,params.lastname);
         // params.ticket_ids =  getTicketIDs();
         sendEmailToCustomer(params);
