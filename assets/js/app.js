@@ -18,7 +18,7 @@ async function showTicketDetails(event,div){
         let ticketID = div.value;
         let {ticketId, price, movieByMovieId, showByShowId, hallByHallId, seatBySeatId, forename, lastname} = (await getTicketDetailsByTicketID(ticketID))
         let title = movieByMovieId.title;
-        let startTime = formatMoviePlayDateForTarget(showByShowId.startTime.substring(0,10),FRONTEND) + " - " + showByShowId.startTime.substring(11,17);
+        let startTime = formatMoviePlayDateForTarget(showByShowId.startTime.substring(0,10),FRONTEND) + " - " + showByShowId.startTime.substring(11,16);
         let hallId = hallByHallId.hallId;
         let seatId = seatBySeatId.seatId;
         console.log("seatID: " + seatId);
