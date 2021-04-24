@@ -167,6 +167,7 @@ async function openReservationPopup() {
 function closeReservationPopup() {
     moviePopup.style.display = "grid";
     reservationPopup.style.display = "none"
+    cleanUI();
 }
 
 function giveResponseToTicketReservation(){
