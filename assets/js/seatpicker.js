@@ -10,7 +10,9 @@ let ticketPrice = 8;
 function updateSelectedCount(div) {
   const selectedSeats = document.querySelectorAll('.row .seat.selected');
   const selectedSeatsCount = selectedSeats.length;
-  pickedSeats = pickedSeats + ", " + div.id; 
+  if(div !== null){
+      pickedSeats = pickedSeats + ", " + div.id; 
+  }
   total.innerText = (selectedSeatsCount * ticketPrice) + "€";
 }
 
