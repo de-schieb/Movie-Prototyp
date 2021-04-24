@@ -20,7 +20,7 @@ async function showTicketDetails(event,div){
         let title = movieByMovieId.title;
         let startTime = showByShowId.startTime.substring(0,16);
         let hallId = hallByHallId.hallId;
-        let seatId = seatBySeatId.seatId;
+        let seatId = getSeatIDForTarget(seatBySeatId.seatId, FRONTEND);
         Swal.fire({
             title: "Ticketdetails",
             html: "<div id=\"ticket_details_popup\" class=\"align-left\">TicketID: <em>" + ticketId + "</em><br>" + 
@@ -172,7 +172,8 @@ async function giveResponseToTicketReservation(){
     if(reservationForm.reportValidity()){
         Swal.fire({
             title:"Bitte warten...",
-            confirmButton: false
+            showCancelButton: false,
+            showConfirmButton: false
         })
         let params = {
             ticket_ids: "",
