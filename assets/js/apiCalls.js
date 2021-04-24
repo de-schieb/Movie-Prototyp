@@ -48,6 +48,10 @@ async function getSeatplanByShowID(showID){
     return await doFetch(url).then((res) => res.json());
 }
 
+async function getTicketIDs(){
+    
+}
+
 function sendEmailToCustomer(params){
     emailjs.send("service_mailjet","template_cinema68_pro", params)
                 .then(function(){

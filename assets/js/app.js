@@ -156,8 +156,6 @@ async function setSeatPlanPattern(showID){
     populateUI(seatPlanPatternDB);
 }
 
-
-
 async function openReservationPopup() {
     moviePopup.style.display = "none";
     reservationPopup.style.display = "grid"
@@ -171,15 +169,17 @@ function closeReservationPopup() {
 }
 
 function giveResponseToTicketReservation(){
-    let params = {
+    if(reservationForm.reportValidity()){
+        let params = {
+            ticket_ids: ,
             email: document.querySelector("#your-email").value,
             firstname: document.querySelector("#your-firstname").value,
             lastname: document.querySelector("#your-lastname").value,
             movie: document.querySelector("#movie-title-seatplan").innerHTML,
+            seats: document.querySelector("seats-seatplan").innerHTML,
             show: document.querySelector("#show-seatplan").innerHTML,
             price: document.querySelector("#total-price-seatplan").innerHTML
-    };
-    if(reservationForm.reportValidity()){
+        };
         sendEmailToCustomer(params);
         Swal.fire({
             title: "Ticketreservierung erfolgreich!",

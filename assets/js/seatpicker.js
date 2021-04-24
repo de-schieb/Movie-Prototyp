@@ -5,6 +5,7 @@ const total = document.getElementById('total-price-seatplan');
 
 let ticketPrice = 8;
 let selectedSeatIDs = [];
+let seatPlanPatternMixed = [];
 
 // Update total and count
 function updateSelectedCount(div) {
@@ -44,7 +45,6 @@ function populateDatabaseSeatPlanPattern(fetchedSeatPlanPattern){
 }
 
 function populateMixedSeatPlanPattern(seatPlanPatternFE,seatPlanPatternDB){
-    let seatPlanPatternMixed = [];
     if(seatPlanPatternFE.length == seatPlanPatternDB.length){
         for(let i = 0;i<seatPlanPatternDB.length;i++){
             seatPlanPatternMixed[i] = {
@@ -62,13 +62,38 @@ function populateMixedSeatPlanPattern(seatPlanPatternFE,seatPlanPatternDB){
 function populateUI(fetchedSeatPlanPattern) {
     let seatPlanPatternFrontend = populateFrontEndSeatPlanPattern();
     let seatPlanPatternDatabase = populateDatabaseSeatPlanPattern(fetchedSeatPlanPattern);
-    let seatPlanPatternMixed = populateMixedSeatPlanPattern(seatPlanPatternFrontend,seatPlanPatternDatabase);
+    seatPlanPatternMixed = populateMixedSeatPlanPattern(seatPlanPatternFrontend,seatPlanPatternDatabase);
 
     console.log("seatPlanPatternMixed.length: ", seatPlanPatternMixed.length)
     for(let i = 0;i<seatPlanPatternMixed.length;i++){
         if(seatPlanPatternMixed[i].seatFree == "false"){
             document.getElementById(seatPlanPatternMixed[i].seatIDFE).classList.toggle('occupied');
         }
+    }
+}
+
+function getSeatIDForTarget(seatID,target){
+    switch(target){
+        case FRONTEND:
+            for(let i = 0;i<seatPlanPatternMixed.length;i++){
+                if(seatPlanPatternMixed[i].seatIDDB === seatID){
+                    return seatPlanPatternMixed[i].seatIDFE;
+                }
+            }
+        case DB:
+            for(let i = 0;i<seatPlanPatternMixed.length;i++){
+                if(seatPlanPatternMixed[i].seatIDFE === seatID){
+                    return seatPlanPatternMixed[i].seatIDDB;
+                }
+            }
+            break;
+    }
+}
+
+function setTicketDetailsInDB(movieID,){
+    for(let i = 0;i<selectedSeatIDs.length;i++){
+        let seatID = getSeatIDForTarget(selectedSeatIDs[i], DB);
+        postTicketDetails(ticketPrice,movieID,showID,2000,seatID,firstName,)
     }
 }
 
@@ -86,7 +111,6 @@ function cleanUI(){
     selectedSeatIDs = [];
     setElementInnerHtml("seats-seatplan",selectedSeatIDs.join(", "));
     setElementInnerHtml("total-price-seatplan", (0 * ticketPrice) + "€");
-
 }
 
 
