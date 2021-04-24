@@ -84,6 +84,7 @@ async function getSeatIDForTarget(seatID,target,showID){
     switch(target){
         case FRONTEND:
             for(let i = 0;i<seatPlanPatternMixed.length;i++){
+                console.log("in FRONTEND");
                 if(seatPlanPatternMixed[i].seatIDDB === seatID){
                     console.log("seatPlanPatternMixed[i].seatIDDB: " + seatPlanPatternMixed[i].seatIDDB);
                     console.log("seatPlanPatternMixed[i].seatIDFE: " + seatPlanPatternMixed[i].seatIDFE);
@@ -92,6 +93,7 @@ async function getSeatIDForTarget(seatID,target,showID){
             }
             case DB:
                 for(let i = 0;i<seatPlanPatternMixed.length;i++){
+                    console.log("in DB");
                     if(seatPlanPatternMixed[i].seatIDFE === seatID){
                     console.log("seatPlanPatternMixed[i].seatIDDB: " + seatPlanPatternMixed[i].seatIDDB);
                     console.log("seatPlanPatternMixed[i].seatIDFE: " + seatPlanPatternMixed[i].seatIDFE);
