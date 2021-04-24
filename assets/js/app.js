@@ -187,7 +187,8 @@ async function giveResponseToTicketReservation(){
         };
         let movieID = (await getMovieIDByMovieTitle(params.movie));
         let formattedMovieShow = formatMoviePlayDateForTarget(params.show.substring(0,10),DB)+"%20"+params.show.substring(15,19) + ":00";
-        let showID = (await getShowIDByMovieIDAndStartTime(movieID,))
+        console.log("formattedMovieShow: " + formattedMovieShow);
+        let showID = (await getShowIDByMovieIDAndStartTime(movieID,formattedMovieShow))
         await setTicketDetailsInDB(movieID,showID,params.firstname,params.lastname);
         // params.ticket_ids =  getTicketIDs();
         sendEmailToCustomer(params);
