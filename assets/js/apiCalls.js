@@ -36,8 +36,14 @@ async function getShowIDByMovieIDAndStartTime(movieID, startTime){
     return await doFetch(url).then((res) => res.text()); 
 }
 
-async function getTicketDetails(ticketID){
-    let url = generateUrl(`/ticketDetailsByID/` + ticketID);
+async function getTicketDetailsByTicketID(ticketID){
+    let url = generateUrl(`ticketDetailsByID/` + ticketID);
+    log("url: " + url);
+    return await doFetch(url).then((res) => res.json());
+}
+
+async function getSeatplanByShowID(showID){
+    let url = generateUrl(`seatPlanByShowID/`+showID);
     log("url: " + url);
     return await doFetch(url).then((res) => res.json());
 }

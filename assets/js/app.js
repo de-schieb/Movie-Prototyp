@@ -16,7 +16,7 @@ window.onload = function() { setInterval( updateTimeStamp, 100); }
 async function showTicketDetails(event,div){
     if(event.key === 'Enter'){
         let ticketID = div.value;
-        let {ticketId, price, movieByMovieId, showByShowId, hallByHallId, seatBySeatId} = (await getTicketDetails(ticketID))
+        let {ticketId, price, movieByMovieId, showByShowId, hallByHallId, seatBySeatId} = (await getTicketDetailsByTicketID(ticketID))
         let title = movieByMovieId.title;
         let startTime = showByShowId.startTime.substring(0,16);
         let hallId = hallByHallId.hallId;
@@ -150,9 +150,15 @@ async function setTicketDetails(div){
     console.log("showIDForTicketReservation: " + showIDForTicketReservation);
 }
 
-function openReservationPopup() {
+function setSeatPlanPattern(showID){
+    let seatPlanPattern = getSeatplanByShowID(showID);
+    console.log("seatPlanPattern: " + seatPlanPattern);
+}
+
+async function openReservationPopup() {
     moviePopup.style.display = "none";
     reservationPopup.style.display = "grid"
+    await setSeatPlanPattern(showIDForTicketReservation);
 }
 
 function closeReservationPopup() {
