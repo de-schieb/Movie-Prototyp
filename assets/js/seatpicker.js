@@ -7,10 +7,10 @@ const total = document.getElementById('total-price-seatplan');
 let ticketPrice = 8;
 
 // Update total and count
-function updateSelectedCount() {
+function updateSelectedCount(div) {
   const selectedSeats = document.querySelectorAll('.row .seat.selected');
   const selectedSeatsCount = selectedSeats.length;
-  pickedSeats = selectedSeats.id.join(", ");
+  pickedSeats = pickedSeats + ", " + div.id; 
   total.innerText = (selectedSeatsCount * ticketPrice) + "€";
 }
 
@@ -82,7 +82,7 @@ function cleanUI(){
 container.addEventListener('click', (e) => {
   if (e.target.classList.contains('seat') && !e.target.classList.contains('occupied')) {
     e.target.classList.toggle('selected');
-    updateSelectedCount()
+    updateSelectedCount(e.target);
   }
 })
 
