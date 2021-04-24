@@ -32,8 +32,8 @@ function populateFrontEndSeatPlanPattern(){
             seatID: allSeats[i].id,
             seatFree: true
         }
+        console.log("seatFE: " + seatPlanPatternFrontend[i].seatID + ", " + seatPlanPatternFrontend[i].seatFree);
     }
-    console.log("seatPlanPatternFrontend: " + seatPlanPatternFrontend);
     return seatPlanPatternFrontend;
 }
 
@@ -45,8 +45,8 @@ function populateDatabaseSeatPlanPattern(fetchedSeatPlanPattern){
             seatID: seat[0],
             seatFree: seat[1]
         }
+        console.log("seatDB: " + seatPlanPatternDatabase[i].seatID + ", " + seatPlanPatternDatabase[i].seatFree);
     }
-    console.log("seatPlanPatternDatabase: " + seatPlanPatternDatabase);
     return seatPlanPatternDatabase;
 }
 
@@ -59,8 +59,8 @@ function populateMixedSeatPlanPattern(seatPlanPatternFE,seatPlanPatternDB){
                 seatIDDB: seatPlanPatternDB[i].seatID,
                 seatFree: seatPlanPatternDB[i].seatFree
             }
+            console.log("seatMix: " + seatPlanPatternMixed[i].seatID + ", " + seatPlanPatternMixed[i].seatFree);
         }
-        console.log("seatPlanPatternMixed: " + seatPlanPatternMixed);
     }
 }
 
