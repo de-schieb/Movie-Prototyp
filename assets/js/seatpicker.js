@@ -58,7 +58,7 @@ function populateMixedSeatPlanPattern(seatPlanPatternFE,seatPlanPatternDB){
                 seatIDDB: seatPlanPatternDB[i].seatID,
                 seatFree: seatPlanPatternDB[i].seatFree
             }
-            console.log("seatMix: " + seatPlanPatternMixed[i].seatID + ", " + seatPlanPatternMixed[i].seatFree);
+            console.log("seatMix: " + seatPlanPatternMixed[i].seatIDFE + ", " + seatPlanPatternMixed[i].seatIDDB +  ", " + seatPlanPatternMixed[i].seatFree);
         }
     }
 }
