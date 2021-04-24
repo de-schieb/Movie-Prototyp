@@ -40,6 +40,7 @@ function populateDatabaseSeatPlanPattern(fetchedSeatPlanPattern){
     let seatPlanPatternDatabase = [];
     for(let i = 0;i<fetchedSeatPlanPattern.length;i++){
         let seat = fetchedSeatPlanPattern[i].split;
+        console.log(seat);
         seatPlanPatternDatabase[i] = {
             seatID: seat[0],
             seatFree: seat[1]
