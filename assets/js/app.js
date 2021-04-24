@@ -150,7 +150,7 @@ async function setTicketDetails(div){
     console.log("showIDForTicketReservation: " + showIDForTicketReservation);
 }
 
-async function setSeatPlanPattern(showID){a
+async function setSeatPlanPattern(showID){
     let seatPlanPattern = (await getSeatplanByShowID(showID));
     console.log("seatPlanPattern: " + seatPlanPattern);
 }
