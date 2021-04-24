@@ -152,13 +152,15 @@ async function setTicketDetails(div){
 
 async function setSeatPlanPattern(showID){
     let seatPlan = (await getSeatplanByShowID(showID));
-    let seat = {seatID,seatFree};
-    let seatPlanPattern;
+    let seatPlanPattern = [];
     for(let i = 0;i<seatPlan.length;i=i+2){
-        seat[i].seatID =  seatPlan[i];
-        seat[i].seatFree = convertBitToBoolean(seatPlan[i+1]);
-        console.log("seat: " + seat[i]);
+        let seat = {
+            seatID: seatPlan[i],
+            seatFree: convertBitToBoolean(seatPlan[i+1])
+        }
+        seatPlanPattern[i] = seat;
     }
+    console.log("seatPlanPattern: " + seatPlanPattern);
 }
 
 async function openReservationPopup() {
