@@ -38,7 +38,7 @@ function populateFrontEndSeatPlanPattern(){
 
 function populateDatabaseSeatPlanPattern(fetchedSeatPlanPattern){
     let seatPlanPatternDatabase = [];
-    for(let i = 0;i<fetchedsSeatPlanPattern.length;i++){
+    for(let i = 0;i<fetchedSeatPlanPattern.length;i++){
         let seat = fetchedSeatPlanPattern[i].split;
         seatPlanPatternDatabase[i] = {
             seatID: seat[0],
