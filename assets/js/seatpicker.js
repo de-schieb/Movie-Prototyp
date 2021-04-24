@@ -1,12 +1,11 @@
 const container = document.querySelector('#seatplan-container');
 const seats = document.querySelectorAll('.row .seat:not(.occupied)');
+const allSeats = document.querySelectorAll(".row .seat");
 const total = document.getElementById('total-price-seatplan');
-
-populateUI();
 
 let ticketPrice = 8;
 
-// Update total and count 
+// Update total and count
 function updateSelectedCount() {
   const selectedSeats = document.querySelectorAll('.row .seat.selected');
 
@@ -25,16 +24,55 @@ function updateSelectedCount() {
   total.innerText = (selectedSeatsCount * ticketPrice) + "€";
 }
 
-// Get data from localstorage and populate the UI
-function populateUI() {
-  const selectedSeats = JSON.parse(localStorage.getItem('selectedSeats'));
+function populateFrontEndSeatPlanPattern(){
+    let seatPlanPatternFrontend = [];
+    for(let i = 0;i<allSeats.length;i++){
+        seatPlanPatternFrontend[i] = {
+            seatID = allSeats[i].id,
+            seatFree = true
+        }
+    }
+    return seatPlanPatternFrontend;
+}
 
-  if (selectedSeats !== null && selectedSeats.length > 0) {
-    seats.forEach((seat, index) => {
-      if (selectedSeats.indexOf(index) > -1) {
-        seat.classList.add('selected');
-      }
-    });
+function populateDatabaseSeatPlanPattern(fetchedSeatPlanPattern){
+    let seatPlanPatternDatabase = [];
+    for(let i = 0;i<fetchedsSeatPlanPattern.length;i++){
+        let seat = fetchedSeatPlanPattern[i].split;
+        seatPlanPatternDatabase[i] = {
+            seatID = seat[0],
+            seatFree = seat[1]
+        }
+    }
+    return seatPlanPatternDatabase;
+}
+
+function populateMixedSeatPlanPattern(seatPlanPatternFE,seatPlanPatternDB){
+    let seatPlanPatternMixed = [];
+    if(seatPlanPatternFE.length == seatPlanPatternDB.length){
+        for(let i = 0;i<seatPlanPatternDB.length;i++){
+            seatPlanPatternMixed[i] = {
+                seatIDFE = seatPlanPatternFE[i].seatID,
+                seatIDDB = seatPlanPatternDB[i].seatID,
+                seatFree = seatPlanPatternDB[i].seatFree
+            }
+        }
+        console.log("seatPlanPatternMixed: " + seatPlanPatternMixed);
+    }
+}
+
+// Get data from localstorage and populate the UI
+function populateUI(fetchedSeatPlanPattern) {
+    let seatPlanPatternFrontend = populateFrontEndSeatPlanPattern();
+    let seatPlanPatternDatabase = populateDatabaseSeatPlanPattern(fetchedSeatPlanPattern);
+    let seatPlanPatternMixed = populateMixedSeatPlanPattern(seatPlanPatternFrontend,seatPlanPatternDatabase);
+    const selectedSeats = JSON.parse(localStorage.getItem('selectedSeats'));
+
+    if (selectedSeats !== null && selectedSeats.length > 0) {
+        seats.forEach((seat, index) => {
+            if (selectedSeats.indexOf(index) > -1) {
+            seat.classList.add('selected');
+            }});
   }
 }
 

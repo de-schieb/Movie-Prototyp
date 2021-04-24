@@ -153,7 +153,10 @@ async function setTicketDetails(div){
 async function setSeatPlanPattern(showID){
     let seatPlanPatternDB =  (await getSeatplanByShowID(showID));
     console.log("seatPlanPatternDB: ", seatPlanPatternDB);
+    populateUI(seatPlanPatternDB);
 }
+
+
 
 async function openReservationPopup() {
     moviePopup.style.display = "none";
