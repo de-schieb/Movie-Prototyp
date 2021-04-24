@@ -87,10 +87,7 @@ function cleanUI(){
     let seatPlanPatternFrontend = populateFrontEndSeatPlanPattern();
 
     for(let i = 0;i<seatPlanPatternFrontend.length;i++){
-        console.log("seatFE.idFE: " + seatPlanPatternFrontend[i].id);
-        let seat = document.getElementById(seatPlanPatternFrontend[i].id);
-        console.log("seat.id: " + seat.id);
-        console.log("seat.classList: " + seat.classList);
+        let seat = document.getElementById(seatPlanPatternFrontend[i].seatID);
         if(seat.classList.contains('occupied') || seat.classList.contains('selected')){
             seat.classList.toggle('');
         }
