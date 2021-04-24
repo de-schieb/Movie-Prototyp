@@ -31,7 +31,6 @@ function populateFrontEndSeatPlanPattern(){
             seatID: allSeats[i].id,
             seatFree: true
         }
-        console.log("seatFE: " + seatPlanPatternFrontend[i].seatID + ", " + seatPlanPatternFrontend[i].seatFree);
     }
     return seatPlanPatternFrontend;
 }
@@ -43,7 +42,6 @@ function populateDatabaseSeatPlanPattern(fetchedSeatPlanPattern){
             seatID: fetchedSeatPlanPattern[i].substring(0,4),
             seatFree: fetchedSeatPlanPattern[i].substring(5,9)
         }
-        console.log("seatDB: " + seatPlanPatternDatabase[i].seatID + ", " + seatPlanPatternDatabase[i].seatFree);
     }
     return seatPlanPatternDatabase;
 }
@@ -67,6 +65,12 @@ function populateUI(fetchedSeatPlanPattern) {
     let seatPlanPatternFrontend = populateFrontEndSeatPlanPattern();
     let seatPlanPatternDatabase = populateDatabaseSeatPlanPattern(fetchedSeatPlanPattern);
     let seatPlanPatternMixed = populateMixedSeatPlanPattern(seatPlanPatternFrontend,seatPlanPatternDatabase);
+
+    for(let i = 0;i<seatPlanPatternMixed;i++){
+        if(!seatPlanPatternMixed[i].seatFree){
+            document.getElementById(seatPlanPatternMixed[i].seatIDFE).classList.toggle('occupied');
+        }
+    }
     const selectedSeats = JSON.parse(localStorage.getItem('selectedSeats'));
 
     if (selectedSeats !== null && selectedSeats.length > 0) {
