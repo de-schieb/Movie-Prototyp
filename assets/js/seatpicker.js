@@ -69,10 +69,7 @@ function populateUI(fetchedSeatPlanPattern) {
 
     console.log("seatPlanPatternMixed.length: ", seatPlanPatternMixed.length)
     for(let i = 0;i<seatPlanPatternMixed.length;i++){
-        console.log("seatPlanPatternMixed[i].seatFree", seatPlanPatternMixed[i].seatFree);
-        console.log("Boolean(seatPlanPatternMixed[i].seatFree", Boolean(seatPlanPatternMixed[i].seatFree));
         if(seatPlanPatternMixed[i].seatFree == "false"){
-            console.log("IN!!!!");
             document.getElementById(seatPlanPatternMixed[i].seatIDFE).classList.toggle('occupied');
         }
     }
@@ -84,6 +81,15 @@ function populateUI(fetchedSeatPlanPattern) {
             seat.classList.add('selected');
             }});
   }
+}
+
+function cleanUI(){
+    for(let i = 0;i<seatPlanPatternMixed.length;i++){
+        let seat = document.getElementById(seatPlanPatternMixed[i].seatIDFE);
+        if(seat.classList.contains('occupied') || seat.classList.contains('selected')){
+            document.getElementById(seatPlanPatternMixed[i].seatIDFE).classList.toggle('');
+        }
+    }
 }
 
 
