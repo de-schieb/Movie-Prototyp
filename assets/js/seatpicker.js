@@ -47,6 +47,7 @@ function populateDatabaseSeatPlanPattern(fetchedSeatPlanPattern){
 }
 
 function populateMixedSeatPlanPattern(seatPlanPatternFE,seatPlanPatternDB){
+    let seatPlanPatternMixed = [];
     if(seatPlanPatternFE.length == seatPlanPatternDB.length){
         for(let i = 0;i<seatPlanPatternDB.length;i++){
             seatPlanPatternMixed[i] = {
@@ -65,7 +66,7 @@ function populateUI(fetchedSeatPlanPattern) {
     let seatPlanPatternFrontend = populateFrontEndSeatPlanPattern();
     let seatPlanPatternDatabase = populateDatabaseSeatPlanPattern(fetchedSeatPlanPattern);
     let seatPlanPatternMixed = populateMixedSeatPlanPattern(seatPlanPatternFrontend,seatPlanPatternDatabase);
-    
+
     console.log("seatPlanPatternMixed.length: ", seatPlanPatternMixed.length)
     for(let i = 0;i<seatPlanPatternMixed.length;i++){
         if(seatPlanPatternMixed[i].seatFree == "false"){
