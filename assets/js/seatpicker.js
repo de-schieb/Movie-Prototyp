@@ -11,7 +11,7 @@ function updateSelectedCount(div) {
   const selectedSeats = document.querySelectorAll('.row .seat.selected');
   const selectedSeatsCount = selectedSeats.length;
   if(div){
-      setElementInnerHtml("seats-seatplan",pickedSeats + ", " + div.id);
+      setElementInnerHtml("seats-seatplan", pickedSeats.innerHTML + ", " + div.id);
   }
   total.innerText = (selectedSeatsCount * ticketPrice) + "€";
 }
