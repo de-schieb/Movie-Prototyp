@@ -4,12 +4,12 @@ const allSeats = document.querySelectorAll(".row .seat");
 const total = document.getElementById('total-price-seatplan');
 
 let ticketPrice = 8;
+let selectedSeatIDs = [];
 
 // Update total and count
 function updateSelectedCount(div) {
   const selectedSeats = document.querySelectorAll('.row .seat.selected');
   const selectedSeatsCount = selectedSeats.length;
-  let selectedSeatIDs = [];
   if(div){
     if(div.classList.contains('selected')){
         selectedSeatIDs.pop();
