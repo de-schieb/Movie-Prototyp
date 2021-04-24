@@ -68,7 +68,7 @@ function populateUI(fetchedSeatPlanPattern) {
     let seatPlanPatternMixed = populateMixedSeatPlanPattern(seatPlanPatternFrontend,seatPlanPatternDatabase);
 
     for(let i = 0;i<seatPlanPatternMixed.length;i++){
-        if(!seatPlanPatternMixed[i].seatFree){
+        if(seatPlanPatternMixed[i].seatFree === false){
             console.log("IN!!!!");
             document.getElementById(seatPlanPatternMixed[i].seatIDFE).classList.toggle('occupied');
         }
