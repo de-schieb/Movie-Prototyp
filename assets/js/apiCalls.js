@@ -12,16 +12,28 @@ async function getPicturePathByMovieID(movieID){
     return await doFetch(url).then((res)=>res.text());
 }
 
-async function getMovieDetailsByMovieID(movie_id){
-    let url = generateUrl(`movieByID/` + movie_id);
+async function getMovieDetailsByMovieID(movieID){
+    let url = generateUrl(`movieByID/` + movieID);
     console.log("url: " + url);
     return await doFetch(url).then((res)=>res.json());
 }
 
-async function getMoviePlayTimesByMovieID(movie_id){
-    let url = generateUrl(`showsByMovieID/` + movie_id);
+async function getMoviePlayTimesByMovieID(movieID){
+    let url = generateUrl(`showsByMovieID/` + movieID);
     console.log("url: " + url);
     return await doFetch(url).then((res)=>res.json());
+}
+
+async function getMovieIDByMovieTitle(movieTitle){
+    let url  = generateUrl(`movieIDByTitle/` + movieTitle);
+    console.log("url: " + url);
+    return await doFetch(url).then((res) => res.text());
+}
+
+async function getShowIDByMovieIDAndStartTime(movieID, startTime){
+    let url = generateUrl(`showIDByMovieIDAndStartTime/`+ movieID + `/` + startTime)
+    console.log("url: " + url);
+    return await doFetch(url).then((res) => res.text()); 
 }
 
 async function getTicketDetails(ticketID){

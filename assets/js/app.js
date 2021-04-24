@@ -9,7 +9,7 @@ const reservationForm = document.querySelector("#your-data-form");
 
 const btnIds = ["first-time-btn","second-time-btn","third-time-btn","fourth-time-btn"];
 
-var clickedBtn;
+let showIDForTicketReservation;
 
 window.onload = function() { setInterval( updateTimeStamp, 100); }
 
@@ -116,16 +116,15 @@ function closeMoviePopup() {
     }
 }
 
-function setTicketDetailsForReservationPopup(div) {
+async function setTicketDetailsForReservationPopup(div) {
+    await setTicketDetails(div);
     setContinueBtnVisible(div);
-    setTicketDetails();
 }
 
 function setContinueBtnVisible(div) {
     for(let i = 0;i<btnIds.length;i++){
         if(div.id === btnIds[i]){
             setBtnClicked(div.id, true);
-            clickedBtn = div;
             continue;
         }
         setBtnClicked(btnIds[i], false);
@@ -133,7 +132,8 @@ function setContinueBtnVisible(div) {
     document.getElementById("continue-btn").style.display= "block";
 }
 
-function setTicketDetails(){
+async function setTicketDetails(div){
+    let clickedBtn = div;
     let pickedMovieTitle = document.getElementById("movie-title").innerHTML;
     console.log("picked movie title: ", pickedMovieTitle);
     let pickedShowPlayTime = clickedBtn.innerHTML;
@@ -142,6 +142,11 @@ function setTicketDetails(){
     console.log("picked show play time: " + pickedShow);
     setElementInnerHtml("movie-title-seatplan", pickedMovieTitle);
     setElementInnerHtml("show-seatplan", pickedShow);
+
+    let formattedMoviePlayTimeDate = formatMoviePlayDateForDatabase(pickedShowPlayDate);
+    let formattedPickedShow = formattedMoviePlayTimeDate + "  " + pickedShowPlayTime;
+    let movieID = (await getMovieIDByMovieTitle(pickedMovieTitle));
+    showIDForTicketReservation = (await getShowIDByMovieIDAndStartTime(movieID,formattedPickedShow));
 }
 
 function openReservationPopup() {
