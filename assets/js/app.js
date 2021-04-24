@@ -16,7 +16,7 @@ window.onload = function() { setInterval( updateTimeStamp, 100); }
 async function showTicketDetails(event,div){
     if(event.key === 'Enter'){
         let ticketID = div.value;
-        let {ticketId, price, movieByMovieId, showByShowId, hallByHallId, seatBySeatId} = (await getTicketDetailsByTicketID(ticketID))
+        let {ticketId, price, movieByMovieId, showByShowId, hallByHallId, seatBySeatId, forename, lastname} = (await getTicketDetailsByTicketID(ticketID))
         let title = movieByMovieId.title;
         let startTime = showByShowId.startTime.substring(0,16);
         let hallId = hallByHallId.hallId;
@@ -33,7 +33,7 @@ async function showTicketDetails(event,div){
                     "Sitz: <em>" + seatId + "</em><br>" + 
                     "Halle: <em>" + hallId + "</em><br>" + 
                     "Preis: <em>" + price + "€</em> <br><br>" +
-                    "Reserviert auf: <em>" + "placeholder" + "</em></div>",
+                    "Reserviert auf: <em>" + forename + " " + lastname + "</em></div>",
             confirmButtonText: "Okay",
             confirmButtonColor: "#000000"
         });
