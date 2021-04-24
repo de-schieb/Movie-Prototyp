@@ -83,7 +83,7 @@ function changeMoviePlayTimes(moviePlayTimes){
   let moviePlayTimeDate = formatMoviePlayDateForTarget(moviePlayTimes[0].substring(0,10),FRONTEND);
   setElementInnerHtml("movie-play-time-date", moviePlayTimeDate);
   for(let i = 0; i<moviePlayTimes.length; i++){
-      setElementInnerHtml(moviePlayTimeFields[i],moviePlayTimes[i].substring(10,16));
+      setElementInnerHtml(moviePlayTimeFields[i],moviePlayTimes[i].substring(11,16));
   }
 }
 
