@@ -151,8 +151,14 @@ async function setTicketDetails(div){
 }
 
 async function setSeatPlanPattern(showID){
-    let seatPlanPattern = (await getSeatplanByShowID(showID));
-    console.log("seatPlanPattern: " + seatPlanPattern);
+    let seatPlan = (await getSeatplanByShowID(showID));
+    let seat = {seatID,seatFree};
+    let seatPlanPattern;
+    for(let i = 0;i<seatPlan.length;i=i+2){
+        seat[i].seatID =  seatPlan[i];
+        seat[i].seatFree = convertBitToBoolean(seatPlan[i+1]);
+        console.log("seat: " + seat[i]);
+    }
 }
 
 async function openReservationPopup() {

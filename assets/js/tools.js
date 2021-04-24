@@ -19,6 +19,14 @@ function shuffle(array) {
   return array;
 }
 
+function convertBitToBoolean(bit){
+  if(bit == 1){
+    return true;
+  }else if(bit == 0){
+    return false;
+  }
+}
+
 function setElementInnerHtml(elementId,value){
      document.getElementById(elementId).innerHTML = value;
  }
