@@ -12,9 +12,9 @@ function updateSelectedCount(div) {
   const selectedSeatsCount = selectedSeats.length;
   if(div){
     if(div.classList.contains('selected')){
-        selectedSeatIDs.pop();
-    }else{
         selectedSeatIDs.push(div.id);
+    }else{
+        selectedSeatIDs.pop();
     }
     setElementInnerHtml("seats-seatplan",selectedSeatIDs.join(", "));
 
