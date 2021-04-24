@@ -17,9 +17,8 @@ function updateSelectedCount(div) {
         selectedSeatIDs.pop();
     }
     setElementInnerHtml("seats-seatplan",selectedSeatIDs.join(", "));
-
   }
-  total.innerText = (selectedSeatsCount * ticketPrice) + "€";
+  setElementInnerHtml("total-price-seatplan", (selectedSeatsCount * ticketPrice) + "€");
 }
 
 function populateFrontEndSeatPlanPattern(){
@@ -84,6 +83,9 @@ function cleanUI(){
             seat.classList.toggle('selected');
         }
     }
+    selectedSeatIDs = [];
+    setElementInnerHtml("total-price-seatplan", (selectedSeatsCount * ticketPrice) + "€");
+
 }
 
 
