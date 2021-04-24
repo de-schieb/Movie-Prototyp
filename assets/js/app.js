@@ -144,7 +144,7 @@ async function setTicketDetails(div){
     setElementInnerHtml("show-seatplan", pickedShow);
 
     let formattedMoviePlayTimeDate = formatMoviePlayDateForTarget(pickedShowPlayDate,DB);
-    let formattedPickedShow = formattedMoviePlayTimeDate +" " + pickedShowPlayTime.trim();
+    let formattedPickedShow = formattedMoviePlayTimeDate + "%20" + pickedShowPlayTime.trim();
     let movieID = (await getMovieIDByMovieTitle(pickedMovieTitle));
     showIDForTicketReservation = (await getShowIDByMovieIDAndStartTime(movieID,formattedPickedShow));
     console.log("showIDForTicketReservation: " + showIDForTicketReservation);
