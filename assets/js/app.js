@@ -171,7 +171,7 @@ function closeReservationPopup() {
 function giveResponseToTicketReservation(){
     if(reservationForm.reportValidity()){
         let params = {
-            ticket_ids: ,
+            // ticket_ids: ,
             email: document.querySelector("#your-email").value,
             firstname: document.querySelector("#your-firstname").value,
             lastname: document.querySelector("#your-lastname").value,
