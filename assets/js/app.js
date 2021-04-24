@@ -168,18 +168,27 @@ function closeReservationPopup() {
     cleanUI();
 }
 
-function giveResponseToTicketReservation(){
+async function giveResponseToTicketReservation(){
     if(reservationForm.reportValidity()){
+        Swal.fire({
+            title:"Loading...",
+            confirmButtonText: "Okay",
+            confirmButtonColor: "#000000"
+        })
         let params = {
-            // ticket_ids: ,
+            ticket_ids: "",
             email: document.querySelector("#your-email").value,
             firstname: document.querySelector("#your-firstname").value,
             lastname: document.querySelector("#your-lastname").value,
             movie: document.querySelector("#movie-title-seatplan").innerHTML,
-            seats: document.querySelector("seats-seatplan").innerHTML,
+            seats: document.querySelector("#seats-seatplan").innerHTML,
             show: document.querySelector("#show-seatplan").innerHTML,
             price: document.querySelector("#total-price-seatplan").innerHTML
         };
+        let movieID = (await getMovieIDByMovieTitle(params.movie));
+        let showID = (await getShowIDByMovieIDAndStartTime(movieID,formatMoviePlayDateForTarget(params.show.substring(0,10)+"%20"+params.show.substring(11),DB)))
+        await setTicketDetailsInDB(movieID,showID,params.firstname,params.lastname);
+        // params.ticket_ids =  getTicketIDs();
         sendEmailToCustomer(params);
         Swal.fire({
             title: "Ticketreservierung erfolgreich!",
