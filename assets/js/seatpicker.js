@@ -28,8 +28,8 @@ function populateFrontEndSeatPlanPattern(){
     let seatPlanPatternFrontend = [];
     for(let i = 0;i<allSeats.length;i++){
         seatPlanPatternFrontend[i] = {
-            seatID = allSeats[i].id,
-            seatFree = true
+            seatID: allSeats[i].id,
+            seatFree: true
         }
     }
     console.log("seatPlanPatternFrontend: " + seatPlanPatternFrontend);
@@ -41,8 +41,8 @@ function populateDatabaseSeatPlanPattern(fetchedSeatPlanPattern){
     for(let i = 0;i<fetchedsSeatPlanPattern.length;i++){
         let seat = fetchedSeatPlanPattern[i].split;
         seatPlanPatternDatabase[i] = {
-            seatID = seat[0],
-            seatFree = seat[1]
+            seatID: seat[0],
+            seatFree: seat[1]
         }
     }
     console.log("seatPlanPatternDatabase: " + seatPlanPatternDatabase);
@@ -54,9 +54,9 @@ function populateMixedSeatPlanPattern(seatPlanPatternFE,seatPlanPatternDB){
     if(seatPlanPatternFE.length == seatPlanPatternDB.length){
         for(let i = 0;i<seatPlanPatternDB.length;i++){
             seatPlanPatternMixed[i] = {
-                seatIDFE = seatPlanPatternFE[i].seatID,
-                seatIDDB = seatPlanPatternDB[i].seatID,
-                seatFree = seatPlanPatternDB[i].seatFree
+                seatIDFE: seatPlanPatternFE[i].seatID,
+                seatIDDB: seatPlanPatternDB[i].seatID,
+                seatFree: seatPlanPatternDB[i].seatFree
             }
         }
         console.log("seatPlanPatternMixed: " + seatPlanPatternMixed);
