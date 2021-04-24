@@ -64,16 +64,17 @@ function changeMovieDetails(details){
 
 function formatMoviePlayDateForTarget(unformattedMoviePlayTimeDate,target){
   let unformattedMoviePlayTimeDate = unformattedMoviePlayTimeDate;
+  let moviePlayTimeYear,moviePlayTimeMonth,moviePlayTimeDay;
   switch(target){
     case FRONTEND: 
-    let moviePlayTimeYear = unformattedMoviePlayTimeDate.substring(0,4);
-    let moviePlayTimeMonth = unformattedMoviePlayTimeDate.substring(5,7);
-    let moviePlayTimeDay = unformattedMoviePlayTimeDate.substring(8,10);
-    return formattedMoviePlayTimeDate = moviePlayTimeDay + "." + moviePlayTimeMonth + "." + moviePlayTimeYear;
+      moviePlayTimeYear = unformattedMoviePlayTimeDate.substring(0,4);
+      moviePlayTimeMonth = unformattedMoviePlayTimeDate.substring(5,7);
+      moviePlayTimeDay = unformattedMoviePlayTimeDate.substring(8,10);
+      return formattedMoviePlayTimeDate = moviePlayTimeDay + "." + moviePlayTimeMonth + "." + moviePlayTimeYear;
     case DB:
-      let moviePlayTimeDay = unformattedMoviePlayTimeDate.substring(0,2);
-      let moviePlayTimeMonth = unformattedMoviePlayTimeDate.substring(3,5);
-      let moviePlayTimeYear = unformattedMoviePlayTimeDate.substring(6,10);
+      moviePlayTimeDay = unformattedMoviePlayTimeDate.substring(0,2);
+      moviePlayTimeMonth = unformattedMoviePlayTimeDate.substring(3,5);
+      moviePlayTimeYear = unformattedMoviePlayTimeDate.substring(6,10);
       return formattedMoviePlayTimeDate = moviePlayTimeYear + "-" + moviePlayTimeMonth + "-" + moviePlayTimeDay;
   }
 }
