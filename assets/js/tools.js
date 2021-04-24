@@ -63,7 +63,6 @@ function changeMovieDetails(details){
 }
 
 function formatMoviePlayDateForTarget(unformattedMoviePlayTimeDate,target){
-  let unformattedMoviePlayTimeDate = unformattedMoviePlayTimeDate;
   let moviePlayTimeYear,moviePlayTimeMonth,moviePlayTimeDay;
   switch(target){
     case FRONTEND: 

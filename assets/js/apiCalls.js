@@ -1,7 +1,7 @@
 const API_URL = 'http://cinema-68.germanywestcentral.cloudapp.azure.com:8090'
 
 async function getMovieIds(){
-    let url = generateUrl(`movieIDs`)
+    let url = generateUrl(`movieIDs`);
     console.log("url: " + url);
     return await doFetch(url).then((res)=>res.json());
 }
