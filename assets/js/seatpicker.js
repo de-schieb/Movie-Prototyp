@@ -27,6 +27,7 @@ function updateSelectedCount() {
 function populateFrontEndSeatPlanPattern(){
     let seatPlanPatternFrontend = [];
     for(let i = 0;i<allSeats.length;i++){
+        console.log("all seats id: " + allSeats[i].id);
         seatPlanPatternFrontend[i] = {
             seatID: allSeats[i].id,
             seatFree: true
