@@ -85,13 +85,11 @@ function populateUI(fetchedSeatPlanPattern) {
 
 function cleanUI(){
     let seatPlanPatternFrontend = populateFrontEndSeatPlanPattern();
-    let seatPlanPatternDatabase = populateDatabaseSeatPlanPattern(fetchedSeatPlanPattern);
-    let seatPlanPatternMixed = populateMixedSeatPlanPattern(seatPlanPatternFrontend,seatPlanPatternDatabase);
 
-    for(let i = 0;i<seatPlanPatternMixed.length;i++){
-        let seat = document.getElementById(seatPlanPatternMixed[i].seatIDFE);
+    for(let i = 0;i<seatPlanPatternFrontend.length;i++){
+        let seat = document.getElementById(seatPlanPatternFrontend[i].id);
         if(seat.classList.contains('occupied') || seat.classList.contains('selected')){
-            document.getElementById(seatPlanPatternMixed[i].seatIDFE).classList.toggle('');
+            seat.classList.toggle('');
         }
     }
 }
