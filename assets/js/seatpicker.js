@@ -15,7 +15,10 @@ function updateSelectedCount(div) {
     if(div.classList.contains('selected')){
         selectedSeatIDs.push(div.id);
     }else{
-        selectedSeatIDs.pop();
+        const index = selectedSeatIDs.indexOf(div.id);
+        if(index>-1){
+            selectedSeatIDs.splice(index,1);
+        }
     }
     setElementInnerHtml("seats-seatplan",selectedSeatIDs.join(", "));
   }
