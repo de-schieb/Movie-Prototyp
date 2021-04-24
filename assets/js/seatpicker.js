@@ -88,8 +88,10 @@ function cleanUI(){
 
     for(let i = 0;i<seatPlanPatternFrontend.length;i++){
         let seat = document.getElementById(seatPlanPatternFrontend[i].seatID);
-        if(seat.classList.contains('occupied') || seat.classList.contains('selected')){
-            seat.classList.toggle('');
+        if(seat.classList.contains('occupied')){
+            seat.classList.toggle('occupied');
+        } else if(seat.classList.contains('selected')){
+            seat.classList.toggle('selected');
         }
     }
 }
