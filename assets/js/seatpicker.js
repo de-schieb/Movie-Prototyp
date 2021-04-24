@@ -58,6 +58,7 @@ function populateMixedSeatPlanPattern(seatPlanPatternFE,seatPlanPatternDB){
             console.log("seatMix: " + seatPlanPatternMixed[i].seatIDFE + ", " + seatPlanPatternMixed[i].seatIDDB +  ", " + seatPlanPatternMixed[i].seatFree);
         }
     }
+    return seatPlanPatternMixed;
 }
 
 // Get data from localstorage and populate the UI
@@ -68,7 +69,7 @@ function populateUI(fetchedSeatPlanPattern) {
 
     for(let i = 0;i<seatPlanPatternMixed.length;i++){
         if(!seatPlanPatternMixed[i].seatFree){
-            document.getElementById(seatPlanPatternMixed[i].seatIDFE).class = 'seat occupied';
+            document.getElementById(seatPlanPatternMixed[i].seatIDFE).classList.toggle('occupied');
         }
     }
     const selectedSeats = JSON.parse(localStorage.getItem('selectedSeats'));
