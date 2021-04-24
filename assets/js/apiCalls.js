@@ -24,6 +24,12 @@ async function getMoviePlayTimesByMovieID(movie_id){
     return await doFetch(url).then((res)=>res.json());
 }
 
+async function getTicketDetails(ticketID){
+    let url = generateUrl(`/ticketDetailsByID/` + ticketID);
+    log("url: " + url);
+    return await doFetch(url).then((res) => res.json());
+}
+
 function sendEmailToCustomer(params){
     emailjs.send("service_mailjet","template_cinema68_pro", params)
                 .then(function(){
@@ -31,10 +37,4 @@ function sendEmailToCustomer(params){
                 }, function(error){
                     console.log('FAILED... ', error);
                 });
-}
-
-async function getTicketDetails(ticketID){
-    let url = generateUrl(`/ticketDetailsByID/` + ticketID);
-    log("url: " + url);
-    return await doFetch(url).then((res) => res.json());
 }
