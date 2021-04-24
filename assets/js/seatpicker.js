@@ -99,6 +99,7 @@ async function setTicketDetailsInDBAndReturnTicketIDs(movieID,showID,firstName,l
         let seatID = getSeatIDForTarget(selectedSeatIDs[i], DB);
         console.log("ticketDetails: " + ticketPrice + ", " + movieID + ", " + showID + ", " + 2000 + ", " + seatID + ", " + firstName + ", " + lastName);
         await postTicketDetails(ticketPrice,movieID,showID,2000,seatID,firstName,lastName);
+        await setSeatBlocked(seatID);
         fetchedSeatIDs.push(await getTicketIDs(movieID,showID,seatID));
     }
     return fetchedSeatIDs.join(", ");

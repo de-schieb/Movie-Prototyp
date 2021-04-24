@@ -54,6 +54,12 @@ async function postTicketDetails(price,movieID,showID,hallID,seatID,firstName,la
     await doPost(url);
 };
 
+async function setSeatBlocked(seatID){
+    let url = generateUrl(`setSeatBlocked/`+ seatID);
+    log("url: " + url);
+    await doPost(url);
+}
+
 async function getTicketIDs(movieID,showID,seatID){
     let url = generateUrl(`getTicketIDByMovieIDAndShowIDAndSeatID/` + movieID + `/` + showID + `/` + seatID);
     log("url: " + url);
