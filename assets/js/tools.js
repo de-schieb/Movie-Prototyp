@@ -1,3 +1,5 @@
+//remove the following line to toggle all log statements
+console.log() = function() {};
 
 const FRONTEND = "frontend";
 const DB = "database";
