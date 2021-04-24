@@ -189,8 +189,7 @@ async function giveResponseToTicketReservation(){
         let formattedMovieShow = formatMoviePlayDateForTarget(params.show.substring(0,10),DB)+"%20"+params.show.substring(13,18) + ":00";
         console.log("formattedMovieShow: " + formattedMovieShow);
         let showID = (await getShowIDByMovieIDAndStartTime(movieID,formattedMovieShow))
-        await setTicketDetailsInDB(movieID,showID,params.firstname,params.lastname);
-        // params.ticket_ids =  getTicketIDs();
+        params.ticket_ids = (await setTicketDetailsInDBAndReturnTicketIDs(movieID,showID,params.firstname,params.lastname));
         sendEmailToCustomer(params);
         Swal.fire({
             title: "Ticketreservierung erfolgreich!",

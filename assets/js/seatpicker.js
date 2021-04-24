@@ -90,12 +90,15 @@ function getSeatIDForTarget(seatID,target){
     }
 }
 
-function setTicketDetailsInDB(movieID,showID,firstName,lastName){
+async function setTicketDetailsInDBAndReturnTicketIDs(movieID,showID,firstName,lastName){
+    let fetchedSeatIDs = [];
     for(let i = 0;i<selectedSeatIDs.length;i++){
         let seatID = getSeatIDForTarget(selectedSeatIDs[i], DB);
         console.log("ticketDetails: " + ticketPrice + ", " + movieID + ", " + showID + ", " + 2000 + ", " + seatID + ", " + firstName + ", " + lastName);
-        // postTicketDetails(ticketPrice,movieID,showID,2000,seatID,firstName,lastName);
+        await postTicketDetails(ticketPrice,movieID,showID,2000,seatID,firstName,lastName);
+        fetchedSeatIDs.push(await getTicketIDs(movieID,showID,seatID));
     }
+    return fetchedSeatIDs.join(", ");
 }
 
 function cleanUI(){

@@ -93,6 +93,12 @@ async function doFetch(url){
   return resp;
 }
 
+async function doPost(url){
+  let resp = await fetch(url,{method: 'POST'})
+  .catch(handleGeneralError);
+  return resp;
+}
+
 function generateUrl(path){
   let url = `${API_URL}/${path}`;
   return url;

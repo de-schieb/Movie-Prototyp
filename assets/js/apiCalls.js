@@ -48,8 +48,16 @@ async function getSeatplanByShowID(showID){
     return await doFetch(url).then((res) => res.json());
 }
 
-async function getTicketIDs(){
-    
+async function postTicketDetails(ticketPrice,movieID,showID,hallID,seatID,firstName,lastName){
+    let url = generateUrl(`postTicket/` + price + `/` + movieID + `/` + showID + `/` + hallID + `/` + seatID + `/` + firstName + `/` + lastName );
+    log("url: " + url);
+    await doPost(url);
+};
+
+async function getTicketIDs(movieID,showID,seatID){
+    let url = generateUrl(`getTicketIDByMovieIDAndShowIDAndSeatID/` + movieID + `/` + showID + `/` + seatID);
+    log("url: " + url);
+    return await doFetch(url).then((res)=>res.json());
 }
 
 function sendEmailToCustomer(params){
