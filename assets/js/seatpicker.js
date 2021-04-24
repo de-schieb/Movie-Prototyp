@@ -84,6 +84,7 @@ function cleanUI(){
         }
     }
     selectedSeatIDs = [];
+    setElementInnerHtml("seats-seatplan",selectedSeatIDs.join(", "));
     setElementInnerHtml("total-price-seatplan", (0 * ticketPrice) + "€");
 
 }
