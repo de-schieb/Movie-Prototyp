@@ -159,8 +159,8 @@ async function setSeatPlanPattern(showID){
             seatFree: convertBitToBoolean(seatPlan[i+1])
         }
         seatPlanPattern[i] = seat;
+        console.log("seat: " + seatPlanPattern[i]);
     }
-    console.log("seatPlanPattern: " + seatPlanPattern);
 }
 
 async function openReservationPopup() {
