@@ -66,7 +66,7 @@ function populateUI(fetchedSeatPlanPattern) {
     let seatPlanPatternDatabase = populateDatabaseSeatPlanPattern(fetchedSeatPlanPattern);
     let seatPlanPatternMixed = populateMixedSeatPlanPattern(seatPlanPatternFrontend,seatPlanPatternDatabase);
 
-    for(let i = 0;i<seatPlanPatternMixed;i++){
+    for(let i = 0;i<seatPlanPatternMixed.length;i++){
         if(!seatPlanPatternMixed[i].seatFree){
             document.getElementById(seatPlanPatternMixed[i].seatIDFE).class = 'seat occupied';
         }
