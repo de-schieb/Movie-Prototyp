@@ -369,6 +369,7 @@ body div ul li{
     height: 205px;
     width: 480px;
     transform: rotateX(-45deg);
+    margin-left: -70px;
     box-shadow: 0 3px 10px rgba(255, 255, 255, 0.7);
 }
 
