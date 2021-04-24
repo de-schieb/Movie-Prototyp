@@ -85,12 +85,16 @@ async function getSeatIDForTarget(seatID,target,showID){
         case FRONTEND:
             for(let i = 0;i<seatPlanPatternMixed.length;i++){
                 if(seatPlanPatternMixed[i].seatIDDB === seatID){
+                    console.log("seatPlanPatternMixed[i].seatIDDB: " + seatPlanPatternMixed[i].seatIDDB);
+                    console.log("seatPlanPatternMixed[i].seatIDFE: " + seatPlanPatternMixed[i].seatIDFE);
                     return seatPlanPatternMixed[i].seatIDFE;
                 }
             }
-        case DB:
-            for(let i = 0;i<seatPlanPatternMixed.length;i++){
-                if(seatPlanPatternMixed[i].seatIDFE === seatID){
+            case DB:
+                for(let i = 0;i<seatPlanPatternMixed.length;i++){
+                    if(seatPlanPatternMixed[i].seatIDFE === seatID){
+                    console.log("seatPlanPatternMixed[i].seatIDDB: " + seatPlanPatternMixed[i].seatIDDB);
+                    console.log("seatPlanPatternMixed[i].seatIDFE: " + seatPlanPatternMixed[i].seatIDFE);
                     return seatPlanPatternMixed[i].seatIDDB;
                 }
             }
