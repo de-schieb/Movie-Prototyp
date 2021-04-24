@@ -19,14 +19,6 @@ function shuffle(array) {
   return array;
 }
 
-function convertBitToBoolean(bit){
-  if(bit == 1){
-    return true;
-  }else if(bit == 0){
-    return false;
-  }
-}
-
 function setElementInnerHtml(elementId,value){
      document.getElementById(elementId).innerHTML = value;
  }
@@ -88,7 +80,7 @@ function formatMoviePlayDateForTarget(unformattedMoviePlayTimeDate,target){
 
 function changeMoviePlayTimes(moviePlayTimes){
   let moviePlayTimeFields = ["first-time-btn", "second-time-btn", "third-time-btn", "fourth-time-btn"];
-  let moviePlayTimeDate = formatMoviePlayDateForTarget(moviePlayTimes[0].substring(0,10),FRONTEND);
+  let moviePlayTimeDate = formatMoviePlayDateForTarget(moviePlayTimes[0].substring(0,10), FRONTEND);
   setElementInnerHtml("movie-play-time-date", moviePlayTimeDate);
   for(let i = 0; i<moviePlayTimes.length; i++){
       setElementInnerHtml(moviePlayTimeFields[i],moviePlayTimes[i].substring(11,16));

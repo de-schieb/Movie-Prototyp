@@ -31,9 +31,9 @@ async function getMovieIDByMovieTitle(movieTitle){
 }
 
 async function getShowIDByMovieIDAndStartTime(movieID, startTime){
-    let url = generateUrl(`showIDByMovieIDAndStartTime/`+ movieID + `/` + startTime)
+    let url = generateUrl(`showIDByMovieIDAndStartTime/`+ movieID + `/` + startTime);
     console.log("url: " + url);
-    return await doFetch(url).then((res) => res.text()); 
+    return await doFetch(url).then((res) => res.text());
 }
 
 async function getTicketDetailsByTicketID(ticketID){
@@ -43,7 +43,7 @@ async function getTicketDetailsByTicketID(ticketID){
 }
 
 async function getSeatplanByShowID(showID){
-    let url = generateUrl(`seatPlanByShowID/`+showID);
+    let url = generateUrl(`seatPlanByShowID/`+ showID);
     log("url: " + url);
     return await doFetch(url).then((res) => res.json());
 }

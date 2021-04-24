@@ -143,7 +143,7 @@ async function setTicketDetails(div){
     setElementInnerHtml("movie-title-seatplan", pickedMovieTitle);
     setElementInnerHtml("show-seatplan", pickedShow);
 
-    let formattedMoviePlayTimeDate = formatMoviePlayDateForTarget(pickedShowPlayDate,DB);
+    let formattedMoviePlayTimeDate = formatMoviePlayDateForTarget(pickedShowPlayDate, DB);
     let formattedPickedShow = formattedMoviePlayTimeDate + "%20" + pickedShowPlayTime + ":00";
     let movieID = (await getMovieIDByMovieTitle(pickedMovieTitle));
     showIDForTicketReservation = (await getShowIDByMovieIDAndStartTime(movieID,formattedPickedShow));
@@ -151,16 +151,8 @@ async function setTicketDetails(div){
 }
 
 async function setSeatPlanPattern(showID){
-    let seatPlan = (await getSeatplanByShowID(showID));
-    let seatPlanPattern = [];
-    for(let i = 0;i<seatPlan.length;i=i+2){
-        let seat = {
-            seatID: seatPlan[i],
-            seatFree: convertBitToBoolean(seatPlan[i+1])
-        }
-        seatPlanPattern[i] = seat;
-        console.log("seat: " + seatPlanPattern[i].seatID + ", " + seatPlanPattern[i].seatFree);
-    }
+    let seatPlanPatternDB =  (await getSeatplanByShowID(showID));
+    console.log("seatPlanPatternDB: ", seatPlanPatternDB);
 }
 
 async function openReservationPopup() {
