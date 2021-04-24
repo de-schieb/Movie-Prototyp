@@ -1,4 +1,7 @@
 
+const FRONTEND = "frontend";
+const DB = "database";
+
 //Fisher-Yates (aka Knuth) Shuffle
 function shuffle(array) {
   let currentIndex = array.length, temporaryValue, randomIndex;
@@ -59,32 +62,30 @@ function changeMovieDetails(details){
   setElementAttr("movie-trailer","src", trailerUrl);
 }
 
-function formatMoviePlayDateForFrontend(unformattedMoviePlayTimeDate){
+function formatMoviePlayDateForTarget(unformattedMoviePlayTimeDate,target){
   let unformattedMoviePlayTimeDate = unformattedMoviePlayTimeDate;
-  let moviePlayTimeYear = unformattedMoviePlayTimeDate.substring(0,4);
-  let moviePlayTimeMonth = unformattedMoviePlayTimeDate.substring(5,7);
-  let moviePlayTimeDay = unformattedMoviePlayTimeDate.substring(8,10);
-  return formattedMoviePlayTimeDate = moviePlayTimeDay + "." + moviePlayTimeMonth + "." + moviePlayTimeYear;
+  switch(target){
+    case FRONTEND: 
+    let moviePlayTimeYear = unformattedMoviePlayTimeDate.substring(0,4);
+    let moviePlayTimeMonth = unformattedMoviePlayTimeDate.substring(5,7);
+    let moviePlayTimeDay = unformattedMoviePlayTimeDate.substring(8,10);
+    return formattedMoviePlayTimeDate = moviePlayTimeDay + "." + moviePlayTimeMonth + "." + moviePlayTimeYear;
+    case DB:
+      let moviePlayTimeDay = unformattedMoviePlayTimeDate.substring(0,2);
+      let moviePlayTimeMonth = unformattedMoviePlayTimeDate.substring(3,5);
+      let moviePlayTimeYear = unformattedMoviePlayTimeDate.substring(6,10);
+      return formattedMoviePlayTimeDate = moviePlayTimeYear + "-" + moviePlayTimeMonth + "-" + moviePlayTimeDay;
+  }
 }
 
 function changeMoviePlayTimes(moviePlayTimes){
   let moviePlayTimeFields = ["first-time-btn", "second-time-btn", "third-time-btn", "fourth-time-btn"];
-  let moviePlayTimeDate = formatMoviePlayDateForFrontend(moviePlayTimes[0].substring(0,10));
+  let moviePlayTimeDate = formatMoviePlayDateForTarget(moviePlayTimes[0].substring(0,10),FRONTEND);
   setElementInnerHtml("movie-play-time-date", moviePlayTimeDate);
   for(let i = 0; i<moviePlayTimes.length; i++){
       setElementInnerHtml(moviePlayTimeFields[i],moviePlayTimes[i].substring(10,16));
   }
 }
-
-function formatMoviePlayDateForDatabase(unformattedMoviePlayTimeDate){
-  let unformattedMoviePlayTimeDate = unformattedMoviePlayTimeDate;
-  let moviePlayTimeDay = unformattedMoviePlayTimeDate.substring(0,2);
-  let moviePlayTimeMonth = unformattedMoviePlayTimeDate.substring(3,5);
-  let moviePlayTimeYear = unformattedMoviePlayTimeDate.substring(6,10);
-  return formattedMoviePlayTimeDate = moviePlayTimeYear + "-" + moviePlayTimeMonth + "-" + moviePlayTimeDay;
-}
-
-
 
 async function doFetch(url){
   let resp = await fetch(url)

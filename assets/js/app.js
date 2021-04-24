@@ -143,10 +143,11 @@ async function setTicketDetails(div){
     setElementInnerHtml("movie-title-seatplan", pickedMovieTitle);
     setElementInnerHtml("show-seatplan", pickedShow);
 
-    let formattedMoviePlayTimeDate = formatMoviePlayDateForDatabase(pickedShowPlayDate);
+    let formattedMoviePlayTimeDate = formatMoviePlayDateForTarget(pickedShowPlayDate,DB);
     let formattedPickedShow = formattedMoviePlayTimeDate + "  " + pickedShowPlayTime;
     let movieID = (await getMovieIDByMovieTitle(pickedMovieTitle));
     showIDForTicketReservation = (await getShowIDByMovieIDAndStartTime(movieID,formattedPickedShow));
+    console.log("showIDForTicketReservation: " + showIDForTicketReservation);
 }
 
 function openReservationPopup() {
