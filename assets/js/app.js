@@ -172,8 +172,7 @@ async function giveResponseToTicketReservation(){
     if(reservationForm.reportValidity()){
         Swal.fire({
             title:"Bitte warten...",
-            confirmButtonText: "Okay",
-            confirmButtonColor: "#000000"
+            confirmButton: false
         })
         let params = {
             ticket_ids: "",
