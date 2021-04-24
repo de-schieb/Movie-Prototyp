@@ -40,7 +40,7 @@ function populateDatabaseSeatPlanPattern(fetchedSeatPlanPattern){
     for(let i = 0;i<fetchedSeatPlanPattern.length;i++){
         seatPlanPatternDatabase[i] = {
             seatID: fetchedSeatPlanPattern[i].substring(0,4),
-            seatFree: fetchedSeatPlanPattern[i].substring(5,9)
+            seatFree: fetchedSeatPlanPattern[i].substring(5)
         }
     }
     return seatPlanPatternDatabase;
