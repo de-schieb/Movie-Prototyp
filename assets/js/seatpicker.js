@@ -88,6 +88,7 @@ function cleanUI(){
 
     for(let i = 0;i<seatPlanPatternFrontend.length;i++){
         let seat = document.getElementById(seatPlanPatternFrontend[i].id);
+        console.log("seat.classList: " + seat.classList);
         if(seat.classList.contains('occupied') || seat.classList.contains('selected')){
             seat.classList.toggle('');
         }
