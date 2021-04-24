@@ -159,7 +159,7 @@ async function setSeatPlanPattern(showID){
             seatFree: convertBitToBoolean(seatPlan[i+1])
         }
         seatPlanPattern[i] = seat;
-        console.log("seat: " + seatPlanPattern[i].toString());
+        console.log("seat: " + seatPlanPattern[i].seatID + ", " + seatPlanPattern[i].seatFree);
     }
 }
 
