@@ -32,6 +32,7 @@ function populateFrontEndSeatPlanPattern(){
             seatFree = true
         }
     }
+    console.log("seatPlanPatternFrontend: " + seatPlanPatternFrontend);
     return seatPlanPatternFrontend;
 }
 
@@ -44,6 +45,7 @@ function populateDatabaseSeatPlanPattern(fetchedSeatPlanPattern){
             seatFree = seat[1]
         }
     }
+    console.log("seatPlanPatternDatabase: " + seatPlanPatternDatabase);
     return seatPlanPatternDatabase;
 }
 
