@@ -71,7 +71,7 @@ function populateUI(fetchedSeatPlanPattern) {
     for(let i = 0;i<seatPlanPatternMixed.length;i++){
         console.log("seatPlanPatternMixed[i].seatFree", seatPlanPatternMixed[i].seatFree);
         console.log("Boolean(seatPlanPatternMixed[i].seatFree", Boolean(seatPlanPatternMixed[i].seatFree));
-        if(!Boolean(seatPlanPatternMixed[i].seatFree)){
+        if(seatPlanPatternMixed[i].seatFree == "false"){
             console.log("IN!!!!");
             document.getElementById(seatPlanPatternMixed[i].seatIDFE).classList.toggle('occupied');
         }
